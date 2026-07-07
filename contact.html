@@ -554,7 +554,9 @@ burger.addEventListener('click',()=>toggleNav());
 mobnav.querySelectorAll('.mlink').forEach(l=>l.addEventListener('click',()=>toggleNav(false)));
 
 function openApptModal(location){modalOverlay.classList.add('open');document.body.style.overflow='hidden';if(location){const sel=document.getElementById('apptLoc');for(let i=0;i<sel.options.length;i++){if(sel.options[i].text===location){sel.selectedIndex=i;break;}}}}
+function openModal(){openApptModal()}
 function closeApptModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
+function closeModal(){closeApptModal()}
 modalClose.addEventListener('click',closeApptModal);
 modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeApptModal()});
 document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeApptModal()});
