@@ -1,5 +1,5 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "/centerline-home.html", "permanent": false }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
   ]
 }
