@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Auto & Work Injuries — PantherCreek Physical Therapy & Balance</title>
+<title>Balance Therapy — PantherCreek Physical Therapy & Balance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&display=swap" rel="stylesheet">
@@ -31,8 +31,11 @@ a{color:inherit;text-decoration:none}
 .eyebrow.on-dark{color:var(--gold-soft)}
 .eyebrow.on-dark::before{background:var(--gold-soft)}
 h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacing:-.02em}
+
+/* ─── Header ─── */
 .hdr{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:6px var(--gut) 6px 16px;background:#fff;box-shadow:0 2px 0 var(--ink)}
 .brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand svg{width:34px;height:34px;flex:none}
 .brand .name{font:600 1.18rem/1 var(--serif);letter-spacing:.01em}
 .brand .name b{color:#fff;font-weight:600}
 .brand .name span{color:var(--signal-2);font-weight:600}
@@ -52,6 +55,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .nav .drop-menu a.active{color:#fff;background:rgba(0,145,218,.25)}
 .nav .drop-menu .drop-icon{width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);display:grid;place-items:center;flex-shrink:0;color:var(--gold-soft)}
 .nav .drop-menu .drop-icon svg{width:14px;height:14px}
+.nav .drop-menu .dm-divider{height:1px;background:rgba(255,255,255,.08);margin:4px 0}
 .hdr-cta{display:flex;align-items:center;gap:18px}
 .tel{display:flex;align-items:center;gap:7px;color:var(--ink);font:600 .9rem/1 var(--sans);white-space:nowrap}
 .tel svg{width:15px;height:15px;opacity:.85}
@@ -74,7 +78,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .mobnav .btn{margin-top:28px;justify-content:center}
 .mobnav .mtel{display:inline-flex;align-items:center;gap:9px;color:var(--gold-soft);font:600 1rem/1 var(--sans);margin-top:22px}
 .mobnav .mtel svg{width:16px;height:16px}
-.hero{position:relative;min-height:52vh;background:var(--ink);background-image:url('public/Auto and work.png');background-size:cover;background-position:center;display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
+
+/* ─── Hero ─── */
+.hero{position:relative;min-height:52vh;background:var(--ink);background-image:url('public/parkinsons-rehab.png');background-size:cover;background-position:center;display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
 .hero-glow{position:absolute;inset:0;z-index:0;background:linear-gradient(145deg,rgba(27,54,93,.90) 0%,rgba(0,107,165,.30) 55%,rgba(27,54,93,.82) 100%)}
 .hero-inner{flex:1;position:relative;z-index:1;padding-top:88px;display:flex;align-items:center}
 .hero-text{padding:clamp(36px,5vw,64px) 0}
@@ -84,9 +90,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .hero-text .breadcrumb svg{width:9px;height:9px;opacity:.4}
 .hero-text h1{font-size:clamp(2.4rem,5vw,4rem);color:#fff;font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-top:16px;max-width:18ch}
 .hero-text .lead{font-size:clamp(.9rem,1.3vw,1.05rem);color:rgba(255,255,255,.62);line-height:1.78;margin-top:18px;max-width:52ch}
+
+/* ─── Scroll reveal ─── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.10s}.reveal.d2{transition-delay:.20s}
+
+/* ─── CTA ─── */
 .cta{background:radial-gradient(900px 500px at 8% 45%,rgba(0,145,218,.35),transparent 58%),radial-gradient(700px 400px at 88% 80%,rgba(34,139,34,.22),transparent 55%),linear-gradient(130deg,#142849 0%,#1B365D 52%,#1E3F6B 100%);color:#fff;padding-block:clamp(72px,9vw,120px);position:relative;overflow:hidden}
 .cta .ridge{position:absolute;inset:auto 0 0 0;height:80%;z-index:0;opacity:.3}
 .cta .ridge svg{width:100%;height:100%}
@@ -97,9 +107,12 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .cta-inner .cta-phone svg{width:18px;height:18px;flex-shrink:0}
 .cta-inner .cta-phone small{display:block;font:500 .68rem/1 var(--sans);color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
 .cta-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+
+/* ─── Footer ─── */
 .ft{background:linear-gradient(175deg,#142849 0%,#1B365D 40%,#1B365D 100%);color:rgba(255,255,255,.62);padding-block:64px 30px;border-top:1px solid var(--line-l)}
 .ft .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-l)}
 .ft .brand{color:#fff;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.ft .brand svg{width:30px;height:30px;flex:none}
 .ft .blurb{font-size:.9rem;line-height:1.6;max-width:34ch;margin-top:14px}
 .ft h4{font:600 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:18px}
 .ft ul{list-style:none}
@@ -109,12 +122,15 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .ft .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:.78rem;color:rgba(255,255,255,.45)}
 .ft .bottom .socials{display:flex;gap:14px}
 .ft .bottom a:hover{color:#fff}
+
+/* ─── Modal ─── */
 .modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(27,54,93,.72);backdrop-filter:blur(8px);display:grid;place-items:center;padding:clamp(16px,4vw,40px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
 .modal-overlay.open{opacity:1;visibility:visible}
 .modal{width:100%;max-width:920px;max-height:90vh;display:grid;grid-template-columns:.85fr 1.15fr;border-radius:14px;overflow:hidden;box-shadow:0 50px 120px rgba(27,54,93,.55);transform:translateY(16px) scale(.97);transition:transform .4s var(--ease)}
 .modal-overlay.open .modal{transform:translateY(0) scale(1)}
 .modal-side{background:var(--navy);color:#fff;padding:48px 40px;display:flex;flex-direction:column;gap:28px;overflow-y:auto}
 .modal-side .brand{display:flex;align-items:center;gap:11px;color:#fff}
+.modal-side .brand svg{width:30px;height:30px;flex:none}
 .modal-side .brand .name{font:700 1.05rem/1 var(--serif)}
 .modal-side .brand .name b{color:#fff}
 .modal-side .brand .name span{color:var(--signal-2)}
@@ -146,6 +162,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .appt-notice svg{flex:none;margin-top:1px;color:var(--signal)}
 .appt-notice p{font-size:.78rem;line-height:1.55;margin:0}
 .appt-notice strong{color:var(--ink);font-weight:600}
+
+/* ─── Service page layout ─── */
 .svc-body{padding-block:clamp(64px,9vw,110px);background:var(--paper)}
 .svc-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(48px,7vw,88px);align-items:start;margin-bottom:clamp(56px,7vw,88px)}
 .svc-intro h2{font-size:clamp(1.6rem,2.4vw,2.2rem);margin-top:14px}
@@ -239,7 +257,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
       <button class="drop-btn active">Services
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-            <div class="drop-menu">
+                  <div class="drop-menu">
         <a href="balance-therapy.html">Balance &amp; Fall Prevention</a>
         <a href="vestibular-rehab.html">Vestibular Rehabilitation</a>
         <a href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
@@ -247,10 +265,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
         <a href="sports-rehab.html">Sports Rehabilitation</a>
         <a href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
         <a href="neurological-rehab.html">Neurological Rehabilitation</a>
-        <a href="auto-work-injuries.html" class="active">Auto &amp; Work Injuries</a>
+        <a href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
         <a href="fitness-wellness.html">Fitness &amp; Wellness</a>
         <a href="pilates.html">Pilates</a>
-        <a href="rock-steady-boxing.html">Rock Steady Boxing</a>
+        <a href="rock-steady-boxing.html" class="active">Rock Steady Boxing</a>
         <a href="urinary-incontinence.html">Urinary Incontinence Rehab</a>
         <a href="nutritional-health.html">Nutritional Health</a>
         <a href="acupuncture.html">Acupuncture Therapy</a>
@@ -292,10 +310,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   <a class="mlink" href="sports-rehab.html">Sports Rehabilitation</a>
   <a class="mlink" href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
   <a class="mlink" href="neurological-rehab.html">Neurological Rehabilitation</a>
-  <a class="mlink active" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+  <a class="mlink" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
   <a class="mlink" href="fitness-wellness.html">Fitness &amp; Wellness</a>
   <a class="mlink" href="pilates.html">Pilates</a>
-  <a class="mlink" href="rock-steady-boxing.html">Rock Steady Boxing</a>
+  <a class="mlink active" href="rock-steady-boxing.html">Rock Steady Boxing</a>
   <a class="mlink" href="urinary-incontinence.html">Urinary Incontinence Rehab</a>
   <a class="mlink" href="nutritional-health.html">Nutritional Health</a>
   <a class="mlink" href="acupuncture.html">Acupuncture Therapy</a>
@@ -323,11 +341,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
           <a href="#">Services</a>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-          <span>Auto &amp; Work Injuries</span>
+          <span>Rock Steady Boxing</span>
         </div>
-        <span class="eyebrow on-dark">Injury Recovery</span>
-        <h1>Expert care when<br>it matters most.</h1>
-        <p class="lead">A car accident or workplace injury can upend your life in an instant. PantherCreek Physical Therapy &amp; Balance specializes in helping patients navigate recovery from motor vehicle accidents and occupational injuries — handling the billing complexity so you can focus on healing.</p>
+        <span class="eyebrow on-dark">Rock Steady Boxing</span>
+        <h1>Fight back against Parkinson's.</h1>
+        <p class="lead">Rock Steady Boxing is a research-backed boxing fitness program specifically designed for people with Parkinson's disease — proven to slow symptom progression.</p>
       </div>
     </div>
   </div>
@@ -337,56 +355,79 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 <section class="svc-body">
   <div class="wrap">
     <div class="svc-intro reveal">
+      <!-- Left -->
       <div>
         <span class="eyebrow">What We Do</span>
-        <h2>Specialized recovery for auto and work injuries.</h2>
-        <p class="svc-lead">We understand the unique demands of injury claims — and we have the clinical expertise and documentation standards to support your recovery and your case.</p>
+        <h2>Boxing as medicine — for Parkinson's disease.</h2>
+        <p class="svc-lead">RSB isn't just exercise — it's a clinically validated approach that uses forced-intensity boxing movements to drive neuroplasticity and slow Parkinson's progression.</p>
         <div class="svc-features">
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/><line x1="13" y1="15" x2="16" y2="15"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>Direct Insurance Billing</strong>
-              <p>We bill auto insurance and workers' comp directly — you focus on getting better, not on paperwork.</p>
+              <strong>Certified RSB Coaches</strong>
+              <p>Our coaches are certified by Rock Steady Boxing and trained to work with Parkinson's patients at every stage.</p>
             </div>
           </div>
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>Early Intervention</strong>
-              <p>We see injury patients promptly. Starting treatment quickly leads to faster, more complete recovery.</p>
+              <strong>Non-Contact Boxing</strong>
+              <p>All boxing is non-contact — focused on the powerful, rhythmic movements that drive neurological benefit.</p>
             </div>
           </div>
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>Thorough Documentation</strong>
-              <p>Our therapists provide detailed progress notes that support your claim and clearly track your recovery milestones.</p>
+              <strong>Community &amp; Camaraderie</strong>
+              <p>RSB builds community. Our classes create lasting friendships among fighters who understand what each other faces.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="svc-dark reveal d1">
-        <div class="svc-dark-inner">
-          <span class="eyebrow on-dark">We Handle the Details</span>
-          <h3>We work directly with auto insurance and workers' compensation.</h3>
-          <p>Navigating billing after an accident adds stress you don't need. We accept most auto insurance and workers' comp plans and coordinate with your insurer directly.</p>
-          <div class="svc-stats">
-            <div class="svc-stat">
-              <span class="snum" style="font-size:1.1rem"><em>Direct billing</em></span>
-              <span class="slbl">to auto insurance and workers' comp</span>
+          <div class="svc-feat">
+            <div class="svc-feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
-            <div class="svc-stat">
-              <span class="snum" style="font-size:1.1rem"><em>Fast access</em></span>
-              <span class="slbl">most patients seen within days of referral</span>
+            <div class="svc-feat-text">
+              <strong>Individualized Assessment</strong>
+              <p>We evaluate strength, proprioception, gait, and vestibular function to find the exact cause of your instability.</p>
+            </div>
+          </div>
+          <div class="svc-feat">
+            <div class="svc-feat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="svc-feat-text">
+              <strong>Progressive Programming</strong>
+              <p>Sessions systematically increase in difficulty, building real-world stability you can rely on at home and in your community.</p>
             </div>
           </div>
         </div>
+      </div>
+      <!-- Right dark card -->
+      <div class="svc-dark reveal d1">
+        <div class="svc-dark-inner">
+          <span class="eyebrow on-dark">Why It Matters</span>
+          <h3>Forced-intensity exercise like boxing is clinically shown to slow Parkinson's progression.</h3>
+          <p>Research demonstrates that high-intensity, forced exercise like Rock Steady Boxing can significantly slow the motor decline associated with Parkinson's disease.</p>
+          <div class="svc-stats">
+            <div class="svc-stat">
+              <span class="snum"><em>89%</em></span>
+              <span class="slbl">of RSB participants improve motor function</span>
+            </div>
+            <div class="svc-stat">
+              <span class="snum"><em>3×/week</em></span>
+              <span class="slbl">recommended class frequency</span>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -421,39 +462,68 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Conditions Treated</span>
-      <h2>We treat the full range of auto and work injuries.</h2>
-      <p>From soft tissue injuries to complex trauma, our therapists have the clinical expertise and documentation standards to support your recovery.</p>
+      <h2>RSB addresses the core challenges of Parkinson's.</h2>
+      <p>Our Rock Steady Boxing program is designed to target the specific motor and non-motor symptoms of Parkinson's disease.</p>
     </div>
     <div class="cond-grid reveal d1">
       <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 6v6M12 14h.01"/></svg></div>
-        <h3>Whiplash &amp; Neck Injuries</h3>
-        <p>One of the most common auto injury diagnoses, requiring skilled manual therapy and progressive strengthening.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10M12 22v-4M4.93 4.93l7.07 7.07M19.07 19.07l-2.83-2.83"/></svg></div>
-        <h3>Back &amp; Spine Injuries</h3>
-        <p>Lumbar and thoracic injuries from impact or repetitive occupational strain.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v5M9 12l-3 6M15 12l3 6M9 18h6"/></svg></div>
-        <h3>Shoulder Injuries</h3>
-        <p>Rotator cuff tears, labral injuries, and impingement resulting from trauma or repetitive overhead work.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div>
-        <h3>Soft Tissue Injuries</h3>
-        <p>Muscle strains, ligament sprains, and contusions requiring proper treatment to heal without chronic dysfunction.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h3>Concussion Management</h3>
-        <p>Vestibular and cognitive symptoms following head trauma, co-managed with our vestibular team.</p>
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Parkinson's Disease</h3>
+        <p>The primary condition RSB is designed and proven to address.</p>
       </div>
       <div class="cond-card">
         <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Post-Traumatic Pain</h3>
-        <p>Persistent pain and functional limitations after the acute injury phase.</p>
+        <h3>Tremor</h3>
+        <p>Boxing movements and rhythmic exercise help reduce resting tremor.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Gait Issues</h3>
+        <p>Improving stride length, cadence, and walking safety.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Balance Deficits</h3>
+        <p>Reducing fall risk through core strength and proprioceptive training.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg></div>
+        <h3>Rigidity</h3>
+        <p>Breaking through muscle stiffness with dynamic, full-body movements.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Freezing of Gait</h3>
+        <p>Strategies and training to manage and reduce freezing episodes.</p>
+      </div>
+    </div>
+        <h3>Gait Instability</h3>
+        <p>Unsafe or shuffling gait that increases fall risk.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <h3>Chronic Fall Risk</h3>
+        <p>History of falls or near-falls requiring proactive intervention.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div>
+        <h3>Post-Surgical Balance Deficits</h3>
+        <p>Rebuilding stability after joint replacement or spine surgery.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg></div>
+        <h3>Age-Related Decline</h3>
+        <p>Strength and proprioception changes that come with normal aging.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+        <h3>Neurological Balance Disorders</h3>
+        <p>Impairment from Parkinson's, stroke, or MS.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Inner Ear Disorders</h3>
+        <p>Vestibular causes of imbalance treated alongside our vestibular team.</p>
       </div>
     </div>
   </div>
@@ -465,45 +535,72 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="approach-grid">
       <div class="reveal">
         <span class="eyebrow">Our Process</span>
-        <h2>From injury to full recovery.</h2>
+        <h2>Your RSB journey — from intake to the ring.</h2>
         <div class="approach-steps">
           <div class="apstep">
             <div class="apstep-num">1</div>
             <div class="apstep-body">
-              <h3>Immediate Access</h3>
-              <p>We prioritize injury patients and aim to get you in quickly. Early treatment leads to better outcomes.</p>
+              <h3>RSB Intake &amp; Assessment</h3>
+              <p>We assess your Parkinson's stage, movement abilities, and fitness level to place you in the right class.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">2</div>
             <div class="apstep-body">
-              <h3>Care Team Coordination</h3>
-              <p>We communicate with your physician, case manager, and attorney so nothing falls through the cracks.</p>
+              <h3>Beginner Boxing Skills</h3>
+              <p>You learn the foundational boxing movements — stance, footwork, punching — in a safe, supportive environment.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">3</div>
             <div class="apstep-body">
-              <h3>Thorough Documentation</h3>
-              <p>Our therapists provide detailed progress notes and functional assessments that support your claim.</p>
+              <h3>Progressive Training</h3>
+              <p>As your skills and fitness improve, class intensity and complexity increase to keep driving neurological benefit.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">4</div>
             <div class="apstep-body">
-              <h3>Complete Recovery Focus</h3>
-              <p>We don't stop at "good enough." We restore full function so you can return to work and life with confidence.</p>
+              <h3>Ongoing Class Participation</h3>
+              <p>RSB is an ongoing program — the longer you train, the more you benefit. We're here for the long fight.</p>
+            </div>
+          </div>
+        </div>
+            <div class="apstep-body">
+              <h3>Comprehensive Balance Assessment</h3>
+              <p>We evaluate strength, proprioception, gait, and vestibular function to identify the exact cause of your instability.</p>
+            </div>
+          </div>
+          <div class="apstep">
+            <div class="apstep-num">2</div>
+            <div class="apstep-body">
+              <h3>SOS-Supported Training</h3>
+              <p>Our Safety Overhead Support System lets you practice challenging movements with zero fall risk, accelerating your progress.</p>
+            </div>
+          </div>
+          <div class="apstep">
+            <div class="apstep-num">3</div>
+            <div class="apstep-body">
+              <h3>Progressive Challenge Program</h3>
+              <p>We systematically advance difficulty to push your limits while keeping you safe and building lasting confidence.</p>
+            </div>
+          </div>
+          <div class="apstep">
+            <div class="apstep-num">4</div>
+            <div class="apstep-body">
+              <h3>Home Exercise Program</h3>
+              <p>You leave every session with exercises tailored to your home environment so recovery continues between visits.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="approach-aside reveal d1">
         <div class="approach-img">
-          <img src="public/Auto and work.png" alt="Auto and work injury recovery at PantherCreek Physical Therapy &amp; Balance">
+          <img src="public/parkinsons-rehab.png" alt="Rock Steady Boxing at PantherCreek Physical Therapy &amp; Balance">
         </div>
         <div class="approach-note">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <p><strong>Don't delay treatment.</strong> Delaying physical therapy after an accident can allow injuries to become chronic. We see injury patients as quickly as possible to give you the best chance at full recovery.</p>
+          <p><strong>Locally trusted since our founding</strong> — PantherCreek Physical Therapy &amp; Balance has served Clackamas County patients for years, becoming the region's recognized leader in balance and vestibular care.</p>
         </div>
       </div>
     </div>
@@ -519,8 +616,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="cta-inner">
       <div class="reveal">
         <span class="eyebrow on-dark">Ready to Start?</span>
-        <h2>Injured and not sure where to start?</h2>
-        <p>Call us and we'll walk you through the process — insurance, scheduling, and what to expect at your first visit.</p>
+        <h2>Join the fight against Parkinson's.</h2>
+        <p>Call us to learn about our Rock Steady Boxing class schedule and complete your intake assessment. Every fighter starts somewhere.</p>
         <div class="cta-phone">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           <div>
@@ -633,16 +730,25 @@ const burger=document.getElementById('burger');
 const mobnav=document.getElementById('mobnav');
 const modalOverlay=document.getElementById('modalOverlay');
 const modalClose=document.getElementById('modalClose');
+
 window.addEventListener('scroll',()=>{hdr.classList.toggle('solid',scrollY>40)},{passive:true});
 function toggleNav(f){burger.classList.toggle('open',f);mobnav.classList.toggle('open',f);document.body.style.overflow=mobnav.classList.contains('open')?'hidden':''}
 burger.addEventListener('click',()=>toggleNav());
 mobnav.querySelectorAll('.mlink').forEach(l=>l.addEventListener('click',()=>toggleNav(false)));
-function openModal(location){modalOverlay.classList.add('open');document.body.style.overflow='hidden';if(location){const sel=document.getElementById('location');for(let i=0;i<sel.options.length;i++){if(sel.options[i].text===location){sel.selectedIndex=i;break;}}}}
+function openModal(location){
+  modalOverlay.classList.add('open');
+  document.body.style.overflow='hidden';
+  if(location){
+    const sel=document.getElementById('location');
+    for(let i=0;i<sel.options.length;i++){if(sel.options[i].text===location){sel.selectedIndex=i;break;}}
+  }
+}
 function closeModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
 modalClose.addEventListener('click',closeModal);
 modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
 document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleNav(false);closeModal()}});
+
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
