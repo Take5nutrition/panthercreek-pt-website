@@ -31,8 +31,11 @@ a{color:inherit;text-decoration:none}
 .eyebrow.on-dark{color:var(--gold-soft)}
 .eyebrow.on-dark::before{background:var(--gold-soft)}
 h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacing:-.02em}
+
+/* ─── Header ─── */
 .hdr{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:6px var(--gut) 6px 16px;background:#fff;box-shadow:0 2px 0 var(--ink)}
 .brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand svg{width:34px;height:34px;flex:none}
 .brand .name{font:600 1.18rem/1 var(--serif);letter-spacing:.01em}
 .brand .name b{color:#fff;font-weight:600}
 .brand .name span{color:var(--signal-2);font-weight:600}
@@ -52,6 +55,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .nav .drop-menu a.active{color:#fff;background:rgba(0,145,218,.25)}
 .nav .drop-menu .drop-icon{width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);display:grid;place-items:center;flex-shrink:0;color:var(--gold-soft)}
 .nav .drop-menu .drop-icon svg{width:14px;height:14px}
+.nav .drop-menu .dm-divider{height:1px;background:rgba(255,255,255,.08);margin:4px 0}
 .hdr-cta{display:flex;align-items:center;gap:18px}
 .tel{display:flex;align-items:center;gap:7px;color:var(--ink);font:600 .9rem/1 var(--sans);white-space:nowrap}
 .tel svg{width:15px;height:15px;opacity:.85}
@@ -74,6 +78,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .mobnav .btn{margin-top:28px;justify-content:center}
 .mobnav .mtel{display:inline-flex;align-items:center;gap:9px;color:var(--gold-soft);font:600 1rem/1 var(--sans);margin-top:22px}
 .mobnav .mtel svg{width:16px;height:16px}
+
+/* ─── Hero ─── */
 .hero{position:relative;min-height:55vh;background:radial-gradient(ellipse 900px 600px at 88% 115%,rgba(0,145,218,.28),transparent 65%),radial-gradient(ellipse 600px 450px at -5% -10%,rgba(140,172,23,.12),transparent 55%),linear-gradient(148deg,#091523 0%,#0F2040 22%,#142849 48%,#1B365D 72%,#1D3F6B 100%);display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
 .hero-glow{position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);background-size:26px 26px}
 .hero-decor{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:min(560px,58vw);height:min(560px,58vw);pointer-events:none;z-index:0;opacity:.45}
@@ -86,9 +92,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .hero-text .breadcrumb svg{width:9px;height:9px;opacity:.4}
 .hero-text h1{font-size:clamp(2.4rem,5vw,4rem);color:#fff;font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-top:16px;max-width:18ch}
 .hero-text .lead{font-size:clamp(.9rem,1.3vw,1.05rem);color:rgba(255,255,255,.62);line-height:1.78;margin-top:18px;max-width:52ch}
+
+/* ─── Scroll reveal ─── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.10s}.reveal.d2{transition-delay:.20s}
+
+/* ─── CTA ─── */
 .cta{background:radial-gradient(900px 500px at 8% 45%,rgba(0,145,218,.35),transparent 58%),radial-gradient(700px 400px at 88% 80%,rgba(34,139,34,.22),transparent 55%),linear-gradient(130deg,#142849 0%,#1B365D 52%,#1E3F6B 100%);color:#fff;padding-block:clamp(72px,9vw,120px);position:relative;overflow:hidden}
 .cta .ridge{position:absolute;inset:auto 0 0 0;height:80%;z-index:0;opacity:.3}
 .cta .ridge svg{width:100%;height:100%}
@@ -99,9 +109,12 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .cta-inner .cta-phone svg{width:18px;height:18px;flex-shrink:0}
 .cta-inner .cta-phone small{display:block;font:500 .68rem/1 var(--sans);color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
 .cta-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+
+/* ─── Footer ─── */
 .ft{background:linear-gradient(175deg,#142849 0%,#1B365D 40%,#1B365D 100%);color:rgba(255,255,255,.62);padding-block:64px 30px;border-top:1px solid var(--line-l)}
 .ft .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-l)}
 .ft .brand{color:#fff;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.ft .brand svg{width:30px;height:30px;flex:none}
 .ft .blurb{font-size:.9rem;line-height:1.6;max-width:34ch;margin-top:14px}
 .ft h4{font:600 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:18px}
 .ft ul{list-style:none}
@@ -111,12 +124,15 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .ft .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:.78rem;color:rgba(255,255,255,.45)}
 .ft .bottom .socials{display:flex;gap:14px}
 .ft .bottom a:hover{color:#fff}
+
+/* ─── Modal ─── */
 .modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(27,54,93,.72);backdrop-filter:blur(8px);display:grid;place-items:center;padding:clamp(16px,4vw,40px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
 .modal-overlay.open{opacity:1;visibility:visible}
 .modal{width:100%;max-width:920px;max-height:90vh;display:grid;grid-template-columns:.85fr 1.15fr;border-radius:14px;overflow:hidden;box-shadow:0 50px 120px rgba(27,54,93,.55);transform:translateY(16px) scale(.97);transition:transform .4s var(--ease)}
 .modal-overlay.open .modal{transform:translateY(0) scale(1)}
 .modal-side{background:var(--navy);color:#fff;padding:48px 40px;display:flex;flex-direction:column;gap:28px;overflow-y:auto}
 .modal-side .brand{display:flex;align-items:center;gap:11px;color:#fff}
+.modal-side .brand svg{width:30px;height:30px;flex:none}
 .modal-side .brand .name{font:700 1.05rem/1 var(--serif)}
 .modal-side .brand .name b{color:#fff}
 .modal-side .brand .name span{color:var(--signal-2)}
@@ -148,6 +164,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .appt-notice svg{flex:none;margin-top:1px;color:var(--signal)}
 .appt-notice p{font-size:.78rem;line-height:1.55;margin:0}
 .appt-notice strong{color:var(--ink);font-weight:600}
+
+/* ─── Service page layout ─── */
 .svc-body{padding-block:clamp(64px,9vw,110px);background:var(--paper)}
 .svc-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(48px,7vw,88px);align-items:start;margin-bottom:clamp(56px,7vw,88px)}
 .svc-intro h2{font-size:clamp(1.6rem,2.4vw,2.2rem);margin-top:14px}
@@ -289,7 +307,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   <a class="mlink" href="locations.html">Locations</a>
   <a class="mlink" href="balance-therapy.html">Balance &amp; Fall Prevention</a>
   <a class="mlink" href="vestibular-rehab.html">Vestibular Rehabilitation</a>
-  <a class="mlink active" href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
+  <a class="mlink active" href="orthopedic-rehab.html" class="active">Orthopedic Rehabilitation</a>
   <a class="mlink" href="back-pain.html">Chronic Back Pain</a>
   <a class="mlink" href="sports-rehab.html">Sports Rehabilitation</a>
   <a class="mlink" href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
@@ -317,7 +335,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-decor" aria-hidden="true">
+  <div class="hero-decor" aria-hidden="true">
       <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="300" cy="300" r="70"  stroke="rgba(255,255,255,.10)" stroke-width="1"/>
         <circle cx="300" cy="300" r="140" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
@@ -342,9 +360,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
           <span>Orthopedic Rehabilitation</span>
         </div>
-        <span class="eyebrow on-dark">Orthopedic Rehabilitation</span>
-        <h1>From surgery<br>to full strength.</h1>
-        <p class="lead">Whether you're recovering from a joint replacement, spine surgery, or a stubborn overuse injury, our CFMT-trained therapists create individualized programs that restore your strength, mobility, and confidence.</p>
+        <span class="eyebrow on-dark">Orthopedic PT</span>
+        <h1>Restore movement.<br>Eliminate pain.</h1>
+        <p class="lead">Evidence-based physical therapy for musculoskeletal injuries and disorders — from arthritis and sprains to joint replacements and work injuries. We treat the cause, not just the symptom.</p>
       </div>
     </div>
   </div>
@@ -356,52 +374,46 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="svc-intro reveal">
       <div>
         <span class="eyebrow">What We Do</span>
-        <h2>Expert orthopedic care — hands-on and evidence-based.</h2>
-        <p class="svc-lead">Our therapists hold advanced CFMT (Certified Functional Manual Therapist) training — a post-graduate certification that goes far beyond standard physical therapy credentials.</p>
+        <h2>Orthopedic care that gets to the root of the problem.</h2>
+        <p class="svc-lead">Your musculoskeletal system — bones, joints, muscles, tendons, ligaments, and cartilage — affects everything you do physically and mentally. We build individualized treatment plans that address the underlying cause of your condition and restore full function.</p>
         <div class="svc-features">
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L3.5 4.8v3.7c0 3.6 2.8 6.5 6.5 7.5 3.7-1 6.5-3.9 6.5-7.5V4.8z"/><path d="M7 10l2 2 4-4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>CFMT-Trained Therapists</strong>
-              <p>Advanced manual therapy certification means more precise, effective hands-on treatment than general PT.</p>
+              <strong>Hands-On Manual Therapy</strong>
+              <p>Skilled joint mobilization, manipulation, and soft tissue techniques that restore movement and reduce pain — often faster than exercise programs alone.</p>
             </div>
           </div>
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>Pre- &amp; Post-Surgical Rehab</strong>
-              <p>We work with your surgeon before and after procedures to optimize your outcome at every stage.</p>
+              <strong>Individualized Treatment Plans</strong>
+              <p>Your injury, your goals, your plan. We don't use generic protocols — every program is built around your specific diagnosis, lifestyle, and what you want to get back to.</p>
             </div>
           </div>
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>Return-to-Life Focus</strong>
-              <p>We prepare you for the specific activities that matter to you — hiking, golf, gardening, or keeping up with grandkids.</p>
+              <strong>Education &amp; Long-Term Prevention</strong>
+              <p>We give you the knowledge and tools to understand your condition, manage flare-ups, and stay active for life — not just for the duration of your PT.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="svc-dark reveal d1">
         <div class="svc-dark-inner">
-          <span class="eyebrow on-dark">Skilled Care</span>
-          <h3>CFMT training — the gold standard in manual therapy.</h3>
-          <p>Not all physical therapy is created equal. Our clinicians pursue advanced post-graduate training so you receive more than exercises — you receive expert, hands-on care that gets results.</p>
+          <span class="eyebrow on-dark">Why It Matters</span>
+          <h3>Most orthopedic conditions can be managed — or fully reversed — with the right physical therapy.</h3>
+          <p>Surgery and medication are often unnecessary. A properly designed PT program addresses the root cause and restores full function for the vast majority of orthopedic patients. We offer a free consultation to find out if PT is right for you.</p>
           <div class="svc-stats">
-            <div class="svc-stat">
-              <span class="snum"><em>30+</em></span>
-              <span class="slbl">years combined orthopedic PT experience</span>
-            </div>
-            <div class="svc-stat">
-              <span class="snum"><em>3</em></span>
-              <span class="slbl">Clackamas County clinic locations</span>
-            </div>
+            <div class="svc-stat"><span class="snum"><em>Free</em></span><span class="slbl">consultation to determine if PT can help you</span></div>
+            <div class="svc-stat"><span class="snum"><em>92%</em></span><span class="slbl">of orthopedic conditions respond well to PT</span></div>
           </div>
         </div>
       </div>
@@ -418,7 +430,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
         <div><strong>Private Treatment Room</strong><span>Your session, your space — always</span></div>
       </div>
       <div class="promise-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <div><strong>One on One, Every Visit</strong><span>Your therapist never leaves</span></div>
       </div>
       <div class="promise-item">
@@ -427,7 +439,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
       </div>
       <div class="promise-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        <div><strong>Fully Equipped Gym</strong><span>Private rooms + full gym access</span></div>
+        <div><strong>Fully Equipped Facility</strong><span>Private rooms + full gym access</span></div>
       </div>
     </div>
   </div>
@@ -438,39 +450,39 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Conditions Treated</span>
-      <h2>We treat a full range of orthopedic conditions.</h2>
-      <p>From acute injuries to complex post-surgical cases, our team brings the skills and equipment to help you recover fully.</p>
+      <h2>Orthopedic conditions we treat.</h2>
+      <p>Whether the issue is acute or chronic, post-surgical or preventive — we have the expertise to help.</p>
     </div>
     <div class="cond-grid reveal d1">
       <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div>
-        <h3>Post-Surgical Recovery</h3>
-        <p>Structured rehab following joint replacement, rotator cuff repair, spinal fusion, or other orthopedic procedures.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10M12 22v-4M4.93 4.93l7.07 7.07M19.07 19.07l-2.83-2.83M2 12h10M22 12h-4M4.93 19.07l7.07-7.07M19.07 4.93l-2.83 2.83"/></svg></div>
-        <h3>Chronic Back &amp; Neck Pain</h3>
-        <p>Evidence-based treatment for persistent spine pain that hasn't responded to rest or medication.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v5M9 12l-3 6M15 12l3 6M9 18h6"/></svg></div>
-        <h3>Shoulder Injuries</h3>
-        <p>Rotator cuff tears, impingement, frozen shoulder, and post-surgical shoulder rehabilitation.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10M8 12H4M20 12h-4M12 22v-4M6 18l3-3M18 18l-3-3M6 6l3 3M18 6l-3 3"/></svg></div>
-        <h3>Knee Conditions</h3>
-        <p>ACL/meniscus injuries, patellofemoral pain, knee replacement recovery, and IT band syndrome.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="8" rx="4" ry="5"/><path d="M8 13c-3 1-5 3-5 5h18c0-2-2-4-5-5"/></svg></div>
-        <h3>Hip &amp; Pelvis</h3>
-        <p>Hip replacement recovery, labral tears, bursitis, and strength deficits affecting gait.</p>
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Arthritis</h3>
+        <p>Joint pain, stiffness, and swelling managed through targeted exercise and manual therapy.</p>
       </div>
       <div class="cond-card">
         <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Sports &amp; Overuse Injuries</h3>
-        <p>Tendinopathies, stress fractures, and repetitive strain affecting active adults.</p>
+        <h3>Back &amp; Neck Pain</h3>
+        <p>Spinal pain from any cause — disc, joint, muscle, nerve, or posture.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
+        <h3>Joint Replacements</h3>
+        <p>Pre- and post-operative rehab for hip, knee, and shoulder replacements.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Sprains, Strains &amp; Tears</h3>
+        <p>Ligament, muscle, and tendon injuries from trauma or overuse.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Fractures</h3>
+        <p>Rehabilitation following bone injuries — restoring strength, mobility, and function.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>Sports &amp; Work Injuries</h3>
+        <p>Injuries sustained in athletic activity or the workplace — treated with precision and urgency.</p>
       </div>
     </div>
   </div>
@@ -482,45 +494,45 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="approach-grid">
       <div class="reveal">
         <span class="eyebrow">Our Process</span>
-        <h2>A structured path back to what you love.</h2>
+        <h2>A clear path from pain to full function.</h2>
         <div class="approach-steps">
           <div class="apstep">
             <div class="apstep-num">1</div>
             <div class="apstep-body">
-              <h3>Movement &amp; Functional Assessment</h3>
-              <p>We evaluate how you move, identify compensations, and uncover the root cause of your pain — not just the symptom.</p>
+              <h3>Musculoskeletal Assessment</h3>
+              <p>We evaluate your movement patterns, strength, flexibility, and pain drivers to identify the root cause — not just the location of your symptoms.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">2</div>
             <div class="apstep-body">
-              <h3>Hands-On Manual Therapy</h3>
-              <p>Our CFMT-trained therapists use skilled joint mobilization and soft tissue techniques to restore mobility and reduce pain quickly.</p>
+              <h3>Manual Therapy</h3>
+              <p>Hands-on treatment starts immediately — joint mobilization, manipulation, and soft tissue work to reduce pain and restore mobility from day one.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">3</div>
             <div class="apstep-body">
-              <h3>Progressive Strengthening</h3>
-              <p>Targeted exercise programs rebuild the strength and stability needed to protect your joints and prevent re-injury.</p>
+              <h3>Progressive Exercise Program</h3>
+              <p>Targeted strengthening, stability, and functional exercises that rebuild your physical capacity and protect you from re-injury.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">4</div>
             <div class="apstep-body">
-              <h3>Return-to-Life Planning</h3>
-              <p>We prepare you for the specific activities that matter to you — with measurable goals and a clear discharge plan.</p>
+              <h3>Return to Full Activity</h3>
+              <p>We guide your return to work, sport, and daily life with a home program that keeps you on track long after discharge.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="approach-aside reveal d1">
         <div class="approach-img">
-          <img src="public/Orthopedic.jpg" alt="Orthopedic rehabilitation at PantherCreek Physical Therapy &amp; Balance">
+          <img src="public/Orthopedic.jpg" alt="Orthopedic rehabilitation at PantherCreek Physical Therapy">
         </div>
         <div class="approach-note">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <p><strong>We communicate with your surgeon.</strong> Our therapists provide detailed progress reports and stay in close contact with your care team throughout your recovery.</p>
+          <p><strong>Clackamas County's trusted choice since our founding</strong> — PantherCreek Physical Therapy &amp; Balance brings skilled, hands-on care and a therapist who stays with you from start to finish.</p>
         </div>
       </div>
     </div>
@@ -536,8 +548,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="cta-inner">
       <div class="reveal">
         <span class="eyebrow on-dark">Ready to Start?</span>
-        <h2>Ready to get back to the life you love?</h2>
-        <p>Call us and we'll get you scheduled quickly. Our orthopedic team is ready to build you a personalized recovery plan.</p>
+        <h2>Ready to move better and hurt less?</h2>
+        <p>Call us today to schedule a free consultation. We'll tell you honestly whether physical therapy can help — and exactly how.</p>
         <div class="cta-phone">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           <div>
@@ -650,16 +662,25 @@ const burger=document.getElementById('burger');
 const mobnav=document.getElementById('mobnav');
 const modalOverlay=document.getElementById('modalOverlay');
 const modalClose=document.getElementById('modalClose');
+
 window.addEventListener('scroll',()=>{hdr.classList.toggle('solid',scrollY>40)},{passive:true});
 function toggleNav(f){burger.classList.toggle('open',f);mobnav.classList.toggle('open',f);document.body.style.overflow=mobnav.classList.contains('open')?'hidden':''}
 burger.addEventListener('click',()=>toggleNav());
 mobnav.querySelectorAll('.mlink').forEach(l=>l.addEventListener('click',()=>toggleNav(false)));
-function openModal(location){modalOverlay.classList.add('open');document.body.style.overflow='hidden';if(location){const sel=document.getElementById('location');for(let i=0;i<sel.options.length;i++){if(sel.options[i].text===location){sel.selectedIndex=i;break;}}}}
+function openModal(location){
+  modalOverlay.classList.add('open');
+  document.body.style.overflow='hidden';
+  if(location){
+    const sel=document.getElementById('location');
+    for(let i=0;i<sel.options.length;i++){if(sel.options[i].text===location){sel.selectedIndex=i;break;}}
+  }
+}
 function closeModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
 modalClose.addEventListener('click',closeModal);
 modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
 document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleNav(false);closeModal()}});
+
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>

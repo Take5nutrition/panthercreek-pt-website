@@ -31,8 +31,11 @@ a{color:inherit;text-decoration:none}
 .eyebrow.on-dark{color:var(--gold-soft)}
 .eyebrow.on-dark::before{background:var(--gold-soft)}
 h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacing:-.02em}
+
+/* ─── Header ─── */
 .hdr{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:6px var(--gut) 6px 16px;background:#fff;box-shadow:0 2px 0 var(--ink)}
 .brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand svg{width:34px;height:34px;flex:none}
 .brand .name{font:600 1.18rem/1 var(--serif);letter-spacing:.01em}
 .brand .name b{color:#fff;font-weight:600}
 .brand .name span{color:var(--signal-2);font-weight:600}
@@ -52,6 +55,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .nav .drop-menu a.active{color:#fff;background:rgba(0,145,218,.25)}
 .nav .drop-menu .drop-icon{width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);display:grid;place-items:center;flex-shrink:0;color:var(--gold-soft)}
 .nav .drop-menu .drop-icon svg{width:14px;height:14px}
+.nav .drop-menu .dm-divider{height:1px;background:rgba(255,255,255,.08);margin:4px 0}
 .hdr-cta{display:flex;align-items:center;gap:18px}
 .tel{display:flex;align-items:center;gap:7px;color:var(--ink);font:600 .9rem/1 var(--sans);white-space:nowrap}
 .tel svg{width:15px;height:15px;opacity:.85}
@@ -74,6 +78,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .mobnav .btn{margin-top:28px;justify-content:center}
 .mobnav .mtel{display:inline-flex;align-items:center;gap:9px;color:var(--gold-soft);font:600 1rem/1 var(--sans);margin-top:22px}
 .mobnav .mtel svg{width:16px;height:16px}
+
+/* ─── Hero ─── */
 .hero{position:relative;min-height:55vh;background:radial-gradient(ellipse 900px 600px at 88% 115%,rgba(0,145,218,.28),transparent 65%),radial-gradient(ellipse 600px 450px at -5% -10%,rgba(140,172,23,.12),transparent 55%),linear-gradient(148deg,#091523 0%,#0F2040 22%,#142849 48%,#1B365D 72%,#1D3F6B 100%);display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
 .hero-glow{position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);background-size:26px 26px}
 .hero-decor{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:min(560px,58vw);height:min(560px,58vw);pointer-events:none;z-index:0;opacity:.45}
@@ -86,9 +92,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .hero-text .breadcrumb svg{width:9px;height:9px;opacity:.4}
 .hero-text h1{font-size:clamp(2.4rem,5vw,4rem);color:#fff;font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-top:16px;max-width:18ch}
 .hero-text .lead{font-size:clamp(.9rem,1.3vw,1.05rem);color:rgba(255,255,255,.62);line-height:1.78;margin-top:18px;max-width:52ch}
+
+/* ─── Scroll reveal ─── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.10s}.reveal.d2{transition-delay:.20s}
+
+/* ─── CTA ─── */
 .cta{background:radial-gradient(900px 500px at 8% 45%,rgba(0,145,218,.35),transparent 58%),radial-gradient(700px 400px at 88% 80%,rgba(34,139,34,.22),transparent 55%),linear-gradient(130deg,#142849 0%,#1B365D 52%,#1E3F6B 100%);color:#fff;padding-block:clamp(72px,9vw,120px);position:relative;overflow:hidden}
 .cta .ridge{position:absolute;inset:auto 0 0 0;height:80%;z-index:0;opacity:.3}
 .cta .ridge svg{width:100%;height:100%}
@@ -99,9 +109,12 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .cta-inner .cta-phone svg{width:18px;height:18px;flex-shrink:0}
 .cta-inner .cta-phone small{display:block;font:500 .68rem/1 var(--sans);color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
 .cta-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+
+/* ─── Footer ─── */
 .ft{background:linear-gradient(175deg,#142849 0%,#1B365D 40%,#1B365D 100%);color:rgba(255,255,255,.62);padding-block:64px 30px;border-top:1px solid var(--line-l)}
 .ft .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-l)}
 .ft .brand{color:#fff;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.ft .brand svg{width:30px;height:30px;flex:none}
 .ft .blurb{font-size:.9rem;line-height:1.6;max-width:34ch;margin-top:14px}
 .ft h4{font:600 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:18px}
 .ft ul{list-style:none}
@@ -111,12 +124,15 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .ft .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:.78rem;color:rgba(255,255,255,.45)}
 .ft .bottom .socials{display:flex;gap:14px}
 .ft .bottom a:hover{color:#fff}
+
+/* ─── Modal ─── */
 .modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(27,54,93,.72);backdrop-filter:blur(8px);display:grid;place-items:center;padding:clamp(16px,4vw,40px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
 .modal-overlay.open{opacity:1;visibility:visible}
 .modal{width:100%;max-width:920px;max-height:90vh;display:grid;grid-template-columns:.85fr 1.15fr;border-radius:14px;overflow:hidden;box-shadow:0 50px 120px rgba(27,54,93,.55);transform:translateY(16px) scale(.97);transition:transform .4s var(--ease)}
 .modal-overlay.open .modal{transform:translateY(0) scale(1)}
 .modal-side{background:var(--navy);color:#fff;padding:48px 40px;display:flex;flex-direction:column;gap:28px;overflow-y:auto}
 .modal-side .brand{display:flex;align-items:center;gap:11px;color:#fff}
+.modal-side .brand svg{width:30px;height:30px;flex:none}
 .modal-side .brand .name{font:700 1.05rem/1 var(--serif)}
 .modal-side .brand .name b{color:#fff}
 .modal-side .brand .name span{color:var(--signal-2)}
@@ -148,6 +164,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .appt-notice svg{flex:none;margin-top:1px;color:var(--signal)}
 .appt-notice p{font-size:.78rem;line-height:1.55;margin:0}
 .appt-notice strong{color:var(--ink);font-weight:600}
+
+/* ─── Service page layout ─── */
 .svc-body{padding-block:clamp(64px,9vw,110px);background:var(--paper)}
 .svc-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(48px,7vw,88px);align-items:start;margin-bottom:clamp(56px,7vw,88px)}
 .svc-intro h2{font-size:clamp(1.6rem,2.4vw,2.2rem);margin-top:14px}
@@ -294,7 +312,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   <a class="mlink" href="sports-rehab.html">Sports Rehabilitation</a>
   <a class="mlink" href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
   <a class="mlink" href="neurological-rehab.html">Neurological Rehabilitation</a>
-  <a class="mlink active" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+  <a class="mlink active" href="auto-work-injuries.html" class="active">Auto &amp; Work Injuries</a>
   <a class="mlink" href="fitness-wellness.html">Fitness &amp; Wellness</a>
   <a class="mlink" href="pilates.html">Pilates</a>
   <a class="mlink" href="rock-steady-boxing.html">Rock Steady Boxing</a>
@@ -317,7 +335,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-decor" aria-hidden="true">
+  <div class="hero-decor" aria-hidden="true">
       <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="300" cy="300" r="70"  stroke="rgba(255,255,255,.10)" stroke-width="1"/>
         <circle cx="300" cy="300" r="140" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
@@ -342,9 +360,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
           <span>Auto &amp; Work Injuries</span>
         </div>
-        <span class="eyebrow on-dark">Injury Recovery</span>
-        <h1>Expert care when<br>it matters most.</h1>
-        <p class="lead">A car accident or workplace injury can upend your life in an instant. PantherCreek Physical Therapy &amp; Balance specializes in helping patients navigate recovery from motor vehicle accidents and occupational injuries — handling the billing complexity so you can focus on healing.</p>
+        <span class="eyebrow on-dark">Auto &amp; Work Injury Rehab</span>
+        <h1>Recover fast.<br>Recover right.</h1>
+        <p class="lead">Physical therapy for auto and workplace injuries — early assessment, hands-on treatment, and seamless coordination with your doctor, case manager, and insurance provider from day one.</p>
       </div>
     </div>
   </div>
@@ -356,52 +374,46 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="svc-intro reveal">
       <div>
         <span class="eyebrow">What We Do</span>
-        <h2>Specialized recovery for auto and work injuries.</h2>
-        <p class="svc-lead">We understand the unique demands of injury claims — and we have the clinical expertise and documentation standards to support your recovery and your case.</p>
+        <h2>Specialized rehab that treats your injury and handles the paperwork.</h2>
+        <p class="svc-lead">Even minor auto and work injuries can cause lifelong problems if left untreated or treated inadequately. We start the right care immediately and work directly with everyone involved in your claim — so you can focus entirely on healing.</p>
         <div class="svc-features">
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/><line x1="13" y1="15" x2="16" y2="15"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>Direct Insurance Billing</strong>
-              <p>We bill auto insurance and workers' comp directly — you focus on getting better, not on paperwork.</p>
+              <strong>Rapid Assessment &amp; Early Treatment</strong>
+              <p>The sooner PT begins after an injury, the faster and more complete your recovery. We prioritize quick scheduling and a thorough evaluation that catches everything — including what X-rays miss.</p>
             </div>
           </div>
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>Early Intervention</strong>
-              <p>We see injury patients promptly. Starting treatment quickly leads to faster, more complete recovery.</p>
+              <strong>Insurance &amp; Case Manager Coordination</strong>
+              <p>We communicate directly with your workers' comp case manager, insurance provider, and referring physician — handling all documentation so nothing falls through the cracks.</p>
             </div>
           </div>
           <div class="svc-feat">
             <div class="svc-feat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <div class="svc-feat-text">
-              <strong>Thorough Documentation</strong>
-              <p>Our therapists provide detailed progress notes that support your claim and clearly track your recovery milestones.</p>
+              <strong>Full Modality Treatment</strong>
+              <p>Manual therapy, soft tissue work, electrical stimulation, ultrasound, therapeutic exercise, and injury-prevention education — every tool available to restore your function completely.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="svc-dark reveal d1">
         <div class="svc-dark-inner">
-          <span class="eyebrow on-dark">We Handle the Details</span>
-          <h3>We work directly with auto insurance and workers' compensation.</h3>
-          <p>Navigating billing after an accident adds stress you don't need. We accept most auto insurance and workers' comp plans and coordinate with your insurer directly.</p>
+          <span class="eyebrow on-dark">Why It Matters</span>
+          <h3>Delayed treatment turns minor injuries into lifelong problems. Early PT changes the outcome.</h3>
+          <p>Chronic pain, stiffness, scar tissue, and weakness are what happen when injuries don't get the right care early. We prevent those complications by starting comprehensive treatment immediately — and documenting everything correctly.</p>
           <div class="svc-stats">
-            <div class="svc-stat">
-              <span class="snum" style="font-size:1.1rem"><em>Direct billing</em></span>
-              <span class="slbl">to auto insurance and workers' comp</span>
-            </div>
-            <div class="svc-stat">
-              <span class="snum" style="font-size:1.1rem"><em>Fast access</em></span>
-              <span class="slbl">most patients seen within days of referral</span>
-            </div>
+            <div class="svc-stat"><span class="snum"><em>2×</em></span><span class="slbl">faster return to work with early PT intervention</span></div>
+            <div class="svc-stat"><span class="snum"><em>67%</em></span><span class="slbl">reduction in chronic pain with prompt treatment</span></div>
           </div>
         </div>
       </div>
@@ -418,7 +430,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
         <div><strong>Private Treatment Room</strong><span>Your session, your space — always</span></div>
       </div>
       <div class="promise-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <div><strong>One on One, Every Visit</strong><span>Your therapist never leaves</span></div>
       </div>
       <div class="promise-item">
@@ -427,7 +439,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
       </div>
       <div class="promise-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        <div><strong>Fully Equipped Gym</strong><span>Private rooms + full gym access</span></div>
+        <div><strong>Fully Equipped Facility</strong><span>Private rooms + full gym access</span></div>
       </div>
     </div>
   </div>
@@ -438,39 +450,39 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Conditions Treated</span>
-      <h2>We treat the full range of auto and work injuries.</h2>
-      <p>From soft tissue injuries to complex trauma, our therapists have the clinical expertise and documentation standards to support your recovery.</p>
+      <h2>Injuries we treat.</h2>
+      <p>From soft tissue strains to complex spinal injuries — we've treated the full spectrum of auto and work-related conditions.</p>
     </div>
     <div class="cond-grid reveal d1">
       <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 6v6M12 14h.01"/></svg></div>
-        <h3>Whiplash &amp; Neck Injuries</h3>
-        <p>One of the most common auto injury diagnoses, requiring skilled manual therapy and progressive strengthening.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10M12 22v-4M4.93 4.93l7.07 7.07M19.07 19.07l-2.83-2.83"/></svg></div>
-        <h3>Back &amp; Spine Injuries</h3>
-        <p>Lumbar and thoracic injuries from impact or repetitive occupational strain.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v5M9 12l-3 6M15 12l3 6M9 18h6"/></svg></div>
-        <h3>Shoulder Injuries</h3>
-        <p>Rotator cuff tears, labral injuries, and impingement resulting from trauma or repetitive overhead work.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div>
-        <h3>Soft Tissue Injuries</h3>
-        <p>Muscle strains, ligament sprains, and contusions requiring proper treatment to heal without chronic dysfunction.</p>
-      </div>
-      <div class="cond-card">
-        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h3>Concussion Management</h3>
-        <p>Vestibular and cognitive symptoms following head trauma, co-managed with our vestibular team.</p>
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Whiplash</h3>
+        <p>Neck pain and stiffness from rapid acceleration-deceleration forces in a collision.</p>
       </div>
       <div class="cond-card">
         <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Post-Traumatic Pain</h3>
-        <p>Persistent pain and functional limitations after the acute injury phase.</p>
+        <h3>Herniated Disc</h3>
+        <p>Disc injury causing local pain or nerve-related symptoms into the arms or legs.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Radiculopathy</h3>
+        <p>Nerve root compression causing radiating pain, numbness, or weakness from the spine outward.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Back &amp; Neck Injuries</h3>
+        <p>Sprains, strains, and spinal injuries from workplace falls, lifts, or vehicle accidents.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
+        <h3>Fractures</h3>
+        <p>Bone injuries requiring carefully staged rehabilitation for full recovery.</p>
+      </div>
+      <div class="cond-card">
+        <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Soft Tissue Injuries</h3>
+        <p>Muscle, tendon, and ligament damage that needs hands-on treatment to heal correctly.</p>
       </div>
     </div>
   </div>
@@ -482,45 +494,45 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="approach-grid">
       <div class="reveal">
         <span class="eyebrow">Our Process</span>
-        <h2>From injury to full recovery.</h2>
+        <h2>From injury to full recovery — documented every step.</h2>
         <div class="approach-steps">
           <div class="apstep">
             <div class="apstep-num">1</div>
             <div class="apstep-body">
-              <h3>Immediate Access</h3>
-              <p>We prioritize injury patients and aim to get you in quickly. Early treatment leads to better outcomes.</p>
+              <h3>Injury Assessment &amp; Documentation</h3>
+              <p>A thorough evaluation that identifies all injuries accurately — critical for both your treatment and your insurance claim.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">2</div>
             <div class="apstep-body">
-              <h3>Care Team Coordination</h3>
-              <p>We communicate with your physician, case manager, and attorney so nothing falls through the cracks.</p>
+              <h3>Hands-On Acute Treatment</h3>
+              <p>Manual therapy, soft tissue work, and appropriate modalities begin immediately to control pain and start the healing process correctly.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">3</div>
             <div class="apstep-body">
-              <h3>Thorough Documentation</h3>
-              <p>Our therapists provide detailed progress notes and functional assessments that support your claim.</p>
+              <h3>Strengthening &amp; Mobility Restoration</h3>
+              <p>Progressive exercises rebuild the strength, flexibility, and stability that the injury and any period of immobility took away.</p>
             </div>
           </div>
           <div class="apstep">
             <div class="apstep-num">4</div>
             <div class="apstep-body">
-              <h3>Complete Recovery Focus</h3>
-              <p>We don't stop at "good enough." We restore full function so you can return to work and life with confidence.</p>
+              <h3>Return to Work &amp; Daily Life</h3>
+              <p>We clear you for activity safely and give you a home program and ergonomic guidance to prevent recurrence in your work environment.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="approach-aside reveal d1">
         <div class="approach-img">
-          <img src="public/Auto and work.png" alt="Auto and work injury recovery at PantherCreek Physical Therapy &amp; Balance">
+          <img src="public/Orthopedic.jpg" alt="Auto and work injury rehab at PantherCreek Physical Therapy">
         </div>
         <div class="approach-note">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <p><strong>Don't delay treatment.</strong> Delaying physical therapy after an accident can allow injuries to become chronic. We see injury patients as quickly as possible to give you the best chance at full recovery.</p>
+          <p><strong>Clackamas County's trusted choice since our founding</strong> — PantherCreek Physical Therapy &amp; Balance brings skilled, hands-on care and a therapist who stays with you from start to finish.</p>
         </div>
       </div>
     </div>
@@ -536,8 +548,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="cta-inner">
       <div class="reveal">
         <span class="eyebrow on-dark">Ready to Start?</span>
-        <h2>Injured and not sure where to start?</h2>
-        <p>Call us and we'll walk you through the process — insurance, scheduling, and what to expect at your first visit.</p>
+        <h2>Injured at work or in an accident?</h2>
+        <p>Don't wait. Call us today — we'll get you assessed quickly and start the right treatment before complications set in.</p>
         <div class="cta-phone">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           <div>
@@ -650,16 +662,25 @@ const burger=document.getElementById('burger');
 const mobnav=document.getElementById('mobnav');
 const modalOverlay=document.getElementById('modalOverlay');
 const modalClose=document.getElementById('modalClose');
+
 window.addEventListener('scroll',()=>{hdr.classList.toggle('solid',scrollY>40)},{passive:true});
 function toggleNav(f){burger.classList.toggle('open',f);mobnav.classList.toggle('open',f);document.body.style.overflow=mobnav.classList.contains('open')?'hidden':''}
 burger.addEventListener('click',()=>toggleNav());
 mobnav.querySelectorAll('.mlink').forEach(l=>l.addEventListener('click',()=>toggleNav(false)));
-function openModal(location){modalOverlay.classList.add('open');document.body.style.overflow='hidden';if(location){const sel=document.getElementById('location');for(let i=0;i<sel.options.length;i++){if(sel.options[i].text===location){sel.selectedIndex=i;break;}}}}
+function openModal(location){
+  modalOverlay.classList.add('open');
+  document.body.style.overflow='hidden';
+  if(location){
+    const sel=document.getElementById('location');
+    for(let i=0;i<sel.options.length;i++){if(sel.options[i].text===location){sel.selectedIndex=i;break;}}
+  }
+}
 function closeModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
 modalClose.addEventListener('click',closeModal);
 modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
 document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleNav(false);closeModal()}});
+
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
