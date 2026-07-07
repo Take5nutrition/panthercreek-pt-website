@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Physical Therapy in Clackamas, OR — PantherCreek Physical Therapy & Balance</title>
+<meta name="description" content="PantherCreek Physical Therapy &amp; Balance in Clackamas, OR — hands-on balance, vestibular, and orthopedic rehab on SE Sunnyside Rd. Serving Happy Valley, Damascus, Boring, and the Sunnyside corridor. Same-week appointments available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B365D;--navy:#142849;--slate:#1E3F6B;
+  --signal:#0091DA;--signal-2:#71C5E8;
+  --gold:#8CAC17;--gold-soft:#A8C520;
+  --paper:#F8FAFC;--mist:#E0F0F8;--stone:#5B6B7A;
+  --ink-70:rgba(27,54,93,.70);
+  --line-d:rgba(27,54,93,.14);--line-l:rgba(255,255,255,.14);
+  --serif:"Josefin Sans",system-ui,sans-serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,sans-serif;
+  --wrap:1200px;--gut:clamp(20px,5vw,64px);--r:10px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+.eyebrow{font:600 .72rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);display:inline-flex;align-items:center;gap:.6em}
+.eyebrow::before{content:"";width:22px;height:1px;border-radius:0;background:var(--gold)}
+.eyebrow.on-dark{color:var(--gold-soft)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacing:-.02em}
+.hdr{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:6px var(--gut) 6px 16px;background:#fff;box-shadow:0 2px 0 var(--ink)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .name{font:600 1.18rem/1 var(--serif);letter-spacing:.01em}
+.brand .name b{color:#fff;font-weight:600}
+.brand .name span{color:var(--signal-2);font-weight:600}
+.brand .sub{display:block;font:600 .52rem/1 var(--sans);letter-spacing:.34em;color:rgba(255,255,255,.55);margin-top:3px;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font:500 .9rem/1 var(--sans);color:var(--ink);transition:color .2s}
+.nav a:hover{color:var(--signal)}
+.nav .has::after{content:"\25BE";font-size:.6em;margin-left:.4em;opacity:.6}
+.nav .drop{position:relative}
+.nav .drop-btn{display:flex;align-items:center;gap:5px;font:500 .9rem/1 var(--sans);color:var(--ink);cursor:pointer;background:none;border:0;padding:0;transition:color .2s}
+.nav .drop-btn:hover,.nav .drop-btn.active{color:var(--signal)}
+.nav .drop-btn svg{width:12px;height:12px;transition:transform .25s var(--ease);opacity:.7}
+.nav .drop:hover .drop-btn svg{transform:rotate(180deg)}
+.nav .drop-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(27,54,93,.97);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:10px;min-width:220px;padding:14px 8px 8px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-6px);transition:opacity .22s var(--ease),transform .22s var(--ease),visibility .22s;pointer-events:none;box-shadow:0 20px 48px rgba(0,0,0,.35)}
+.nav .drop:hover .drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.nav .drop-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:6px;font:500 .85rem/1.3 var(--sans);color:rgba(255,255,255,.78);transition:background .18s,color .18s;white-space:nowrap}
+.nav .drop-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav .drop-menu .drop-icon{width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);display:grid;place-items:center;flex-shrink:0;color:var(--gold-soft)}
+.nav .drop-menu .drop-icon svg{width:14px;height:14px}
+.hdr-cta{display:flex;align-items:center;gap:18px}
+.tel{display:flex;align-items:center;gap:7px;color:var(--ink);font:600 .9rem/1 var(--sans);white-space:nowrap}
+.tel svg{width:15px;height:15px;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:.6em;cursor:pointer;border:0;font:600 .85rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:14px 26px;border-radius:6px;transition:transform .25s var(--ease),background .25s,box-shadow .25s}
+.btn svg{width:15px;height:15px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn--blue{background:linear-gradient(180deg,rgba(255,255,255,.13) 0%,rgba(0,0,0,.10) 100%),var(--signal);color:#fff;box-shadow:0 4px 24px rgba(0,145,218,.30)}
+.btn--blue:hover{background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(0,0,0,.14) 100%),var(--signal-2);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:#fff;border:1px solid var(--line-l)}
+.btn--ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.burger{display:none;background:none;border:0;cursor:pointer;width:30px;height:22px;position:relative}
+.burger span{position:absolute;left:0;right:0;height:2px;background:var(--ink);transition:.3s}
+.burger span:nth-child(1){top:0}.burger span:nth-child(2){top:10px}.burger span:nth-child(3){top:20px}
+.burger.open span:nth-child(1){top:10px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:10px;transform:rotate(-45deg)}
+.mobnav{position:fixed;inset:0;z-index:70;background:rgba(27,54,93,.98);backdrop-filter:blur(10px);display:flex;flex-direction:column;padding:104px var(--gut) 48px;gap:2px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .32s var(--ease),transform .32s var(--ease),visibility .32s}
+.mobnav.open{opacity:1;visibility:visible;transform:none}
+.mobnav a.mlink{color:#fff;font:500 1.55rem/1 var(--serif);padding:18px 0;border-bottom:1px solid var(--line-l)}
+.mobnav .btn{margin-top:28px;justify-content:center}
+.mobnav .mtel{display:inline-flex;align-items:center;gap:9px;color:var(--gold-soft);font:600 1rem/1 var(--sans);margin-top:22px}
+.mobnav .mtel svg{width:16px;height:16px}
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg .glow{position:absolute;inset:0;background:radial-gradient(900px 520px at 50% 40%,rgba(140,172,23,.14),transparent 60%),radial-gradient(700px 480px at 50% 55%,rgba(0,145,218,.26),transparent 62%),linear-gradient(180deg,#1B365D 0%,#142849 55%,#1B365D 100%)}
+.hero-bg .ridge{position:absolute;inset:auto 0 0 0;height:62%;opacity:.5}
+.hero-bg .ridge svg{width:100%;height:100%}
+.hero-veil{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 120% 100% at 38% 55%,rgba(0,145,218,.26) 0%,rgba(27,54,93,.70) 38%,rgba(27,54,93,.92) 100%)}
+.hero-inner{max-width:100%;margin:0 auto;padding:190px var(--gut) 120px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-copy{width:100%;max-width:none}
+.hero h1{font-size:clamp(3.2rem,9vw,7rem);font-weight:800;margin:26px 0 0;letter-spacing:.01em;line-height:1.12}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .word{display:inline-block;transform:translateY(110%);transition:transform .9s var(--ease)}
+.hero h1 .accent{color:var(--signal-2)}
+.hero h1 .accent .dot{color:var(--gold)}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:rgba(255,255,255,.82);margin:40px auto 48px;max-width:52ch;font-weight:400}
+.hero .actions{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.watch{display:inline-flex;align-items:center;gap:12px;color:#fff;font:600 .9rem/1 var(--sans);cursor:pointer;background:none;border:0}
+.watch .ply{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-l);display:grid;place-items:center;transition:.25s var(--ease)}
+.watch .ply svg{width:14px;height:14px;margin-left:2px}
+.watch:hover .ply{background:rgba(255,255,255,.1);transform:scale(1.06)}
+.spine{display:none}
+.spine .ln{position:absolute;top:120px;bottom:60px;left:50%;width:1px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.35) 12%,rgba(255,255,255,.35) 88%,transparent);transform:translateX(-50%) scaleY(0);transform-origin:top;transition:transform 1s var(--ease) .25s}
+.spine .med{width:60px;height:60px;border-radius:50%;background:rgba(27,54,93,.55);border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;backdrop-filter:blur(4px);box-shadow:0 0 0 6px rgba(140,172,23,0);opacity:0;transform:scale(.7);transition:opacity .6s var(--ease) .7s,transform .6s var(--ease) .7s,box-shadow 2.4s ease;z-index:2}
+.spine .med svg{width:26px;height:26px}
+.hero.loaded .spine .ln{transform:translateX(-50%) scaleY(1)}
+.hero.loaded .spine .med{opacity:1;transform:scale(1);box-shadow:0 0 0 6px rgba(140,172,23,.14)}
+.hero.loaded h1 .word{transform:translateY(0)}
+.hero.loaded h1 .l1 .word{transition-delay:.45s}
+.hero.loaded h1 .l2 .word{transition-delay:.55s}
+.hero.loaded h1 .l3 .word{transition-delay:.65s}
+.hero .eyebrow,.hero p.lead,.hero .actions{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.hero.loaded .eyebrow{opacity:1;transform:none;transition-delay:.35s}
+.hero.loaded p.lead{opacity:1;transform:none;transition-delay:.8s}
+.hero.loaded .actions{opacity:1;transform:none;transition-delay:.95s}
+.trust{background:var(--navy);border-top:1px solid var(--line-l)}
+.trust .wrap{max-width:100%;padding-inline:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-block:0}
+.trust .item{display:flex;align-items:center;justify-content:center;gap:11px;color:rgba(255,255,255,.88);font:500 .9rem/1.2 var(--sans);padding:22px 24px;text-align:center}
+.trust .item svg{flex:none;opacity:.8}
+.trust .item+.item{border-left:1px solid var(--line-l)}
+.mission{background:var(--paper);padding-block:clamp(70px,9vw,120px)}
+.mission .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,5vw,72px);align-items:center}
+.mission h2{font-size:clamp(2rem,3.6vw,2.9rem);margin:18px 0 0}
+.mission .rule{width:54px;height:2px;background:var(--signal);margin:22px 0}
+.mission p{color:var(--ink-70);max-width:46ch;font-size:1.02rem}
+.mission .more{display:inline-flex;align-items:center;gap:.55em;color:var(--signal);font:600 .92rem/1 var(--sans);margin-top:26px}
+.mission .more svg{width:15px;height:15px;transition:transform .25s var(--ease)}
+.mission .more:hover svg{transform:translateX(4px)}
+.mission .visual{position:relative}
+.photo{position:relative;border-radius:var(--r);overflow:hidden;background:var(--slate);background-image:radial-gradient(600px 300px at 30% 0%,rgba(0,145,218,.30),transparent 70%),linear-gradient(160deg,#16324C,#142849)}
+.photo::after{content:attr(data-tag);position:absolute;left:14px;bottom:12px;font:600 .6rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);padding:6px 10px;border:1px solid var(--line-l);border-radius:3px}
+.photo .contour{position:absolute;inset:0;opacity:.5}
+.mission .photo{aspect-ratio:4/3.4}
+.quote-card{position:absolute;right:-14px;bottom:34px;width:min(280px,72%);background:var(--navy);color:#fff;border-radius:var(--r);padding:26px 24px;box-shadow:0 26px 60px rgba(27,54,93,.40);border:1px solid rgba(255,255,255,.08)}
+.quote-card .q{font:500 2.6rem/.6 var(--serif);color:var(--gold-soft);height:24px;display:block}
+.quote-card p{font-family:var(--serif);font-size:1rem;line-height:1.45;color:#fff;margin:10px 0 16px;max-width:none}
+.quote-card .cite-name{font:600 .82rem/1.2 var(--sans)}
+.stars{display:inline-flex;gap:3px;margin-top:10px;color:var(--gold-soft)}
+.stars svg{width:14px;height:14px}
+.head-c{text-align:center;max-width:680px;margin:0 auto clamp(38px,5vw,60px)}
+.head-c h2{font-size:clamp(2rem,4vw,3rem);margin-top:16px}
+.svc{background:var(--ink);color:#fff;padding-block:clamp(72px,9vw,120px);position:relative}
+.svc .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(38px,5vw,56px)}
+.card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1/1.04;background:linear-gradient(160deg,#142849,#1B365D 65%,#1A5580 100%);border:1px solid var(--line-l);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.card .contour{position:absolute;inset:0;opacity:.4;transition:transform .6s var(--ease)}
+.card .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,54,93,.1) 30%,rgba(27,54,93,.86) 100%)}
+.card .body{position:absolute;inset:auto 0 0 0;padding:22px;padding-right:62px;display:flex;align-items:center;gap:13px;z-index:2}
+.card h3{font-family:var(--sans);font-weight:600;font-size:1.06rem;line-height:1.15;color:#fff}
+.card .arr{position:absolute;right:18px;bottom:20px;width:34px;height:34px;border-radius:4px;border:1px solid var(--line-l);display:grid;place-items:center;z-index:2;transition:.3s var(--ease)}
+.card .arr svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.card:hover .contour{transform:scale(1.08)}
+.card:hover .arr{background:var(--signal);border-color:var(--signal)}
+.card:hover .arr svg{transform:translate(2px,-2px)}
+.svc .center{text-align:center;margin-top:44px}
+.testi{background:var(--paper);padding-block:0;overflow:hidden}
+.testi .t-wrap{display:grid;grid-template-columns:5fr 6fr;min-height:520px}
+.t-left{background:linear-gradient(145deg,#142849 0%,#1B365D 35%,#1B365D 70%,#1A4060 100%);padding:clamp(48px,6vw,80px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.t-left .deco-q{position:absolute;bottom:-60px;right:-30px;font:400 28rem/1 Georgia,serif;color:rgba(255,255,255,.03);pointer-events:none;user-select:none;line-height:1}
+.t-left h2{font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.1;color:#fff;margin-top:16px;position:relative;z-index:1}
+.t-left-foot{position:relative;z-index:1}
+.t-left .eyebrow.on-dark{color:#5B9CF6}
+.t-left .eyebrow.on-dark::before{background:#5B9CF6}
+.t-nav{display:flex;align-items:center;gap:16px;margin-top:28px}
+.t-dots{display:flex;gap:8px}
+.t-dot{width:24px;height:2px;border-radius:1px;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:background .25s,width .25s;padding:0}
+.t-dot.active{background:#5B9CF6;width:36px}
+.t-arr{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-l);background:none;cursor:pointer;display:grid;place-items:center;color:rgba(255,255,255,.6);transition:background .25s,color .25s}
+.t-arr:hover{background:rgba(255,255,255,.1);color:#fff}
+.t-arr svg{width:14px;height:14px}
+.t-right{padding:clamp(48px,6vw,80px);display:flex;align-items:center;position:relative;background:#fff}
+.t-stage{position:relative;width:100%}
+.t-bg-q{position:absolute;top:-80px;left:-20px;font:400 20rem/1 Georgia,serif;color:var(--gold);opacity:.05;pointer-events:none;user-select:none;line-height:1}
+.t-quote{opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease);pointer-events:none;position:absolute;inset:0}
+.t-quote.active{opacity:1;transform:none;pointer-events:auto;position:relative;inset:auto}
+.t-stars{display:inline-flex;gap:4px;color:var(--gold);margin-bottom:28px}
+.t-stars svg{width:15px;height:15px}
+.t-text{font:400 clamp(1.15rem,1.8vw,1.42rem)/1.7 Georgia,serif;font-style:italic;color:var(--ink);margin:0 0 32px}
+.t-rule{width:32px;height:1.5px;background:var(--gold);margin-bottom:14px;display:block}
+.t-cite{font:600 .78rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.locs{background:#fff;padding-block:clamp(64px,8vw,100px);border-top:1px solid var(--line-d)}
+.locs .grid{display:grid;grid-template-columns:.85fr repeat(3,1fr);gap:24px;align-items:start}
+.locs h2{font-family:var(--serif);font-size:1.7rem;line-height:1.1;margin-top:14px}
+.locs .intro p{color:var(--stone);font-size:.95rem;margin-top:14px;max-width:34ch}
+.locs .more{display:inline-flex;align-items:center;gap:.5em;color:var(--signal);font:600 .88rem/1 var(--sans);margin-top:20px}
+.locs .more svg{width:14px;height:14px}
+.loc{display:block}
+.loc .photo{aspect-ratio:4/3;border-radius:12px}
+.loc h3{font-family:var(--sans);font-weight:700;font-size:1rem;color:var(--ink);margin-top:14px}
+.cta{position:relative;color:#fff;overflow:hidden;background:radial-gradient(900px 500px at 12% 45%,rgba(0,145,218,.35),transparent 58%),radial-gradient(700px 400px at 90% 80%,rgba(34,139,34,.22),transparent 55%),linear-gradient(130deg,#142849 0%,#1B365D 52%,#1E3F6B 100%)}
+.cta .ridge{position:absolute;inset:auto 0 0 0;height:70%;opacity:.4}
+.cta .wrap{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:34px;padding-block:clamp(48px,6vw,72px)}
+.cta h2{font-size:clamp(1.9rem,3.4vw,2.8rem);max-width:18ch}
+.cta p{color:rgba(255,255,255,.78);margin-top:14px;max-width:46ch;font-size:1rem}
+.cta .actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end}
+.ft{background:linear-gradient(175deg,#142849 0%,#1B365D 40%,#1B365D 100%);color:rgba(255,255,255,.62);padding-block:64px 30px;border-top:1px solid var(--line-l)}
+.ft .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-l)}
+.ft .brand{color:#fff;margin-bottom:18px}
+.ft .blurb{font-size:.9rem;line-height:1.6;max-width:34ch}
+.ft h4{font:600 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.ft ul{list-style:none}
+.ft li{margin-bottom:11px}
+.ft a{font-size:.9rem;transition:color .2s}
+.ft a:hover{color:#fff}
+.ft .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:.78rem;color:rgba(255,255,255,.45)}
+.ft .bottom .socials{display:flex;gap:14px}
+.ft .bottom a:hover{color:#fff}
+.mission,.testi,.locs{position:relative}
+.deco-wave{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.deco-wave svg{position:absolute;width:140%;min-width:900px;top:50%;left:-20%;transform:translateY(-50%);display:block}
+.mission .wrap,.testi .wrap,.locs .wrap{position:relative;z-index:1}
+.mission .rule{width:80px;height:20px;background:none;margin:22px 0;display:block;overflow:visible}
+.mission .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;padding-top:28px;border-top:1px solid var(--line-d)}
+.mission .feat{display:flex;flex-direction:column;gap:7px}
+.mission .feat .ico{width:42px;height:42px;border-radius:8px;border:1px solid var(--line-d);background:#fff;display:grid;place-items:center;color:var(--signal);flex:none}
+.mission .feat h4{font:600 .83rem/1.25 var(--sans);color:var(--ink);letter-spacing:.02em;text-transform:uppercase}
+.mission .feat p{font-size:.8rem;color:var(--stone);line-height:1.5;margin:0}
+.modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(27,54,93,.72);backdrop-filter:blur(8px);display:grid;place-items:center;padding:clamp(16px,4vw,40px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.modal-overlay.open{opacity:1;visibility:visible}
+.modal{width:100%;max-width:920px;max-height:90vh;display:grid;grid-template-columns:.85fr 1.15fr;border-radius:14px;overflow:hidden;box-shadow:0 50px 120px rgba(27,54,93,.55);transform:translateY(16px) scale(.97);transition:transform .4s var(--ease)}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-side{background:var(--navy);color:#fff;padding:48px 40px;display:flex;flex-direction:column;gap:28px;overflow-y:auto}
+.modal-side .brand{display:flex;align-items:center;gap:11px;color:#fff}
+.modal-side .brand svg{width:30px;height:30px;flex:none}
+.modal-side .brand .name{font:700 1.05rem/1 var(--serif)}
+.modal-side .brand .name b{color:#fff}
+.modal-side .brand .name span{color:var(--signal-2)}
+.modal-side .brand .sub{display:block;font:600 .48rem/1 var(--sans);letter-spacing:.3em;color:rgba(255,255,255,.5);margin-top:3px;text-transform:uppercase}
+.modal-trust{display:flex;flex-direction:column;gap:14px;padding:22px 0;border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l)}
+.modal-trust .titem{display:flex;align-items:center;gap:11px;font:500 .88rem/1.3 var(--sans);color:rgba(255,255,255,.85)}
+.modal-trust .titem svg{flex:none;color:var(--gold-soft)}
+.modal-mission .mwave{width:60px;height:12px;display:block;margin-bottom:12px}
+.modal-mission h3{font:700 1.15rem/1.2 var(--serif);color:#fff;margin-bottom:10px}
+.modal-mission p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65}
+.modal-form-wrap{background:var(--paper);padding:44px 40px;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:6px;border:1px solid var(--line-d);background:none;cursor:pointer;display:grid;place-items:center;color:var(--stone);transition:.2s}
+.modal-close:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.modal-form-wrap>h2{font:700 1.5rem/1.1 var(--serif);color:var(--ink);margin-bottom:5px;letter-spacing:-.02em}
+.modal-form-wrap>.sub{font-size:.85rem;color:var(--stone);margin-bottom:26px}
+.mform{display:flex;flex-direction:column;gap:16px}
+.mform .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mform .field{display:flex;flex-direction:column;gap:6px}
+.mform .field label{font:600 .7rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.mform .field input,.mform .field select{width:100%;padding:11px 14px;border:1px solid var(--line-d);border-radius:6px;font:400 .92rem/1 var(--sans);color:var(--ink);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.mform .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235B6B7A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.mform .field input:focus,.mform .field select:focus{border-color:var(--signal);box-shadow:0 0 0 3px rgba(0,145,218,.1)}
+.mform .field input::placeholder{color:rgba(91,107,122,.5)}
+.time-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.time-opts label{cursor:pointer}
+.time-opts input[type="radio"]{display:none}
+.time-opts .chip{display:block;padding:10px 8px;text-align:center;border:1px solid var(--line-d);border-radius:6px;font:600 .75rem/1.2 var(--sans);color:var(--stone);transition:.2s;letter-spacing:.06em;text-transform:uppercase}
+.time-opts label:hover .chip{border-color:var(--signal);color:var(--signal)}
+.time-opts input:checked+.chip{background:var(--signal);color:#fff;border-color:var(--signal)}
+.appt-notice{display:flex;align-items:flex-start;gap:10px;background:var(--mist);border:1px solid rgba(0,145,218,.15);border-radius:6px;padding:12px 14px;color:var(--stone)}
+.appt-notice svg{flex:none;margin-top:1px;color:var(--signal)}
+.appt-notice p{font-size:.78rem;line-height:1.55;margin:0}
+.appt-notice strong{color:var(--ink);font-weight:600}
+@media(max-width:700px){.modal{grid-template-columns:1fr}.modal-side{display:none}.modal-form-wrap{padding:36px 24px}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}.reveal.d6{transition-delay:.48s}
+@media(max-width:1080px){
+  .nav{display:none}.burger{display:block}
+  .hero-inner{grid-template-columns:1fr}.spine{display:none}
+  .testi .t-wrap{grid-template-columns:1fr}
+  .locs .grid{grid-template-columns:1fr 1fr}
+  .ft .top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .trust .wrap{grid-template-columns:repeat(2,1fr)}
+  .trust .item:nth-child(1),.trust .item:nth-child(2){border-bottom:1px solid var(--line-l)}
+  .trust .item:nth-child(odd){border-left:none}
+  .hdr-cta .tel{display:none}
+  .hdr-cta .btn--blue{display:none}
+  .svc .grid{grid-template-columns:1fr 1fr}
+  .mission .grid{grid-template-columns:1fr}
+  .quote-card{position:relative;right:0;bottom:0;width:100%;margin-top:18px}
+  .testi .grid{grid-template-columns:1fr}
+  .locs .grid{grid-template-columns:1fr 1fr}
+  .cta .wrap{grid-template-columns:1fr}.cta .actions{justify-content:flex-start}
+  .ft .top{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero .word{transform:none!important}
+  .hero .eyebrow,.hero p.lead,.hero .actions{opacity:1;transform:none}
+  .spine .ln{transform:translateX(-50%) scaleY(1)}
+  .spine .med{opacity:1;transform:scale(1)}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a href="centerline-home.html" class="brand" aria-label="PantherCreek Physical Therapy &amp; Balance home">
+    <img src="public/Logo%203%20.png" alt="PantherCreek Physical Therapy &amp; Balance logo" style="height:80px;width:auto;object-fit:contain;flex:none">
+  </a>
+  <nav class="nav">
+    <a href="about.html">About</a>
+    <a href="staff.html">Our Team</a>
+    <a href="locations.html" class="active">Locations</a>
+    <div class="drop">
+      <button class="drop-btn">Services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="drop-menu">
+        <a href="balance-therapy.html">Balance &amp; Fall Prevention</a>
+        <a href="vestibular-rehab.html">Vestibular Rehabilitation</a>
+        <a href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
+        <a href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
+        <a href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+        <a href="acupuncture.html">Acupuncture Therapy</a>
+      </div>
+    </div>
+    <div class="drop">
+      <button class="drop-btn">Resources
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="drop-menu">
+        <a href="billing.html">Billing &amp; Insurance</a>
+        <a href="first-visit.html">Preparing for Your Visit</a>
+        <a href="#">Patient Intake Form</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="hdr-cta">
+    <a class="tel" href="tel:5036985500">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      (503) 698-5500
+    </a>
+    <button class="btn btn--blue" onclick="openModal()">Schedule an Appointment
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mobnav" id="mobnav" aria-label="Mobile navigation">
+  <a class="mlink" href="about.html">About</a>
+  <a class="mlink" href="staff.html">Our Team</a>
+  <a class="mlink active" href="locations.html">Locations</a>
+  <a class="mlink" href="balance-therapy.html">Balance &amp; Fall Prevention</a>
+  <a class="mlink" href="vestibular-rehab.html">Vestibular Rehabilitation</a>
+  <a class="mlink" href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
+  <a class="mlink" href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
+  <a class="mlink" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+  <a class="mlink" href="acupuncture.html">Acupuncture Therapy</a>
+  <a class="mlink" href="billing.html">Billing &amp; Insurance</a>
+  <a class="mlink" href="first-visit.html">Preparing for Your Visit</a>
+  <a class="mlink" href="contact.html">Contact</a>
+  <button class="btn btn--blue" onclick="openModal()">Schedule an Appointment
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+  <a class="mtel" href="tel:5036985500">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    (503) 698-5500
+  </a>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="ridge">
+      <svg viewBox="0 0 1440 400" preserveAspectRatio="none" fill="none">
+        <path d="M0 400V250c120-30 200-90 320-80s180 70 300 40 220-120 360-110 260 110 460 60v240Z" fill="rgba(27,54,93,.55)"/>
+        <path d="M0 400V300c160-20 240-70 380-60s240 80 380 50 240-90 420-70 280 80 280 80v200Z" fill="rgba(27,54,93,.8)"/>
+        <path d="M0 400v-60c200 0 280-30 460-25s260 45 460 35 460-30 460-30v80Z" fill="#1B365D"/>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow on-dark">Physical Therapy in Clackamas, OR</span>
+      <h1 style="font-size:clamp(1.6rem,3vw,2.4rem)">Clackamas' trusted physical therapists.</h1>
+      <p class="lead">Serving Clackamas, Happy Valley, and the Sunnyside corridor — hands-on physical therapy designed around your recovery.</p>
+      <div class="actions">
+        <a class="btn btn--blue" href="#contact">Schedule an Appointment
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <button class="watch"><span class="ply"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>Watch our story</button>
+      </div>
+    </div>
+    <div class="spine" aria-hidden="true">
+      <div class="ln"></div>
+      <div class="med">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M22.5 9.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5S18.6 7 20 7s2.5 1.1 2.5 2.5Z" fill="#fff"/>
+          <path d="M14 17.5l4.5-1.8 3 1.6 4 .4M19.5 16.5l-1.5 6 3.5 4.5M18 22.5l-3.5 5.5M22.5 17.7l2.5 4.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="item">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 2.5l2.2 4.5 5 .7-3.6 3.5.85 5-4.45-2.35L5.55 16.2l.85-5L2.8 7.7l5-.7z"/>
+      </svg>
+      5-Star Patient Reviews
+    </div>
+    <div class="item">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 2L3.5 4.8v3.7c0 3.6 2.8 6.5 6.5 7.5 3.7-1 6.5-3.9 6.5-7.5V4.8z"/>
+        <path d="M7 10l2 2 4-4"/>
+      </svg>
+      Medicare Accepted
+    </div>
+    <div class="item">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 10.5a3 3 0 100-6 3 3 0 000 6z"/>
+        <path d="M10 2C6.7 2 4 4.7 4 8c0 5 6 10 6 10s6-5 6-10c0-3.3-2.7-6-6-6z"/>
+      </svg>
+      Three Clackamas County Locations
+    </div>
+    <div class="item">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="10" y1="3" x2="10" y2="17"/>
+        <line x1="3" y1="8" x2="17" y2="8"/>
+        <line x1="3" y1="8" x2="3" y2="13"/>
+        <line x1="17" y1="8" x2="17" y2="13"/>
+        <path d="M1 13h4"/>
+        <path d="M15 13h4"/>
+        <circle cx="10" cy="3" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      Balance &amp; Vestibular Specialists
+    </div>
+  </div>
+</div>
+
+<section class="mission" id="mission">
+  <div class="deco-wave" aria-hidden="true">
+    <svg viewBox="0 0 1400 500" fill="none" preserveAspectRatio="xMidYMid slice">
+      <path d="M-100 80C180 20 420 160 700 80s560 60 1100 0" stroke="rgba(27,54,93,.035)" stroke-width="1.2"/>
+      <path d="M-100 175C180 115 420 255 700 175s560 60 1100 0" stroke="rgba(27,54,93,.035)" stroke-width="1.2"/>
+      <path d="M-100 270C180 210 420 350 700 270s560 60 1100 0" stroke="rgba(27,54,93,.035)" stroke-width="1.2"/>
+      <path d="M-100 365C180 305 420 445 700 365s560 60 1100 0" stroke="rgba(27,54,93,.035)" stroke-width="1.2"/>
+      <path d="M-100 460C180 400 420 500 700 460s560 60 1100 0" stroke="rgba(27,54,93,.035)" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div class="wrap grid">
+    <div class="copy reveal">
+      <span class="eyebrow">Our Mission</span>
+      <h2>Clackamas care. Real results.</h2>
+      <svg class="rule" viewBox="0 0 80 20" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <path d="M0 10C12 3 22 17 40 10s28-7 40 0"/>
+      </svg>
+      <p>Located on SE Sunnyside Road, our Clackamas clinic has helped patients from Happy Valley, Damascus, and the surrounding communities overcome pain, restore balance, and return to the activities that matter most. We believe no two patients are the same, which is why every treatment plan is tailored to your goals, your lifestyle, and your recovery journey.</p>
+      <a class="more" href="about.html">Learn more about us
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="feats">
+        <div class="feat">
+          <h4>Hands-On Care</h4>
+          <p>Skilled, direct therapy from therapist to patient, every session.</p>
+        </div>
+        <div class="feat">
+          <h4>Safety Support</h4>
+          <p>Go further without fear of falling. Our overhead support has you.</p>
+        </div>
+        <div class="feat">
+          <h4>Built Around You</h4>
+          <p>No templates. Every plan is shaped to your life, goals, and pace.</p>
+        </div>
+      </div>
+    </div>
+    <div class="visual reveal d2">
+      <div class="photo" data-tag="Therapist &amp; patient — your photo here" style="aspect-ratio:4/3.4">
+        <div class="contour">
+          <svg viewBox="0 0 400 360" preserveAspectRatio="xMidYMid slice" fill="none" stroke="rgba(255,255,255,.16)">
+            <path d="M-20 120C80 80 160 150 260 110s180 30 200 10"/><path d="M-20 170C80 130 160 200 260 160s180 30 200 10"/>
+            <path d="M-20 220C80 180 160 250 260 210s180 30 200 10"/><path d="M-20 270C80 230 160 300 260 260s180 30 200 10"/>
+          </svg>
+        </div>
+      </div>
+      <div class="quote-card">
+        <span class="q">&ldquo;</span>
+        <p>Three weeks into the Balance Program, the biggest change is how much more confident I feel in daily life.</p>
+        <div class="cite-name">Ron, 74 — Retired</div>
+        <span class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="head-c reveal">
+      <span class="eyebrow on-dark">Our Services</span>
+      <h2 style="color:#fff">Specialized care. Proven results.</h2>
+    </div>
+    <div class="grid">
+      <a class="card reveal d1" href="#" style="background-image:url('public/Balance.png');background-size:cover;background-position:center">
+        <div class="shade"></div>
+        <div class="body"><h3>Balance Therapy</h3></div>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card reveal d2" href="#" style="background-image:url('public/Vestibular%20Rehabilitation.jpg');background-size:cover;background-position:center">
+        <div class="shade"></div>
+        <div class="body"><h3>Vestibular Rehabilitation</h3></div>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card reveal d3" href="#" style="background-image:url('public/Orthopedic.jpg');background-size:cover;background-position:center">
+        <div class="shade"></div>
+        <div class="body"><h3>Orthopedic Rehabilitation</h3></div>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card reveal d1" href="#" style="background-image:url('public/parkinsons-rehab.png');background-size:cover;background-position:center">
+        <div class="shade"></div>
+        <div class="body"><h3>Parkinson's Rehabilitation</h3></div>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card reveal d2" href="#" style="background-image:url('public/Auto%20and%20work.png');background-size:cover;background-position:center">
+        <div class="shade"></div>
+        <div class="body"><h3>Auto &amp; Work Injuries</h3></div>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card reveal d3" href="#" style="background-image:url('public/Acupuncture.png');background-size:cover;background-position:center">
+        <div class="shade"></div>
+        <div class="body"><h3>Acupuncture</h3></div>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <div class="center reveal"><a class="btn btn--ghost" href="#">View all services
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="t-wrap">
+    <div class="t-left reveal">
+      <div>
+        <span class="eyebrow on-dark">Patient Stories</span>
+        <h2>Real people.<br>Real progress.<br>Real results.</h2>
+      </div>
+      <div class="t-left-foot">
+        <p style="font-size:.88rem;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:24px;max-width:280px">Every story starts the same way — someone in pain, someone who wanted their life back. Here's what happened next.</p>
+        <div class="t-nav">
+          <button class="t-arr" id="tPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <div class="t-dots">
+            <button class="t-dot active" data-idx="0" aria-label="Story 1"></button>
+            <button class="t-dot" data-idx="1" aria-label="Story 2"></button>
+            <button class="t-dot" data-idx="2" aria-label="Story 3"></button>
+          </div>
+          <button class="t-arr" id="tNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <span class="deco-q" aria-hidden="true">&ldquo;</span>
+    </div>
+    <div class="t-right reveal d2">
+      <div class="t-stage">
+        <span class="t-bg-q" aria-hidden="true">&ldquo;</span>
+        <div class="t-quote active">
+          <span class="t-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></span>
+          <p class="t-text">&ldquo;After knee replacement surgery, I was back on the golf course faster than I ever expected. Every session felt purposeful and the results spoke for themselves.&rdquo;</p>
+          <span class="t-rule"></span>
+          <span class="t-cite">Mike &nbsp;·&nbsp; 62 &nbsp;·&nbsp; Post-Surgical Recovery</span>
+        </div>
+        <div class="t-quote">
+          <span class="t-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></span>
+          <p class="t-text">&ldquo;I finally feel like myself again. The therapists here genuinely care — not just about your recovery, but about you as a person. That makes all the difference.&rdquo;</p>
+          <span class="t-rule"></span>
+          <span class="t-cite">Linda &nbsp;·&nbsp; 68 &nbsp;·&nbsp; Active Adults</span>
+        </div>
+        <div class="t-quote">
+          <span class="t-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></span>
+          <p class="t-text">&ldquo;The Balance Program changed my daily life. I walk confidently now without the constant fear of falling. I only wish I had come here sooner.&rdquo;</p>
+          <span class="t-rule"></span>
+          <span class="t-cite">Ron &nbsp;·&nbsp; 74 &nbsp;·&nbsp; Vestibular &amp; Balance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="locs" id="locations">
+  <div class="deco-wave" aria-hidden="true">
+    <svg viewBox="0 0 1400 500" fill="none" preserveAspectRatio="xMidYMid slice">
+      <path d="M-100 80C180 20 420 160 700 80s560 60 1100 0" stroke="rgba(27,54,93,.025)" stroke-width="1.2"/>
+      <path d="M-100 175C180 115 420 255 700 175s560 60 1100 0" stroke="rgba(27,54,93,.025)" stroke-width="1.2"/>
+      <path d="M-100 270C180 210 420 350 700 270s560 60 1100 0" stroke="rgba(27,54,93,.025)" stroke-width="1.2"/>
+      <path d="M-100 365C180 305 420 445 700 365s560 60 1100 0" stroke="rgba(27,54,93,.025)" stroke-width="1.2"/>
+      <path d="M-100 460C180 400 420 500 700 460s560 60 1100 0" stroke="rgba(27,54,93,.025)" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div class="wrap grid">
+    <div class="intro reveal">
+      <span class="eyebrow">Serving Clackamas &amp; Beyond</span>
+      <h2>Your Clackamas neighborhood clinic.</h2>
+      <p>Conveniently located on SE Sunnyside Rd, our Clackamas clinic is the closest option for patients in Happy Valley, Oregon City, Damascus, and Milwaukie.</p>
+      <a class="more" href="locations.html" style="margin-top:12px">View our other locations
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <a class="loc reveal d1" href="clackamas.html"><div class="photo" data-tag="Clackamas"></div><h3>Clackamas</h3></a>
+    <a class="loc reveal d2" href="molalla.html"><div class="photo" data-tag="Molalla"></div><h3>Molalla</h3></a>
+    <a class="loc reveal d3" href="estacada.html"><div class="photo" data-tag="Estacada"></div><h3>Estacada</h3></a>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="ridge" aria-hidden="true">
+    <svg viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none"><path d="M0 300V180c160-30 240 20 420 10s260-60 460-50 280 50 560 30v130Z" fill="rgba(27,54,93,.6)"/><path d="M0 300V220c200-20 280 20 460 15s260-40 480-30 300 25 500 25v70Z" fill="#1B365D"/></svg>
+  </div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow on-dark">Get Started</span>
+      <h2 style="color:#fff;margin-top:14px">Ready to move better in Clackamas?</h2>
+      <p>Our Clackamas team is welcoming new patients now. Same-week appointments are often available.</p>
+    </div>
+    <div class="actions reveal d2">
+      <a class="btn btn--blue" href="#">Schedule an Appointment
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--ghost" href="tel:5036985500">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call our team</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="centerline-home.html" class="brand">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="rgba(255,255,255,.3)"/><line x1="20" y1="2" x2="20" y2="38" stroke="#8CAC17" stroke-width="1.2"/><path d="M22.5 9.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5S18.6 7 20 7s2.5 1.1 2.5 2.5Z" fill="#fff"/><path d="M14 17.5l4.5-1.8 3 1.6 4 .4M19.5 16.5l-1.5 6 3.5 4.5M18 22.5l-3.5 5.5M22.5 17.7l2.5 4.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><span class="name"><b>PANTHER</b><span>CREEK</span></span><span class="sub">Physical Therapy &amp; Balance</span></span>
+        </a>
+        <p class="blurb">PantherCreek Physical Therapy &amp; Balance — hands on, one on one care serving Clackamas County, Oregon since 1989.</p>
+        <p style="font:700 .68rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:14px">Stronger Every Step</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#">Balance Therapy</a></li><li><a href="#">Vestibular Rehab</a></li><li><a href="#">Orthopedic Rehab</a></li><li><a href="#">Parkinson's Rehab</a></li><li><a href="#">Acupuncture</a></li></ul></div>
+      <div><h4>Locations</h4><ul><li><a href="clackamas.html">Clackamas</a></li><li><a href="molalla.html">Molalla</a></li><li><a href="estacada.html">Estacada</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:5036985500">(503) 698-5500</a></li><li><a href="#">Schedule an evaluation</a></li><li><a href="#">Patient intake form</a></li><li><a href="billing.html">Billing &amp; insurance</a></li></ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 PantherCreek Physical Therapy &amp; Balance. Independently owned &amp; operated. The information here is not medical advice.</span>
+      <span class="socials"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-side">
+      <a href="centerline-home.html" class="brand" aria-label="PantherCreek Physical Therapy &amp; Balance home">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" stroke="rgba(255,255,255,.3)"/>
+          <line x1="20" y1="2" x2="20" y2="38" stroke="#8CAC17" stroke-width="1.2"/>
+          <path d="M22.5 9.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5S18.6 7 20 7s2.5 1.1 2.5 2.5Z" fill="#fff"/>
+          <path d="M14 17.5l4.5-1.8 3 1.6 4 .4M19.5 16.5l-1.5 6 3.5 4.5M18 22.5l-3.5 5.5M22.5 17.7l2.5 4.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>
+          <span class="name"><b>PANTHER</b><span>CREEK</span></span>
+          <span class="sub">Physical Therapy &amp; Balance</span>
+        </span>
+      </a>
+      <div class="modal-trust">
+        <div class="titem">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5l2.2 4.5 5 .7-3.6 3.5.85 5-4.45-2.35L5.55 16.2l.85-5L2.8 7.7l5-.7z"/></svg>
+          5-Star Patient Reviews
+        </div>
+        <div class="titem">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2L3.5 4.8v3.7c0 3.6 2.8 6.5 6.5 7.5 3.7-1 6.5-3.9 6.5-7.5V4.8z"/><path d="M7 10l2 2 4-4"/></svg>
+          Medicare Accepted
+        </div>
+        <div class="titem">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10.5a3 3 0 100-6 3 3 0 000 6z"/><path d="M10 2C6.7 2 4 4.7 4 8c0 5 6 10 6 10s6-5 6-10c0-3.3-2.7-6-6-6z"/></svg>
+          Three Clackamas County Locations
+        </div>
+        <div class="titem">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="10" y1="3" x2="10" y2="17"/><line x1="3" y1="8" x2="17" y2="8"/><line x1="3" y1="8" x2="3" y2="13"/><line x1="17" y1="8" x2="17" y2="13"/><path d="M1 13h4"/><path d="M15 13h4"/><circle cx="10" cy="3" r="1" fill="currentColor" stroke="none"/></svg>
+          Balance &amp; Vestibular Specialists
+        </div>
+      </div>
+      <div class="modal-mission">
+        <svg class="mwave" viewBox="0 0 60 12" fill="none" stroke="var(--gold-soft)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+          <path d="M0 6C9 1 16 11 24 6s15-5 18 0 9 5 18 0"/>
+        </svg>
+        <h3>Finding your center.<br>Restoring your movement.</h3>
+        <p>PantherCreek pairs advanced, hands-on training with specialized equipment — including an overhead safety-support track. Every plan is built around your life, not a template.</p>
+      </div>
+    </div>
+    <div class="modal-form-wrap">
+      <button class="modal-close" id="modalClose" aria-label="Close dialog">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 1l11 11M12 1L1 12"/></svg>
+      </button>
+      <h2 id="modalTitle">Schedule an Appointment</h2>
+      <p class="sub">Request your preferred time below — we'll call to confirm or suggest alternate availability.</p>
+      <form class="mform" id="apptForm" novalidate>
+        <div class="field">
+          <label for="appt-location">Location</label>
+          <select id="appt-location" name="location" required>
+            <option value="" disabled selected>Select a clinic…</option>
+            <option value="clackamas" selected>Clackamas</option>
+            <option value="molalla">Molalla</option>
+            <option value="estacada">Estacada</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="appt-date">Preferred Date</label>
+          <input type="date" id="appt-date" name="date" required/>
+        </div>
+        <div class="field">
+          <label>Preferred Time</label>
+          <div class="time-opts">
+            <label><input type="radio" name="time" value="morning"/><span class="chip">Morning</span></label>
+            <label><input type="radio" name="time" value="afternoon"/><span class="chip">Afternoon</span></label>
+            <label><input type="radio" name="time" value="evening"/><span class="chip">Evening</span></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="appt-fname">First Name</label>
+            <input type="text" id="appt-fname" name="fname" placeholder="Jane" required autocomplete="given-name"/>
+          </div>
+          <div class="field">
+            <label for="appt-lname">Last Name</label>
+            <input type="text" id="appt-lname" name="lname" placeholder="Smith" required autocomplete="family-name"/>
+          </div>
+        </div>
+        <div class="field">
+          <label for="appt-phone">Phone Number</label>
+          <input type="tel" id="appt-phone" name="phone" placeholder="(503) 000-0000" required autocomplete="tel"/>
+        </div>
+        <div class="field">
+          <label for="appt-email">Email Address</label>
+          <input type="email" id="appt-email" name="email" placeholder="jane@example.com" required autocomplete="email"/>
+        </div>
+        <button type="submit" class="btn btn--blue" style="justify-content:center;width:100%;padding:15px 22px">
+          Request Appointment
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <div class="appt-notice">
+          <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.5v.5"/></svg>
+          <p>Please note this is a <strong>request only</strong> — our team will call you to confirm your appointment or suggest alternate availability.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+const hdr=document.getElementById('hdr');
+const onScroll=()=>{hdr.classList.toggle('solid',window.scrollY>40)};
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('load',()=>{requestAnimationFrame(()=>document.getElementById('top').classList.add('loaded'))});
+if(document.readyState==='complete'){document.getElementById('top').classList.add('loaded')}
+const burger=document.getElementById('burger'),mobnav=document.getElementById('mobnav');
+function toggleNav(open){mobnav.classList.toggle('open',open);burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':''}
+burger.addEventListener('click',()=>toggleNav(!mobnav.classList.contains('open')));
+mobnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleNav(false)));
+const modalOverlay=document.getElementById('modalOverlay');
+const modalClose=document.getElementById('modalClose');
+function openModal(){modalOverlay.classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('a.btn,button.btn').forEach(btn=>{
+  if(btn.textContent.trim().startsWith('Schedule')){
+    btn.addEventListener('click',e=>{e.preventDefault();toggleNav(false);openModal()})
+  }
+});
+modalClose.addEventListener('click',closeModal);
+modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
+document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleNav(false);closeModal()}});
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(function(){
+  const quotes=document.querySelectorAll('.t-quote');
+  const dots=document.querySelectorAll('.t-dot');
+  let cur=0;
+  function go(n){
+    quotes[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur=(n+quotes.length)%quotes.length;
+    quotes[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+  document.getElementById('tPrev').addEventListener('click',()=>go(cur-1));
+  document.getElementById('tNext').addEventListener('click',()=>go(cur+1));
+  dots.forEach(d=>d.addEventListener('click',()=>go(+d.dataset.idx)));
+})();
+</script>
+</body>
+</html>

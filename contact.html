@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Contact Us — PantherCreek Physical Therapy & Balance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B365D;--navy:#142849;--slate:#1E3F6B;
+  --signal:#0091DA;--signal-2:#71C5E8;
+  --gold:#8CAC17;--gold-soft:#A8C520;
+  --paper:#F8FAFC;--mist:#E0F0F8;--stone:#5B6B7A;
+  --line-d:rgba(27,54,93,.14);--line-l:rgba(255,255,255,.14);
+  --serif:"Josefin Sans",system-ui,sans-serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,sans-serif;
+  --wrap:1200px;--gut:clamp(20px,5vw,64px);--r:10px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+.eyebrow{font:600 .72rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);display:inline-flex;align-items:center;gap:.6em}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--gold)}
+.eyebrow.on-dark{color:var(--gold-soft)}
+.eyebrow.on-dark::before{background:var(--gold-soft)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacing:-.02em}
+
+/* ─── Header ─── */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:6px var(--gut) 6px 16px;background:#fff;box-shadow:0 2px 0 var(--ink)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .name{font:600 1.18rem/1 var(--serif);letter-spacing:.01em}
+.brand .name b{color:#fff;font-weight:600}
+.brand .name span{color:var(--signal-2);font-weight:600}
+.brand .sub{display:block;font:600 .52rem/1 var(--sans);letter-spacing:.34em;color:rgba(255,255,255,.55);margin-top:3px;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font:500 .9rem/1 var(--sans);color:var(--ink);transition:color .2s}
+.nav a:hover,.nav a.active{color:#fff}
+.nav .drop{position:relative}
+.nav .drop-btn{display:flex;align-items:center;gap:5px;font:500 .9rem/1 var(--sans);color:var(--ink);cursor:pointer;background:none;border:0;padding:0;transition:color .2s}
+.nav .drop-btn:hover,.nav .drop-btn.active{color:var(--signal)}
+.nav .drop-btn svg{width:12px;height:12px;transition:transform .25s var(--ease);opacity:.7}
+.nav .drop:hover .drop-btn svg{transform:rotate(180deg)}
+.nav .drop-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(27,54,93,.97);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:10px;min-width:220px;padding:14px 8px 8px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-6px);transition:opacity .22s var(--ease),transform .22s var(--ease),visibility .22s;pointer-events:none;box-shadow:0 20px 48px rgba(0,0,0,.35)}
+.nav .drop:hover .drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.nav .drop-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:6px;font:500 .85rem/1.3 var(--sans);color:rgba(255,255,255,.78);transition:background .18s,color .18s;white-space:nowrap}
+.nav .drop-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav .drop-menu a.active{color:#fff;background:rgba(0,145,218,.25)}
+.nav .drop-menu .drop-icon{width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);display:grid;place-items:center;flex-shrink:0;color:var(--gold-soft)}
+.nav .drop-menu .drop-icon svg{width:14px;height:14px}
+.hdr-cta{display:flex;align-items:center;gap:18px}
+.tel{display:flex;align-items:center;gap:7px;color:var(--ink);font:600 .9rem/1 var(--sans);white-space:nowrap}
+.tel svg{width:15px;height:15px;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:.6em;cursor:pointer;border:0;font:600 .85rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:14px 26px;border-radius:6px;transition:transform .25s var(--ease),background .25s,box-shadow .25s}
+.btn svg{width:15px;height:15px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn--blue{background:linear-gradient(180deg,rgba(255,255,255,.13) 0%,rgba(0,0,0,.10) 100%),var(--signal);color:#fff;box-shadow:0 4px 24px rgba(0,145,218,.30)}
+.btn--blue:hover{background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(0,0,0,.14) 100%),var(--signal-2);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:#fff;border:1px solid var(--line-l)}
+.btn--ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.burger{display:none;background:none;border:0;cursor:pointer;width:30px;height:22px;position:relative}
+.burger span{position:absolute;left:0;right:0;height:2px;background:var(--ink);transition:.3s}
+.burger span:nth-child(1){top:0}.burger span:nth-child(2){top:10px}.burger span:nth-child(3){top:20px}
+.burger.open span:nth-child(1){top:10px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:10px;transform:rotate(-45deg)}
+.mobnav{position:fixed;inset:0;z-index:70;background:rgba(27,54,93,.98);backdrop-filter:blur(10px);display:flex;flex-direction:column;padding:104px var(--gut) 48px;gap:2px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .32s var(--ease),transform .32s var(--ease),visibility .32s}
+.mobnav.open{opacity:1;visibility:visible;transform:none}
+.mobnav a.mlink{color:#fff;font:500 1.55rem/1 var(--serif);padding:18px 0;border-bottom:1px solid var(--line-l)}
+.mobnav .btn{margin-top:28px;justify-content:center}
+.mobnav .mtel{display:inline-flex;align-items:center;gap:9px;color:var(--gold-soft);font:600 1rem/1 var(--sans);margin-top:22px}
+.mobnav .mtel svg{width:16px;height:16px}
+
+/* ─── Hero ─── */
+.hero{position:relative;min-height:52vh;background:var(--ink);background-image:url('public/Contact%20.jpg');background-size:cover;background-position:center;display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
+.hero-glow{position:absolute;inset:0;z-index:0;background:linear-gradient(145deg,rgba(27,54,93,.90) 0%,rgba(0,107,165,.30) 55%,rgba(27,54,93,.82) 100%)}
+.hero-inner{flex:1;position:relative;z-index:1;padding-top:88px;display:flex;align-items:center}
+.hero-text{padding:clamp(36px,5vw,64px) 0}
+.hero-text .breadcrumb{display:flex;align-items:center;gap:8px;font:500 .75rem/1 var(--sans);color:rgba(255,255,255,.4);margin-bottom:20px}
+.hero-text .breadcrumb a{color:rgba(255,255,255,.4);transition:color .2s}
+.hero-text .breadcrumb a:hover{color:#fff}
+.hero-text .breadcrumb svg{width:9px;height:9px;opacity:.4}
+.hero-text h1{font-size:clamp(2.4rem,5vw,4rem);color:#fff;font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-top:16px;max-width:18ch}
+.hero-text .lead{font-size:clamp(.9rem,1.3vw,1.05rem);color:rgba(255,255,255,.62);line-height:1.78;margin-top:18px;max-width:52ch}
+
+/* ─── Contact layout ─── */
+.contact-body{padding-block:clamp(64px,9vw,110px);background:var(--paper)}
+.contact-layout{display:grid;grid-template-columns:1fr 360px;gap:clamp(40px,6vw,72px);align-items:start}
+
+/* ─── Form card ─── */
+.contact-form-card{background:#fff;border-radius:14px;border:1px solid var(--line-d);overflow:hidden}
+.form-card-head{padding:28px 36px;border-bottom:1px solid var(--line-d)}
+.form-card-head h2{font-size:clamp(1.2rem,1.8vw,1.5rem);margin-bottom:5px}
+.form-card-head p{font-size:.88rem;color:var(--stone);line-height:1.55}
+.form-card-body{padding:32px 36px}
+.cform{display:flex;flex-direction:column;gap:18px}
+.cform .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cform .field{display:flex;flex-direction:column;gap:6px}
+.cform .field label{font:600 .7rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.cform .field input,.cform .field select,.cform .field textarea{width:100%;padding:12px 16px;border:1px solid var(--line-d);border-radius:6px;font:400 .92rem/1.5 var(--sans);color:var(--ink);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;resize:none}
+.cform .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235B6B7A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.cform .field input:focus,.cform .field select:focus,.cform .field textarea:focus{border-color:var(--signal);box-shadow:0 0 0 3px rgba(0,145,218,.1)}
+.cform .field input::placeholder,.cform .field textarea::placeholder{color:rgba(91,107,122,.45)}
+.cform .field textarea{min-height:140px;line-height:1.7}
+.form-error{font-size:.8rem;color:#c0392b;margin-top:4px;display:none}
+.form-error.show{display:block}
+.submit-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.submit-row .btn--blue{padding:15px 32px}
+.char-count{font:400 .75rem/1 var(--sans);color:var(--stone)}
+
+/* ─── Success state ─── */
+.form-success{display:none;text-align:center;padding:48px 36px}
+.form-success.show{display:block}
+.success-icon{width:64px;height:64px;border-radius:50%;background:rgba(0,145,218,.1);display:grid;place-items:center;margin:0 auto 20px;color:var(--signal)}
+.success-icon svg{width:30px;height:30px}
+.form-success h3{font-size:1.4rem;margin-bottom:10px}
+.form-success p{font-size:.9rem;color:var(--stone);line-height:1.7;max-width:38ch;margin:0 auto}
+
+/* ─── Form error banner ─── */
+.form-banner{display:none;margin-bottom:16px;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:12px 16px;font:400 .85rem/1.5 var(--sans);color:#991b1b}
+.form-banner.show{display:block}
+
+/* ─── Sidebar ─── */
+.contact-sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:100px}
+.side-card{background:#fff;border-radius:12px;border:1px solid var(--line-d);padding:28px}
+.side-card h3{font-size:1rem;margin-bottom:8px}
+.side-card p{font-size:.85rem;color:var(--stone);line-height:1.65}
+.side-divider{height:1px;background:var(--line-d);margin-block:18px}
+.contact-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line-d)}
+.contact-item:last-child{border-bottom:none;padding-bottom:0}
+.contact-item:first-child{padding-top:0}
+.ci-icon{width:36px;height:36px;border-radius:8px;background:var(--mist);display:grid;place-items:center;flex-shrink:0;color:var(--signal)}
+.ci-icon svg{width:16px;height:16px}
+.ci-text{font-size:.85rem;color:var(--stone);line-height:1.55}
+.ci-text strong{display:block;font:600 .68rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+.ci-text a{color:var(--signal)}
+.side-dark{background:linear-gradient(135deg,var(--navy),var(--slate));border-radius:12px;padding:26px}
+.side-dark .sd-tag{font:600 .65rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px;display:block}
+.side-dark h3{font-size:.95rem;color:#fff;margin-bottom:8px;line-height:1.3}
+.side-dark p{font-size:.82rem;color:rgba(255,255,255,.58);line-height:1.65;margin-bottom:16px}
+
+/* ─── Modal ─── */
+.modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(27,54,93,.72);backdrop-filter:blur(8px);display:grid;place-items:center;padding:clamp(16px,4vw,40px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.modal-overlay.open{opacity:1;visibility:visible}
+.modal{width:100%;max-width:920px;max-height:90vh;display:grid;grid-template-columns:.85fr 1.15fr;border-radius:14px;overflow:hidden;box-shadow:0 50px 120px rgba(27,54,93,.55);transform:translateY(16px) scale(.97);transition:transform .4s var(--ease)}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-side{background:var(--navy);color:#fff;padding:48px 40px;display:flex;flex-direction:column;gap:28px;overflow-y:auto}
+.modal-side .brand{display:flex;align-items:center;gap:11px;color:#fff}
+.modal-side .brand svg{width:30px;height:30px;flex:none}
+.modal-side .brand .name{font:700 1.05rem/1 var(--serif)}
+.modal-side .brand .name b{color:#fff}
+.modal-side .brand .name span{color:var(--signal-2)}
+.modal-side .brand .sub{display:block;font:600 .48rem/1 var(--sans);letter-spacing:.3em;color:rgba(255,255,255,.5);margin-top:3px;text-transform:uppercase}
+.modal-trust{display:flex;flex-direction:column;gap:14px;padding:22px 0;border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l)}
+.modal-trust .titem{display:flex;align-items:center;gap:11px;font:500 .88rem/1.3 var(--sans);color:rgba(255,255,255,.85)}
+.modal-trust .titem svg{flex:none;color:var(--gold-soft)}
+.modal-mission .mwave{width:60px;height:12px;display:block;margin-bottom:12px}
+.modal-mission h3{font:700 1.15rem/1.2 var(--serif);color:#fff;margin-bottom:10px}
+.modal-mission p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65}
+.modal-form-wrap{background:var(--paper);padding:44px 40px;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:6px;border:1px solid var(--line-d);background:none;cursor:pointer;display:grid;place-items:center;color:var(--stone);transition:.2s}
+.modal-close:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.modal-form-wrap>h2{font:700 1.5rem/1.1 var(--serif);color:var(--ink);margin-bottom:5px;letter-spacing:-.02em}
+.modal-form-wrap>.sub{font-size:.85rem;color:var(--stone);margin-bottom:26px}
+.mform{display:flex;flex-direction:column;gap:16px}
+.mform .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mform .field{display:flex;flex-direction:column;gap:6px}
+.mform .field label{font:600 .7rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.mform .field input,.mform .field select{width:100%;padding:11px 14px;border:1px solid var(--line-d);border-radius:6px;font:400 .92rem/1 var(--sans);color:var(--ink);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.mform .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235B6B7A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.mform .field input:focus,.mform .field select:focus{border-color:var(--signal);box-shadow:0 0 0 3px rgba(0,145,218,.1)}
+.mform .field input::placeholder{color:rgba(91,107,122,.5)}
+.time-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.time-opts label{cursor:pointer}
+.time-opts input[type="radio"]{display:none}
+.time-opts .chip{display:block;padding:10px 8px;text-align:center;border:1px solid var(--line-d);border-radius:6px;font:600 .75rem/1.2 var(--sans);color:var(--stone);transition:.2s;letter-spacing:.06em;text-transform:uppercase}
+.time-opts label:hover .chip{border-color:var(--signal);color:var(--signal)}
+.time-opts input:checked+.chip{background:var(--signal);color:#fff;border-color:var(--signal)}
+.appt-notice{display:flex;align-items:flex-start;gap:10px;background:var(--mist);border:1px solid rgba(0,145,218,.15);border-radius:6px;padding:12px 14px;color:var(--stone)}
+.appt-notice svg{flex:none;margin-top:1px;color:var(--signal)}
+.appt-notice p{font-size:.78rem;line-height:1.55;margin:0}
+.appt-notice strong{color:var(--ink);font-weight:600}
+@media(max-width:1080px){
+  .modal{grid-template-columns:1fr}.modal-side{display:none}.modal-form-wrap{padding:36px 24px}
+}
+
+/* ─── Scroll reveal ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.10s}.reveal.d2{transition-delay:.20s}
+
+/* ─── Footer ─── */
+.ft{background:linear-gradient(175deg,#142849 0%,#1B365D 40%,#1B365D 100%);color:rgba(255,255,255,.62);padding-block:64px 30px;border-top:1px solid var(--line-l)}
+.ft .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-l)}
+.ft .brand{color:#fff;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.ft .brand svg{width:30px;height:30px;flex:none}
+.ft .blurb{font-size:.9rem;line-height:1.6;max-width:34ch;margin-top:14px}
+.ft h4{font:600 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.ft ul{list-style:none}
+.ft li{margin-bottom:11px}
+.ft a{font-size:.9rem;transition:color .2s}
+.ft a:hover{color:#fff}
+.ft .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:.78rem;color:rgba(255,255,255,.45)}
+.ft .bottom .socials{display:flex;gap:14px}
+.ft .bottom a:hover{color:#fff}
+
+/* ─── Responsive ─── */
+@media(max-width:1080px){
+  .nav{display:none}.burger{display:block}
+  .contact-layout{grid-template-columns:1fr}
+  .contact-sidebar{position:static}
+  .ft .top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:580px){
+  .cform .row{grid-template-columns:1fr}
+  .form-card-head,.form-card-body{padding-inline:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="hdr" id="hdr">
+  <a href="centerline-home.html" class="brand" aria-label="PantherCreek Physical Therapy &amp; Balance home">
+    <img src="public/Logo%203%20.png" alt="PantherCreek Physical Therapy &amp; Balance logo" style="height:80px;width:auto;object-fit:contain;flex:none">
+  </a>
+  <nav class="nav">
+    <a href="about.html">About</a>
+    <a href="staff.html">Our Team</a>
+    <a href="locations.html">Locations</a>
+    <div class="drop">
+      <button class="drop-btn">Services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="drop-menu">
+        <a href="balance-therapy.html">Balance &amp; Fall Prevention</a>
+        <a href="vestibular-rehab.html">Vestibular Rehabilitation</a>
+        <a href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
+        <a href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
+        <a href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+        <a href="acupuncture.html">Acupuncture Therapy</a>
+      </div>
+    </div>
+    <div class="drop">
+      <button class="drop-btn">Resources
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="drop-menu">
+        <a href="billing.html">Billing &amp; Insurance</a>
+        <a href="first-visit.html">Preparing for Your Visit</a>
+        <a href="#">Patient Intake Form</a>
+      </div>
+    </div>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+  <div class="hdr-cta">
+    <a class="tel" href="tel:5036985500">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      (503) 698-5500
+    </a>
+    <button class="btn btn--blue" onclick="openModal()">Schedule an Appointment
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mobnav" id="mobnav" aria-label="Mobile navigation">
+  <a class="mlink" href="about.html">About</a>
+  <a class="mlink" href="staff.html">Our Team</a>
+  <a class="mlink" href="locations.html">Locations</a>
+  <a class="mlink" href="balance-therapy.html">Balance &amp; Fall Prevention</a>
+  <a class="mlink" href="vestibular-rehab.html">Vestibular Rehabilitation</a>
+  <a class="mlink" href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
+  <a class="mlink" href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
+  <a class="mlink" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+  <a class="mlink" href="acupuncture.html">Acupuncture Therapy</a>
+  <a class="mlink" href="billing.html">Billing &amp; Insurance</a>
+  <a class="mlink" href="first-visit.html">Preparing for Your Visit</a>
+  <a class="mlink active" href="contact.html">Contact</a>
+  <button class="btn btn--blue" onclick="openModal()">Schedule an Appointment
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+  <a class="mtel" href="tel:5036985500">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    (503) 698-5500
+  </a>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="wrap" style="width:100%">
+      <div class="hero-text">
+        <div class="breadcrumb">
+          <a href="centerline-home.html">Home</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          <span>Contact</span>
+        </div>
+        <span class="eyebrow on-dark">Get in Touch</span>
+        <h1>We'd love to<br>hear from you.</h1>
+        <p class="lead">Have a question about treatment, insurance, or what to expect? Send us a message and we'll get back to you within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact Body ── -->
+<section class="contact-body">
+  <div class="wrap">
+    <div class="contact-layout">
+
+      <!-- Form -->
+      <div class="contact-form-card reveal">
+        <div class="form-card-head">
+          <h2>Send us a message</h2>
+          <p>We respond to all messages within one business day — usually faster.</p>
+        </div>
+        <div class="form-card-body">
+          <div class="form-banner" id="formBanner"></div>
+          <form class="cform" id="contactForm" novalidate>
+            <div class="row">
+              <div class="field">
+                <label for="name">Full Name <span style="color:#c0392b">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name">
+                <span class="form-error" id="nameErr">Please enter your name.</span>
+              </div>
+              <div class="field">
+                <label for="email">Email Address <span style="color:#c0392b">*</span></label>
+                <input type="email" id="email" name="email" placeholder="jane@email.com" required autocomplete="email">
+                <span class="form-error" id="emailErr">Please enter a valid email.</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(503) 000-0000" autocomplete="tel">
+              </div>
+              <div class="field">
+                <label for="subject">Topic</label>
+                <select id="subject" name="subject">
+                  <option value="" disabled selected>Select a topic</option>
+                  <option>General Question</option>
+                  <option>Insurance &amp; Billing</option>
+                  <option>Scheduling an Appointment</option>
+                  <option>What to Expect</option>
+                  <option>Treatment &amp; Services</option>
+                  <option>Locations &amp; Hours</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Message <span style="color:#c0392b">*</span></label>
+              <textarea id="message" name="message" placeholder="Tell us what's on your mind…" required maxlength="1200"></textarea>
+              <span class="form-error" id="msgErr">Please enter a message.</span>
+            </div>
+            <div class="submit-row">
+              <button type="submit" class="btn btn--blue" id="submitBtn">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <span class="char-count" id="charCount"></span>
+            </div>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            </div>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. We'll be in touch within one business day.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="contact-sidebar">
+
+        <div class="side-card reveal d1">
+          <h3>Prefer to call?</h3>
+          <p style="margin-bottom:16px">Our front desk is happy to answer questions directly.</p>
+          <div class="contact-item">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+            <div class="ci-text"><strong>Phone</strong><a href="tel:5036985500">(503) 698-5500</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div class="ci-text"><strong>Office Hours</strong>Mon – Thu: 8:00 AM – 6:00 PM<br>Friday: 8:00 AM – 4:00 PM<br>Sat &amp; Sun: Closed</div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="ci-text"><strong>Locations</strong><a href="locations.html">Clackamas · Molalla · Estacada</a></div>
+          </div>
+        </div>
+
+        <div class="side-dark reveal d2">
+          <span class="sd-tag">Ready to book?</span>
+          <h3>Schedule your first appointment today.</h3>
+          <p>Most patients are seen within a few days of their first call. Same-week appointments are often available.</p>
+          <button class="btn btn--ghost" onclick="openApptModal()" style="font-size:.8rem;padding:11px 20px">
+            Request an Appointment
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="centerline-home.html" class="brand">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="rgba(255,255,255,.3)"/><line x1="20" y1="2" x2="20" y2="38" stroke="#8CAC17" stroke-width="1.2"/><path d="M22.5 9.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5S18.6 7 20 7s2.5 1.1 2.5 2.5Z" fill="#fff"/><path d="M14 17.5l4.5-1.8 3 1.6 4 .4M19.5 16.5l-1.5 6 3.5 4.5M18 22.5l-3.5 5.5M22.5 17.7l2.5 4.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><span class="name"><b>PANTHER</b><span>CREEK</span></span><span class="sub">Physical Therapy &amp; Balance</span></span>
+        </a>
+        <p class="blurb">PantherCreek Physical Therapy &amp; Balance — hands on, one on one care serving Clackamas County, Oregon since 1989.</p>
+        <p style="font:700 .68rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:14px">Stronger Every Step</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#">Balance Therapy</a></li><li><a href="#">Vestibular Rehab</a></li><li><a href="#">Orthopedic Rehab</a></li><li><a href="#">Parkinson's Rehab</a></li><li><a href="#">Acupuncture</a></li></ul></div>
+      <div><h4>Locations</h4><ul><li><a href="locations.html#card-clackamas">Clackamas</a></li><li><a href="locations.html#card-molalla">Molalla</a></li><li><a href="locations.html#card-estacada">Estacada</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:5036985500">(503) 698-5500</a></li><li><a href="contact.html">Send a message</a></li><li><a href="#">Patient intake form</a></li><li><a href="billing.html">Billing &amp; insurance</a></li></ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 PantherCreek Physical Therapy &amp; Balance. Independently owned &amp; operated. The information here is not medical advice.</span>
+      <span class="socials"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Appointment Modal ── -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-side">
+      <a href="centerline-home.html" class="brand">
+        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="rgba(255,255,255,.3)"/><line x1="20" y1="2" x2="20" y2="38" stroke="#8CAC17" stroke-width="1.2"/><path d="M22.5 9.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5S18.6 7 20 7s2.5 1.1 2.5 2.5Z" fill="#fff"/><path d="M14 17.5l4.5-1.8 3 1.6 4 .4M19.5 16.5l-1.5 6 3.5 4.5M18 22.5l-3.5 5.5M22.5 17.7l2.5 4.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><span class="name"><b>PANTHER</b><span>CREEK</span></span><span class="sub">Physical Therapy &amp; Balance</span></span>
+      </a>
+      <div class="modal-trust">
+        <div class="titem"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5l2.2 4.5 5 .7-3.6 3.5.85 5-4.45-2.35L5.55 16.2l.85-5L2.8 7.7l5-.7z"/></svg>5-Star Patient Reviews</div>
+        <div class="titem"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L3.5 4.8v3.7c0 3.6 2.8 6.5 6.5 7.5 3.7-1 6.5-3.9 6.5-7.5V4.8z"/><path d="M7 10l2 2 4-4"/></svg>Medicare Accepted</div>
+        <div class="titem"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10.5a3 3 0 100-6 3 3 0 000 6z"/><path d="M10 2C6.7 2 4 4.7 4 8c0 5 6 10 6 10s6-5 6-10c0-3.3-2.7-6-6-6z"/></svg>Three Clackamas County Locations</div>
+        <div class="titem"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="3" x2="10" y2="17"/><line x1="3" y1="8" x2="17" y2="8"/><line x1="3" y1="8" x2="3" y2="13"/><line x1="17" y1="8" x2="17" y2="13"/><path d="M1 13h4"/><path d="M15 13h4"/><circle cx="10" cy="3" r="1" fill="currentColor" stroke="none"/></svg>Balance &amp; Vestibular Specialists</div>
+      </div>
+      <div class="modal-mission">
+        <svg class="mwave" viewBox="0 0 60 12" fill="none" stroke="var(--gold-soft)" stroke-width="1.4" stroke-linecap="round"><path d="M0 6C9 1 16 11 24 6s15-5 18 0 9 5 18 0"/></svg>
+        <h3>Finding your center.<br>Restoring your movement.</h3>
+        <p>PantherCreek pairs advanced, hands-on training with specialized equipment. Every plan is built around your life, not a template.</p>
+      </div>
+    </div>
+    <div class="modal-form-wrap">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h2 id="modalTitle">Request an Appointment</h2>
+      <p class="sub">Fill out the form and we'll be in touch within one business day.</p>
+      <form class="mform" id="apptForm" novalidate>
+        <div class="field">
+          <label for="apptLoc">Preferred Location</label>
+          <select id="apptLoc" name="location" required>
+            <option value="" disabled selected>Select a location</option>
+            <option>Clackamas</option>
+            <option>Molalla</option>
+            <option>Estacada</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="apptDate">Preferred Date</label>
+          <input type="date" id="apptDate" name="date">
+        </div>
+        <div class="field">
+          <label>Preferred Time</label>
+          <div class="time-opts">
+            <label><input type="radio" name="time" value="morning"><span class="chip">Morning</span></label>
+            <label><input type="radio" name="time" value="afternoon"><span class="chip">Afternoon</span></label>
+            <label><input type="radio" name="time" value="evening"><span class="chip">Evening</span></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="fname">First Name</label><input type="text" id="fname" name="fname" placeholder="Jane" required></div>
+          <div class="field"><label for="lname">Last Name</label><input type="text" id="lname" name="lname" placeholder="Smith" required></div>
+        </div>
+        <div class="field"><label for="apptPhone">Phone Number</label><input type="tel" id="apptPhone" name="phone" placeholder="(503) 000-0000" required></div>
+        <div class="field"><label for="apptEmail">Email Address</label><input type="email" id="apptEmail" name="email" placeholder="jane@email.com" required></div>
+        <div class="appt-notice">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p><strong>Please note:</strong> This is a request only. We will call you to confirm availability or suggest an alternate time.</p>
+        </div>
+        <button type="submit" class="btn btn--blue" style="justify-content:center">Submit Request
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+const hdr=document.getElementById('hdr');
+const burger=document.getElementById('burger');
+const mobnav=document.getElementById('mobnav');
+const modalOverlay=document.getElementById('modalOverlay');
+const modalClose=document.getElementById('modalClose');
+
+window.addEventListener('scroll',()=>{hdr.classList.toggle('solid',scrollY>40)},{passive:true});
+function toggleNav(f){burger.classList.toggle('open',f);mobnav.classList.toggle('open',f);document.body.style.overflow=mobnav.classList.contains('open')?'hidden':''}
+burger.addEventListener('click',()=>toggleNav());
+mobnav.querySelectorAll('.mlink').forEach(l=>l.addEventListener('click',()=>toggleNav(false)));
+
+function openApptModal(location){modalOverlay.classList.add('open');document.body.style.overflow='hidden';if(location){const sel=document.getElementById('apptLoc');for(let i=0;i<sel.options.length;i++){if(sel.options[i].text===location){sel.selectedIndex=i;break;}}}}
+function closeApptModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
+modalClose.addEventListener('click',closeApptModal);
+modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeApptModal()});
+document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeApptModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleNav(false);closeApptModal()}});
+
+// ── Contact form ──
+const form=document.getElementById('contactForm');
+const msgEl=document.getElementById('message');
+const charCount=document.getElementById('charCount');
+
+msgEl.addEventListener('input',()=>{
+  const len=msgEl.value.length;
+  charCount.textContent=len>0?`${len} / 1200`:'';
+});
+
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const message=msgEl.value.trim();
+  let valid=true;
+
+  document.getElementById('nameErr').classList.toggle('show',!name);
+  document.getElementById('emailErr').classList.toggle('show',!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+  document.getElementById('msgErr').classList.toggle('show',!message);
+  if(!name||!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||!message)return;
+
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true;
+  btn.innerHTML='Sending… <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  document.getElementById('formBanner').classList.remove('show');
+
+  try{
+    const res=await fetch('/api/contact',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        name,
+        email,
+        phone:document.getElementById('phone').value.trim(),
+        subject:document.getElementById('subject').value,
+        message
+      })
+    });
+    const data=await res.json();
+    if(!res.ok)throw new Error(data.error||'Something went wrong.');
+    form.style.display='none';
+    document.getElementById('formSuccess').classList.add('show');
+  }catch(err){
+    const banner=document.getElementById('formBanner');
+    banner.textContent=err.message||'Something went wrong. Please try again or call us directly.';
+    banner.classList.add('show');
+    btn.disabled=false;
+    btn.innerHTML='Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  }
+});
+
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

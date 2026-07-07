@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Meet Our Team — PantherCreek Physical Therapy &amp; Balance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B365D;--navy:#142849;--slate:#1E3F6B;
+  --signal:#0091DA;--signal-2:#71C5E8;
+  --gold:#8CAC17;--gold-soft:#A8C520;
+  --paper:#F8FAFC;--mist:#E0F0F8;--stone:#5B6B7A;
+  --ink-70:rgba(27,54,93,.70);
+  --line-d:rgba(27,54,93,.14);--line-l:rgba(255,255,255,.14);
+  --serif:"Josefin Sans",system-ui,sans-serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,sans-serif;
+  --wrap:1200px;--gut:clamp(20px,5vw,64px);--r:10px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+.eyebrow{font:600 .72rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);display:inline-flex;align-items:center;gap:.6em}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--gold)}
+.eyebrow.on-dark{color:var(--gold-soft)}
+.eyebrow.on-dark::before{background:var(--gold-soft)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacing:-.02em}
+
+/* ─── Header ─── */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:6px var(--gut) 6px 16px;background:#fff;box-shadow:0 2px 0 var(--ink)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .name{font:600 1.18rem/1 var(--serif);letter-spacing:.01em}
+.brand .name b{color:#fff;font-weight:600}
+.brand .name span{color:var(--signal-2);font-weight:600}
+.brand .sub{display:block;font:600 .52rem/1 var(--sans);letter-spacing:.34em;color:rgba(255,255,255,.55);margin-top:3px;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font:500 .9rem/1 var(--sans);color:var(--ink);transition:color .2s}
+.nav a:hover,.nav a.active{color:#fff}
+.nav .drop{position:relative}
+.nav .drop-btn{display:flex;align-items:center;gap:5px;font:500 .9rem/1 var(--sans);color:var(--ink);cursor:pointer;background:none;border:0;padding:0;transition:color .2s}
+.nav .drop-btn:hover,.nav .drop-btn.active{color:var(--signal)}
+.nav .drop-btn svg{width:12px;height:12px;transition:transform .25s var(--ease);opacity:.7}
+.nav .drop:hover .drop-btn svg{transform:rotate(180deg)}
+.nav .drop-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(27,54,93,.97);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:10px;min-width:220px;padding:14px 8px 8px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-6px);transition:opacity .22s var(--ease),transform .22s var(--ease),visibility .22s;pointer-events:none;box-shadow:0 20px 48px rgba(0,0,0,.35)}
+.nav .drop:hover .drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.nav .drop-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:6px;font:500 .85rem/1.3 var(--sans);color:rgba(255,255,255,.78);transition:background .18s,color .18s;white-space:nowrap}
+.nav .drop-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav .drop-menu a.active{color:#fff;background:rgba(0,145,218,.25)}
+.nav .drop-menu .drop-icon{width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);display:grid;place-items:center;flex-shrink:0;color:var(--gold-soft)}
+.nav .drop-menu .drop-icon svg{width:14px;height:14px}
+.nav .drop-menu .dm-divider{height:1px;background:rgba(255,255,255,.08);margin:4px 0}
+.hdr-cta{display:flex;align-items:center;gap:18px}
+.tel{display:flex;align-items:center;gap:7px;color:var(--ink);font:600 .9rem/1 var(--sans);white-space:nowrap}
+.tel svg{width:15px;height:15px;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:.6em;cursor:pointer;border:0;font:600 .85rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:14px 26px;border-radius:6px;transition:transform .25s var(--ease),background .25s,box-shadow .25s}
+.btn svg{width:15px;height:15px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn--blue{background:linear-gradient(180deg,rgba(255,255,255,.13) 0%,rgba(0,0,0,.10) 100%),var(--signal);color:#fff;box-shadow:0 4px 24px rgba(0,145,218,.30)}
+.btn--blue:hover{background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(0,0,0,.14) 100%),var(--signal-2);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:#fff;border:1px solid var(--line-l)}
+.btn--ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.burger{display:none;background:none;border:0;cursor:pointer;width:30px;height:22px;position:relative}
+.burger span{position:absolute;left:0;right:0;height:2px;background:var(--ink);transition:.3s}
+.burger span:nth-child(1){top:0}.burger span:nth-child(2){top:10px}.burger span:nth-child(3){top:20px}
+.burger.open span:nth-child(1){top:10px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:10px;transform:rotate(-45deg)}
+.mobnav{position:fixed;inset:0;z-index:70;background:rgba(27,54,93,.98);backdrop-filter:blur(10px);display:flex;flex-direction:column;padding:104px var(--gut) 48px;gap:2px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .32s var(--ease),transform .32s var(--ease),visibility .32s}
+.mobnav.open{opacity:1;visibility:visible;transform:none}
+.mobnav a.mlink{color:#fff;font:500 1.55rem/1 var(--serif);padding:18px 0;border-bottom:1px solid var(--line-l)}
+.mobnav .btn{margin-top:28px;justify-content:center}
+.mobnav .mtel{display:inline-flex;align-items:center;gap:9px;color:var(--gold-soft);font:600 1rem/1 var(--sans);margin-top:22px}
+.mobnav .mtel svg{width:16px;height:16px}
+
+/* ─── Hero ─── */
+.hero{position:relative;min-height:48vh;background:linear-gradient(135deg,#142849 0%,#1B365D 25%,#1B365D 60%,#1E3F6B 85%,#1A5074 100%);display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
+.hero-glow{position:absolute;inset:0;z-index:0;background:radial-gradient(900px 500px at 80% 60%,rgba(0,145,218,.30),transparent 60%),radial-gradient(500px 400px at 10% 80%,rgba(140,172,23,.08),transparent 55%)}
+.hero-inner{flex:1;position:relative;z-index:1;padding-top:88px;display:flex;align-items:center}
+.hero-text{padding:clamp(40px,6vw,72px) 0}
+.hero-text .breadcrumb{display:flex;align-items:center;gap:8px;font:500 .75rem/1 var(--sans);color:rgba(255,255,255,.4);margin-bottom:20px}
+.hero-text .breadcrumb a{color:rgba(255,255,255,.4);transition:color .2s}
+.hero-text .breadcrumb a:hover{color:#fff}
+.hero-text .breadcrumb svg{width:9px;height:9px;opacity:.4}
+.hero-text h1{font-size:clamp(2.6rem,5.5vw,4.5rem);color:#fff;font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-top:16px;max-width:18ch}
+.hero-text .lead{font-size:clamp(.95rem,1.4vw,1.1rem);color:rgba(255,255,255,.68);line-height:1.78;margin-top:22px;max-width:52ch}
+.hero-stats{display:flex;gap:clamp(24px,5vw,52px);margin-top:44px;padding-top:36px;border-top:1px solid var(--line-l);flex-wrap:wrap}
+.hstat .num{font:800 2.2rem/1 var(--sans);color:#fff;letter-spacing:-.02em;display:block}
+.hstat .num em{color:var(--gold);font-style:normal}
+.hstat .lbl{font:500 .72rem/1.3 var(--sans);color:rgba(255,255,255,.45);letter-spacing:.06em;display:block;margin-top:5px}
+
+/* ─── Staff intro ─── */
+.staff-intro{padding-block:clamp(64px,8vw,100px);margin-top:-2vw;background:var(--paper)}
+.staff-intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.staff-intro-text .eyebrow{margin-bottom:16px}
+.staff-intro-text h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:20px}
+.staff-intro-text p{font-size:.95rem;color:var(--stone);line-height:1.78;max-width:50ch}
+.staff-intro-text p+p{margin-top:14px}
+.staff-intro-pills{display:flex;flex-direction:column;gap:16px}
+.staff-pill{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line-d);border-radius:10px;padding:18px 22px;transition:box-shadow .25s,transform .25s}
+.staff-pill:hover{box-shadow:0 8px 32px rgba(27,54,93,.10);transform:translateY(-2px)}
+.staff-pill .pill-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
+.staff-pill .pill-icon.pt{background:rgba(0,145,218,.1);color:var(--signal)}
+.staff-pill .pill-icon.pta{background:rgba(22,50,76,.1);color:var(--slate)}
+.staff-pill .pill-icon.ac{background:rgba(140,172,23,.12);color:var(--gold)}
+.staff-pill .pill-icon svg{width:20px;height:20px}
+.staff-pill .pill-text .pill-title{font:700 .88rem/1 var(--serif);color:var(--ink);display:block;margin-bottom:4px}
+.staff-pill .pill-text .pill-count{font:500 .72rem/1 var(--sans);color:var(--stone);letter-spacing:.04em}
+
+/* ─── Staff grid ─── */
+.staff-section{padding-block:clamp(60px,8vw,100px);background:#fff;border-top:1px solid var(--line-d)}
+.staff-section-head{text-align:center;max-width:620px;margin:0 auto clamp(48px,6vw,72px)}
+.staff-section-head .eyebrow{justify-content:center;margin-bottom:16px}
+.staff-section-head h2{font-size:clamp(1.8rem,3vw,2.6rem)}
+.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+
+/* ─── Staff card ─── */
+.scard{background:#fff;border:1px solid var(--line-d);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
+.scard:hover{box-shadow:0 16px 56px rgba(27,54,93,.12);transform:translateY(-4px)}
+.scard-photo{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(160deg,var(--slate),var(--ink))}
+.scard-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s var(--ease)}
+.scard:hover .scard-photo img{transform:scale(1.04)}
+.scard-photo .photo-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font:700 3rem/1 var(--serif);color:rgba(255,255,255,.35);letter-spacing:-.02em}
+.scard-photo .role-badge{position:absolute;top:16px;left:16px;font:700 .6rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;border-radius:4px;backdrop-filter:blur(8px)}
+.role-badge.pt{background:rgba(0,145,218,.85);color:#fff}
+.role-badge.pta{background:rgba(22,50,76,.85);color:#fff}
+.role-badge.owner{background:rgba(140,172,23,.9);color:#1B365D}
+.role-badge.ac{background:rgba(0,145,218,.85);color:#fff}
+.scard-body{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
+.scard-name{font:700 1.18rem/1.15 var(--serif);color:var(--ink);margin-bottom:6px}
+.scard-creds{font:600 .7rem/1.4 var(--sans);color:var(--signal);letter-spacing:.06em;margin-bottom:14px}
+.scard-divider{height:1px;background:var(--line-d);margin-bottom:16px}
+.scard-section{margin-bottom:16px}
+.scard-section:last-child{margin-bottom:0}
+.scard-section-label{font:700 .6rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.5em;margin-bottom:8px}
+.scard-section-label::before{content:"";width:14px;height:1.5px;background:var(--gold)}
+.scard-section p{font-size:.83rem;color:var(--stone);line-height:1.65}
+.scard-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.stag{font:500 .68rem/1 var(--sans);padding:4px 9px;border-radius:20px;background:var(--mist);color:var(--stone);letter-spacing:.03em}
+.scard-note{margin-top:auto;padding-top:16px;border-top:1px solid var(--line-d);font:400 italic .78rem/1.6 Georgia,serif;color:var(--stone)}
+
+/* ─── Divider category label ─── */
+.staff-cat{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding-block:8px 4px}
+.staff-cat span{font:700 .68rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--stone);white-space:nowrap}
+.staff-cat::before,.staff-cat::after{content:"";flex:1;height:1px;background:var(--line-d)}
+.staff-cat::before{max-width:32px}
+
+/* ─── CTA ─── */
+.cta{background:radial-gradient(900px 500px at 8% 45%,rgba(0,145,218,.35),transparent 58%),radial-gradient(700px 400px at 88% 80%,rgba(34,139,34,.22),transparent 55%),linear-gradient(130deg,#142849 0%,#1B365D 52%,#1E3F6B 100%);color:#fff;padding-block:clamp(72px,9vw,120px);position:relative;overflow:hidden}
+.cta .ridge{position:absolute;inset:auto 0 0 0;height:80%;z-index:0;opacity:.3}
+.cta .ridge svg{width:100%;height:100%}
+.cta-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:clamp(40px,6vw,80px);align-items:center}
+.cta-inner h2{font-size:clamp(1.9rem,3.5vw,2.8rem);max-width:22ch}
+.cta-inner p{font-size:.97rem;color:rgba(255,255,255,.72);margin-top:14px;max-width:50ch;line-height:1.72}
+.cta-inner .cta-phone{display:flex;align-items:center;gap:10px;margin-top:24px;font:700 1.3rem/1 var(--sans);color:var(--gold-soft)}
+.cta-inner .cta-phone svg{width:18px;height:18px;flex-shrink:0}
+.cta-inner .cta-phone small{display:block;font:500 .68rem/1 var(--sans);color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
+.cta-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+
+/* ─── Footer ─── */
+.ft{background:linear-gradient(175deg,#142849 0%,#1B365D 40%,#1B365D 100%);color:rgba(255,255,255,.62);padding-block:64px 30px;border-top:1px solid var(--line-l)}
+.ft .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-l)}
+.ft .brand{color:#fff;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.ft .brand svg{width:30px;height:30px;flex:none}
+.ft .blurb{font-size:.9rem;line-height:1.6;max-width:34ch;margin-top:14px}
+.ft h4{font:600 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.ft ul{list-style:none}
+.ft li{margin-bottom:11px}
+.ft a{font-size:.9rem;transition:color .2s}
+.ft a:hover{color:#fff}
+.ft .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:.78rem;color:rgba(255,255,255,.45)}
+.ft .bottom .socials{display:flex;gap:14px}
+.ft .bottom a:hover{color:#fff}
+
+/* ─── Modal ─── */
+.modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(27,54,93,.72);backdrop-filter:blur(8px);display:grid;place-items:center;padding:clamp(16px,4vw,40px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.modal-overlay.open{opacity:1;visibility:visible}
+.modal{width:100%;max-width:920px;max-height:90vh;display:grid;grid-template-columns:.85fr 1.15fr;border-radius:14px;overflow:hidden;box-shadow:0 50px 120px rgba(27,54,93,.55);transform:translateY(16px) scale(.97);transition:transform .4s var(--ease)}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-side{background:var(--navy);color:#fff;padding:48px 40px;display:flex;flex-direction:column;gap:28px;overflow-y:auto}
+.modal-side .brand{display:flex;align-items:center;gap:11px;color:#fff}
+.modal-side .brand svg{width:30px;height:30px;flex:none}
+.modal-side .brand .name{font:700 1.05rem/1 var(--serif)}
+.modal-side .brand .name b{color:#fff}
+.modal-side .brand .name span{color:var(--signal-2)}
+.modal-side .brand .sub{display:block;font:600 .48rem/1 var(--sans);letter-spacing:.3em;color:rgba(255,255,255,.5);margin-top:3px;text-transform:uppercase}
+.modal-trust{display:flex;flex-direction:column;gap:14px;padding:22px 0;border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l)}
+.modal-trust .titem{display:flex;align-items:center;gap:11px;font:500 .88rem/1.3 var(--sans);color:rgba(255,255,255,.85)}
+.modal-trust .titem svg{flex:none;color:var(--gold-soft)}
+.modal-mission .mwave{width:60px;height:12px;display:block;margin-bottom:12px}
+.modal-mission h3{font:700 1.15rem/1.2 var(--serif);color:#fff;margin-bottom:10px}
+.modal-mission p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65}
+.modal-form-wrap{background:var(--paper);padding:44px 40px;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:6px;border:1px solid var(--line-d);background:none;cursor:pointer;display:grid;place-items:center;color:var(--stone);transition:.2s}
+.modal-close:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.modal-form-wrap>h2{font:700 1.5rem/1.1 var(--serif);color:var(--ink);margin-bottom:5px;letter-spacing:-.02em}
+.modal-form-wrap>.sub{font-size:.85rem;color:var(--stone);margin-bottom:26px}
+.mform{display:flex;flex-direction:column;gap:16px}
+.mform .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mform .field{display:flex;flex-direction:column;gap:6px}
+.mform .field label{font:600 .7rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.mform .field input,.mform .field select{width:100%;padding:11px 14px;border:1px solid var(--line-d);border-radius:6px;font:400 .92rem/1 var(--sans);color:var(--ink);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.mform .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235B6B7A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.mform .field input:focus,.mform .field select:focus{border-color:var(--signal);box-shadow:0 0 0 3px rgba(0,145,218,.1)}
+.mform .field input::placeholder{color:rgba(91,107,122,.5)}
+.time-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.time-opts label{cursor:pointer}
+.time-opts input[type="radio"]{display:none}
+.time-opts .chip{display:block;padding:10px 8px;text-align:center;border:1px solid var(--line-d);border-radius:6px;font:600 .75rem/1.2 var(--sans);color:var(--stone);transition:.2s;letter-spacing:.06em;text-transform:uppercase}
+.time-opts label:hover .chip{border-color:var(--signal);color:var(--signal)}
+.time-opts input:checked+.chip{background:var(--signal);color:#fff;border-color:var(--signal)}
+.appt-notice{display:flex;align-items:flex-start;gap:10px;background:var(--mist);border:1px solid rgba(0,145,218,.15);border-radius:6px;padding:12px 14px;color:var(--stone)}
+.appt-notice svg{flex:none;margin-top:1px;color:var(--signal)}
+.appt-notice p{font-size:.78rem;line-height:1.55;margin:0}
+.appt-notice strong{color:var(--ink);font-weight:600}
+
+/* ─── Scroll reveal ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.10s}.reveal.d2{transition-delay:.20s}.reveal.d3{transition-delay:.30s}.reveal.d4{transition-delay:.40s}
+
+/* ─── Responsive ─── */
+@media(max-width:1080px){
+  .nav{display:none}.burger{display:block}
+  .staff-intro .wrap{grid-template-columns:1fr}
+  .staff-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-inner{grid-template-columns:1fr}.cta-right{align-items:flex-start}
+  .ft .top{grid-template-columns:1fr 1fr}
+  .modal{grid-template-columns:1fr}.modal-side{display:none}.modal-form-wrap{padding:36px 24px}
+}
+@media(max-width:640px){
+  .staff-grid{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;gap:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="hdr" id="hdr">
+  <a href="centerline-home.html" class="brand" aria-label="PantherCreek Physical Therapy &amp; Balance home">
+    <img src="public/Logo%203%20.png" alt="PantherCreek Physical Therapy &amp; Balance logo" style="height:80px;width:auto;object-fit:contain;flex:none">
+  </a>
+  <nav class="nav">
+    <a href="about.html">About</a>
+    <a href="staff.html" class="active">Our Team</a>
+    <a href="locations.html">Locations</a>
+    <div class="drop">
+      <button class="drop-btn">Services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="drop-menu">
+        <a href="balance-therapy.html">Balance &amp; Fall Prevention</a>
+        <a href="vestibular-rehab.html">Vestibular Rehabilitation</a>
+        <a href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
+        <a href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
+        <a href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+        <a href="acupuncture.html">Acupuncture Therapy</a>
+      </div>
+    </div>
+    <div class="drop">
+      <button class="drop-btn">Resources
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="drop-menu">
+        <a href="billing.html">Billing &amp; Insurance</a>
+        <a href="first-visit.html">Preparing for Your Visit</a>
+        <a href="#">Patient Intake Form</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="hdr-cta">
+    <a class="tel" href="tel:5036985500">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      (503) 698-5500
+    </a>
+    <button class="btn btn--blue" onclick="openModal()">Schedule an Appointment
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mobnav" id="mobnav" aria-label="Mobile navigation">
+  <a class="mlink" href="about.html">About</a>
+  <a class="mlink active" href="staff.html">Our Team</a>
+  <a class="mlink" href="locations.html">Locations</a>
+  <a class="mlink" href="balance-therapy.html">Balance &amp; Fall Prevention</a>
+  <a class="mlink" href="vestibular-rehab.html">Vestibular Rehabilitation</a>
+  <a class="mlink" href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
+  <a class="mlink" href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
+  <a class="mlink" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+  <a class="mlink" href="acupuncture.html">Acupuncture Therapy</a>
+  <a class="mlink" href="billing.html">Billing &amp; Insurance</a>
+  <a class="mlink" href="first-visit.html">Preparing for Your Visit</a>
+  <a class="mlink" href="contact.html">Contact</a>
+  <button class="btn btn--blue" onclick="openModal()">Schedule an Appointment
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+  <a class="mtel" href="tel:5036985500">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    (503) 698-5500
+  </a>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="breadcrumb">
+          <a href="centerline-home.html">Home</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          <span>Our Team</span>
+        </div>
+        <span class="eyebrow on-dark">The People Behind Your Care</span>
+        <h1>Experienced.<br>Caring.<br>Here for you.</h1>
+        <p class="lead">Every therapist on our team brings advanced credentials, genuine warmth, and a commitment to hands-on, one-on-one care. You'll see the same face, every visit.</p>
+        <div class="hero-stats">
+          <div class="hstat"><span class="num"><em>35</em>+</span><span class="lbl">Years serving<br>Clackamas County</span></div>
+          <div class="hstat"><span class="num"><em>7</em></span><span class="lbl">Clinical team<br>members</span></div>
+          <div class="hstat"><span class="num"><em>100</em>%</span><span class="lbl">One-on-one<br>every visit</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Staff intro ── -->
+<section class="staff-intro">
+  <div class="wrap">
+    <div class="staff-intro-text reveal">
+      <span class="eyebrow">Who We Are</span>
+      <h2>A team built on expertise and genuine care.</h2>
+      <p>We don't just hire credentials — we hire people. Every member of our clinical team must meet two standards: advanced clinical training and a genuinely warm, caring personality. You can teach technique. You can't teach someone to care.</p>
+      <p>Our therapists collectively hold specialties in manual therapy, balance and vestibular rehab, Parkinson's care, orthopedics, acupuncture, and more — all under one roof across three Clackamas County locations.</p>
+    </div>
+    <div class="staff-intro-pills reveal d2">
+      <div class="staff-pill">
+        <div class="pill-icon pt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+        </div>
+        <div class="pill-text">
+          <span class="pill-title">Physical Therapists &amp; PT Assistants</span>
+          <span class="pill-count">Advanced degrees · Specialty certifications · Manual therapy focus</span>
+        </div>
+      </div>
+      <div class="staff-pill">
+        <div class="pill-icon ac">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M8 6c0 2 8 2 8 0"/><path d="M8 11c0 2 8 2 8 0"/></svg>
+        </div>
+        <div class="pill-text">
+          <span class="pill-title">Licensed Acupuncturist</span>
+          <span class="pill-count">Nationally board certified · Integrative medicine trained</span>
+        </div>
+      </div>
+      <div class="staff-pill">
+        <div class="pill-icon pta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="pill-text">
+          <span class="pill-title">Hands-On. One on One. Every Visit.</span>
+          <span class="pill-count">Private treatment rooms · Same therapist at every appointment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Staff Grid ── -->
+<section class="staff-section">
+  <div class="wrap">
+    <div class="staff-section-head reveal">
+      <span class="eyebrow">Our Clinical Team</span>
+      <h2>Meet the people who will care for you.</h2>
+    </div>
+
+    <div class="staff-grid">
+
+      <!-- Category: Physical Therapists -->
+      <div class="staff-cat"><span>Physical Therapists</span></div>
+
+      <!-- Brant Lewis -->
+      <div class="scard reveal">
+        <div class="scard-photo">
+          <img src="public/Brant_bio.jpg" alt="Brant Lewis, PT — Clinic Owner">
+          <span class="role-badge owner">Clinic Owner</span>
+        </div>
+        <div class="scard-body">
+          <div class="scard-name">Brant Lewis</div>
+          <div class="scard-creds">PT, COMT, CFMT, Senior Balance Retrainer</div>
+          <div class="scard-divider"></div>
+          <div class="scard-section">
+            <div class="scard-section-label">Specialties</div>
+            <div class="scard-tags">
+              <span class="stag">Inner Ear Disorders</span>
+              <span class="stag">Vertigo / Hypo-function</span>
+              <span class="stag">Foot &amp; Ankle Rehab</span>
+              <span class="stag">Running &amp; Walking</span>
+              <span class="stag">Accelerated Rehab</span>
+            </div>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Education</div>
+            <p>Graduate of Loma Linda University — Physical Therapy. At PantherCreek (formerly Physical Therapy Associates) since 1989.</p>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Outside the Clinic</div>
+            <p>Long-distance backpacking with his daughter, attempting to reclaim his glory days on the golf course with his son, and running alongside the patients he coaches through recovery.</p>
+          </div>
+          <p class="scard-note">"Physical therapy is both art and science. Over 35 years, I have honed both — and my commitment to every patient has never changed."</p>
+        </div>
+      </div>
+
+      <!-- Susan Vogt -->
+      <div class="scard reveal d1">
+        <div class="scard-photo">
+          <img src="public/Susan_bio.jpg" alt="Susan Vogt, MPT">
+          <span class="role-badge pt">Physical Therapist</span>
+        </div>
+        <div class="scard-body">
+          <div class="scard-name">Susan Vogt</div>
+          <div class="scard-creds">MPT, COMT, CFMT, Certified Senior Balance Retrainer</div>
+          <div class="scard-divider"></div>
+          <div class="scard-section">
+            <div class="scard-section-label">Specialties</div>
+            <div class="scard-tags">
+              <span class="stag">Myofascial Release</span>
+              <span class="stag">Spine Rehab</span>
+              <span class="stag">Total Joint Replacements</span>
+              <span class="stag">Headaches</span>
+              <span class="stag">Facial Pain / TMJ</span>
+              <span class="stag">Balance</span>
+            </div>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Education</div>
+            <p>Master of Physical Therapy, Loma Linda University. Certified Functional Manual Therapist (CFMT). Certified Orthopedic Manual Therapist (COMT).</p>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Outside the Clinic</div>
+            <p>Traveling, connecting with people from around the globe, cooking, gardening, hiking, biking, and being a mom to two college-age kids, a sweet cat, and a dog.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Morgan Denny -->
+      <div class="scard reveal d2">
+        <div class="scard-photo" style="background:linear-gradient(145deg,#1B365D,#1B365D)">
+          <div class="photo-ph">MD</div>
+          <span class="role-badge pt">Physical Therapist</span>
+        </div>
+        <div class="scard-body">
+          <div class="scard-name">Morgan Denny</div>
+          <div class="scard-creds">PT, DPT</div>
+          <div class="scard-divider"></div>
+          <div class="scard-section">
+            <div class="scard-section-label">Specialties</div>
+            <div class="scard-tags">
+              <span class="stag">Primary Care PT</span>
+              <span class="stag">Chronic Pain</span>
+              <span class="stag">Hypermobility Syndromes</span>
+              <span class="stag">Running Evaluations</span>
+              <span class="stag">Orthopedic Pain</span>
+              <span class="stag">Joint Manipulation</span>
+              <span class="stag">Wellness Care</span>
+            </div>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Education</div>
+            <p>Doctor of Physical Therapy, University of Montana, 2006.</p>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Outside the Clinic</div>
+            <p>Playing in the woods, growing food, pedaling around with her little human, everything art, and hanging out with interesting humans.</p>
+          </div>
+          <p class="scard-note">"I love that PT provides an avenue to truly get to know someone and treat them holistically — as a human, not just a body part."</p>
+        </div>
+      </div>
+
+      <!-- Category: Physical Therapist Assistants -->
+      <div class="staff-cat"><span>Physical Therapist Assistants</span></div>
+
+      <!-- Lemel Moyer -->
+      <div class="scard reveal">
+        <div class="scard-photo">
+          <img src="public/Lemel_bio.jpg" alt="Lemel Moyer, PTA">
+          <span class="role-badge pta">PT Assistant</span>
+        </div>
+        <div class="scard-body">
+          <div class="scard-name">Lemel Moyer</div>
+          <div class="scard-creds">PTA, Graston Certified</div>
+          <div class="scard-divider"></div>
+          <div class="scard-section">
+            <div class="scard-section-label">Specialties</div>
+            <div class="scard-tags">
+              <span class="stag">Orthopedic Injuries</span>
+              <span class="stag">Sports Injuries</span>
+              <span class="stag">Wellness Promotion</span>
+              <span class="stag">Graston Technique</span>
+            </div>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Education</div>
+            <p>Graduate of Mt. Hood Community College — Physical Therapist Assistant. 25+ years of experience in outpatient physical therapy and rehabilitative services, with emphasis in orthopedic and sports injuries.</p>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Outside the Clinic</div>
+            <p>Dogs, water sports, kayaking, camping, hiking, traveling, cooking, and eating good food.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trish Jilot -->
+      <div class="scard reveal d1">
+        <div class="scard-photo">
+          <img src="public/Trish_bio.jpg" alt="Trish Jilot, PTA">
+          <span class="role-badge pta">PT Assistant</span>
+        </div>
+        <div class="scard-body">
+          <div class="scard-name">Trish Jilot</div>
+          <div class="scard-creds">PTA, ASTYM, LSVT BIG Certified, Bike Fitter</div>
+          <div class="scard-divider"></div>
+          <div class="scard-section">
+            <div class="scard-section-label">Specialties</div>
+            <div class="scard-tags">
+              <span class="stag">Sports Injuries</span>
+              <span class="stag">Balance Disorders</span>
+              <span class="stag">Parkinson's Disease</span>
+              <span class="stag">LSVT BIG</span>
+              <span class="stag">ASTYM</span>
+              <span class="stag">Bike Fitting</span>
+            </div>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Education</div>
+            <p>Physical Therapist Assistant, Mt. Hood Community College. Parkinson's LSVT BIG Certified. ASTYM Certified.</p>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Outside the Clinic</div>
+            <p>Cycling (road, mountain, and gravel), backpacking, learning about geology, cooking, and traveling.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kyza Miller -->
+      <div class="scard reveal d2">
+        <div class="scard-photo">
+          <img src="public/Kyza_bio.jpg" alt="Kyza Miller, PTA">
+          <span class="role-badge pta">PT Assistant</span>
+        </div>
+        <div class="scard-body">
+          <div class="scard-name">Kyza Miller</div>
+          <div class="scard-creds">PTA, BS</div>
+          <div class="scard-divider"></div>
+          <div class="scard-section">
+            <div class="scard-section-label">Specialties</div>
+            <div class="scard-tags">
+              <span class="stag">Balance Training</span>
+            </div>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Education</div>
+            <p>BS in Environmental Studies, Portland State University. Physical Therapist Assistant, Mt. Hood Community College.</p>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Outside the Clinic</div>
+            <p>Gardening, traveling, watercolor painting, and any outdoor adventure with her husband and two dogs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category: Acupuncture -->
+      <div class="staff-cat"><span>Acupuncture</span></div>
+
+      <!-- Jamie Apodaca -->
+      <div class="scard reveal">
+        <div class="scard-photo" style="background:linear-gradient(145deg,#1B365D,#142849)">
+          <div class="photo-ph">JA</div>
+          <span class="role-badge ac">Acupuncturist</span>
+        </div>
+        <div class="scard-body">
+          <div class="scard-name">Jamie Apodaca</div>
+          <div class="scard-creds">MAc, Diplomate NCCAOM, LAc</div>
+          <div class="scard-divider"></div>
+          <div class="scard-section">
+            <div class="scard-section-label">Specialties</div>
+            <div class="scard-tags">
+              <span class="stag">Neck &amp; Shoulder Pain</span>
+              <span class="stag">Hip &amp; Back Pain</span>
+              <span class="stag">Knee Pain</span>
+              <span class="stag">Osteoarthritis</span>
+              <span class="stag">Headaches</span>
+              <span class="stag">Chemo Side Effects</span>
+              <span class="stag">GI Disorders</span>
+              <span class="stag">Insomnia</span>
+              <span class="stag">Relaxation</span>
+            </div>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Education &amp; Background</div>
+            <p>Nationally Board Certified and Licensed Acupuncturist. Graduate of Emperor's College of Traditional Oriental Medicine and Oregon College of Oriental Medicine (OCOM). Selected for an integrative medicine clinical rotation at Providence Cancer Institute, providing acupuncture for patients undergoing cancer treatment. BA in Spanish from Colorado College, 2010. Prior to acupuncture, she taught ESL in Oaxaca, Mexico, and conducted pharmaceutical clinical trials.</p>
+          </div>
+          <div class="scard-section">
+            <div class="scard-section-label">Outside the Clinic</div>
+            <p>Taking in the Oregon Coast, discovering new music, and enjoying the cuisine the Pacific Northwest has to offer.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /staff-grid -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta" id="contact">
+  <div class="ridge" aria-hidden="true">
+    <svg viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none"><path d="M0 300V180c160-30 240 20 420 10s260-60 460-50 280 50 560 30v130Z" fill="rgba(27,54,93,.5)"/></svg>
+  </div>
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="reveal">
+        <span class="eyebrow on-dark">Ready to Start?</span>
+        <h2>Meet your therapist — and begin your recovery.</h2>
+        <p>Schedule an appointment and we'll match you with the right therapist for your needs. One-on-one, hands-on care from day one — at any of our three Clackamas County locations.</p>
+        <div class="cta-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <div>
+            <a href="tel:5036985500">(503) 698-5500</a>
+            <small>Call us — we answer</small>
+          </div>
+        </div>
+      </div>
+      <div class="cta-right reveal d2">
+        <button class="btn btn--blue" onclick="openModal()">Request an Appointment
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <a href="about.html" class="btn btn--ghost">Learn Our Story
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="centerline-home.html" class="brand">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="rgba(255,255,255,.3)"/><line x1="20" y1="2" x2="20" y2="38" stroke="#8CAC17" stroke-width="1.2"/><path d="M22.5 9.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5S18.6 7 20 7s2.5 1.1 2.5 2.5Z" fill="#fff"/><path d="M14 17.5l4.5-1.8 3 1.6 4 .4M19.5 16.5l-1.5 6 3.5 4.5M18 22.5l-3.5 5.5M22.5 17.7l2.5 4.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><span class="name"><b>PANTHER</b><span>CREEK</span></span><span class="sub">Physical Therapy &amp; Balance</span></span>
+        </a>
+        <p class="blurb">PantherCreek Physical Therapy &amp; Balance — hands on, one on one care serving Clackamas County, Oregon since 1989.</p>
+        <p style="font:700 .68rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:14px">Stronger Every Step</p>
+      </div>
+      <div><h4>Services</h4><ul>
+        <li><a href="balance-therapy.html">Balance Therapy</a></li>
+        <li><a href="vestibular-rehab.html">Vestibular Rehab</a></li>
+        <li><a href="orthopedic-rehab.html">Orthopedic Rehab</a></li>
+        <li><a href="parkinsons-rehab.html">Parkinson's Rehab</a></li>
+        <li><a href="acupuncture.html">Acupuncture</a></li>
+      </ul></div>
+      <div><h4>Locations</h4><ul>
+        <li><a href="clackamas.html">Clackamas</a></li>
+        <li><a href="molalla.html">Molalla</a></li>
+        <li><a href="estacada.html">Estacada</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul>
+        <li><a href="tel:5036985500">(503) 698-5500</a></li>
+        <li><a href="#" onclick="openModal()">Schedule an appointment</a></li>
+        <li><a href="staff.html">Meet our team</a></li>
+        <li><a href="billing.html">Billing &amp; insurance</a></li>
+      </ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 PantherCreek Physical Therapy &amp; Balance. Independently owned &amp; operated. The information here is not medical advice.</span>
+      <span class="socials"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Modal ── -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-side">
+      <a href="#" class="brand">
+        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="rgba(255,255,255,.3)"/><line x1="20" y1="2" x2="20" y2="38" stroke="#8CAC17" stroke-width="1.2"/><path d="M22.5 9.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5S18.6 7 20 7s2.5 1.1 2.5 2.5Z" fill="#fff"/><path d="M14 17.5l4.5-1.8 3 1.6 4 .4M19.5 16.5l-1.5 6 3.5 4.5M18 22.5l-3.5 5.5M22.5 17.7l2.5 4.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><span class="name"><b>PANTHER</b><span>CREEK</span></span><span class="sub">Physical Therapy &amp; Balance</span></span>
+      </a>
+      <div class="modal-trust">
+        <div class="titem"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5l2.2 4.5 5 .7-3.6 3.5.85 5-4.45-2.35L5.55 16.2l.85-5L2.8 7.7l5-.7z"/></svg>5-Star Patient Reviews</div>
+        <div class="titem"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L3.5 4.8v3.7c0 3.6 2.8 6.5 6.5 7.5 3.7-1 6.5-3.9 6.5-7.5V4.8z"/><path d="M7 10l2 2 4-4"/></svg>Medicare Accepted</div>
+        <div class="titem"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10.5a3 3 0 100-6 3 3 0 000 6z"/><path d="M10 2C6.7 2 4 4.7 4 8c0 5 6 10 6 10s6-5 6-10c0-3.3-2.7-6-6-6z"/></svg>Three Clackamas County Locations</div>
+        <div class="titem"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="3"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>One-on-One Every Visit</div>
+      </div>
+      <div class="modal-mission">
+        <svg class="mwave" viewBox="0 0 60 12" fill="none" stroke="var(--gold-soft)" stroke-width="1.4" stroke-linecap="round"><path d="M0 6C9 1 16 11 24 6s15-5 18 0 9 5 18 0"/></svg>
+        <h3>Stronger Every Step.</h3>
+        <p>New name. Same trusted team. Same exceptional care — hands on, one on one, in your own private room.</p>
+      </div>
+    </div>
+    <div class="modal-form-wrap">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h2 id="modalTitle">Request an Appointment</h2>
+      <p class="sub">Fill out the form and we'll be in touch within one business day.</p>
+      <form class="mform" id="apptForm" novalidate>
+        <div class="field">
+          <label for="location">Preferred Location</label>
+          <select id="location" name="location" required>
+            <option value="" disabled selected>Select a location</option>
+            <option>Clackamas</option>
+            <option>Molalla</option>
+            <option>Estacada</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="apptDate">Preferred Date</label>
+          <input type="date" id="apptDate" name="date">
+        </div>
+        <div class="field">
+          <label>Preferred Time</label>
+          <div class="time-opts">
+            <label><input type="radio" name="time" value="morning"><span class="chip">Morning</span></label>
+            <label><input type="radio" name="time" value="afternoon"><span class="chip">Afternoon</span></label>
+            <label><input type="radio" name="time" value="evening"><span class="chip">Evening</span></label>
+          </div>
+        </div>
+        <div class="mform .row" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div class="field"><label for="fname">First Name</label><input type="text" id="fname" name="fname" placeholder="Jane" required></div>
+          <div class="field"><label for="lname">Last Name</label><input type="text" id="lname" name="lname" placeholder="Smith" required></div>
+        </div>
+        <div class="field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="(503) 000-0000" required></div>
+        <div class="field"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="jane@email.com" required></div>
+        <div class="appt-notice">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p><strong>Please note:</strong> This is a request only. We will call you to confirm availability or suggest an alternate time.</p>
+        </div>
+        <button type="submit" class="btn btn--blue" style="justify-content:center">Submit Request
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+const hdr=document.getElementById('hdr');
+const burger=document.getElementById('burger');
+const mobnav=document.getElementById('mobnav');
+const modalOverlay=document.getElementById('modalOverlay');
+const modalClose=document.getElementById('modalClose');
+
+window.addEventListener('scroll',()=>{hdr.classList.toggle('solid',scrollY>40)},{passive:true});
+function toggleNav(f){burger.classList.toggle('open',f);mobnav.classList.toggle('open',f);document.body.style.overflow=mobnav.classList.contains('open')?'hidden':''}
+burger.addEventListener('click',()=>toggleNav());
+mobnav.querySelectorAll('.mlink').forEach(l=>l.addEventListener('click',()=>toggleNav(false)));
+function openModal(){modalOverlay.classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
+modalClose.addEventListener('click',closeModal);
+modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
+document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleNav(false);closeModal()}});
+
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.10,rootMargin:'0px 0px -4% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
