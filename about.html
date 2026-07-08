@@ -250,9 +250,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .mobnav .mtel svg{width:16px;height:16px}
 
 /* ─── HERO ─── */
-.hero{position:relative;min-height:52vh;background:var(--ink);background-image:url('public/About%20us.jpg');background-size:cover;background-position:center;display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
-.hero-glow{position:absolute;inset:0;z-index:0;background:linear-gradient(145deg,rgba(27,54,93,.90) 0%,rgba(0,107,165,.30) 55%,rgba(27,54,93,.82) 100%)}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;flex:1;position:relative;z-index:1;padding-top:88px}
+.hero{position:relative;min-height:42vh;background:linear-gradient(135deg,#142849 0%,#1B365D 52%,#1E3F6B 100%);display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
+.hero-glow{position:absolute;inset:0;z-index:0;background:radial-gradient(900px 500px at 80% 50%,rgba(0,145,218,.25),transparent 60%)}
+.hero-inner{flex:1;position:relative;z-index:1;padding-top:88px;display:flex;align-items:center}
 .hero-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,5.5vw,72px) clamp(20px,4vw,64px) clamp(40px,5.5vw,72px) var(--gut)}
 .hero-text .breadcrumb{display:flex;align-items:center;gap:8px;font:500 .75rem/1 var(--sans);color:rgba(255,255,255,.4);margin-bottom:20px}
 .hero-text .breadcrumb a{color:rgba(255,255,255,.4);transition:color .2s}
@@ -623,24 +623,16 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 <section class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-inner">
-    <div class="hero-text">
-      <div class="breadcrumb">
-        <a href="/">Home</a>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        <span>About Us</span>
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="breadcrumb">
+          <a href="/">Home</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          <span>About Us</span>
+        </div>
+        <span class="eyebrow on-dark">About PantherCreek</span>
+        <h1>Practice History.<br>Mission. Community.</h1>
       </div>
-      <span class="eyebrow on-dark">About PantherCreek</span>
-      <h1>Practice History.<br>Mission. Community.</h1>
-    </div>
-    <div class="hero-img" aria-hidden="true">
-      <div class="img-fill"></div>
-      <div class="grid-pat"></div>
-      <div class="wave-pat">
-        <svg viewBox="0 0 600 500" fill="none">
-          <path d="M-50 80C80 30 160 130 280 80s200-50 320 0M-50 160C80 110 160 210 280 160s200-50 320 0M-50 240C80 190 160 290 280 240s200-50 320 0M-50 320C80 270 160 370 280 320s200-50 320 0M-50 400C80 350 160 450 280 400s200-50 320 0" stroke="rgba(255,255,255,.7)" stroke-width="1"/>
-        </svg>
-      </div>
-      <div class="img-overlay"></div>
     </div>
   </div>
 </section>
