@@ -250,7 +250,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .mobnav .mtel svg{width:16px;height:16px}
 
 /* ─── Hero ─── */
-.hero{position:relative;min-height:48vh;background:linear-gradient(135deg,#142849 0%,#1B365D 25%,#1B365D 60%,#1E3F6B 85%,#1A5074 100%);display:flex;flex-direction:column;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
+.hero{position:relative;min-height:40vh;background:linear-gradient(135deg,#142849 0%,#1B365D 25%,#1B365D 60%,#1E3F6B 85%,#1A5074 100%);display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
 .hero-glow{position:absolute;inset:0;z-index:0;background:radial-gradient(900px 500px at 80% 60%,rgba(0,145,218,.30),transparent 60%),radial-gradient(500px 400px at 10% 80%,rgba(140,172,23,.08),transparent 55%)}
 .hero-inner{flex:1;position:relative;z-index:1;padding-top:88px;display:flex;align-items:center}
 .hero-text{padding:clamp(40px,6vw,72px) 0}
@@ -260,10 +260,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .hero-text .breadcrumb svg{width:9px;height:9px;opacity:.4}
 .hero-text h1{font-size:clamp(2.6rem,5.5vw,4.5rem);color:#fff;font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-top:16px;max-width:18ch}
 .hero-text .lead{font-size:clamp(.95rem,1.4vw,1.1rem);color:rgba(255,255,255,.68);line-height:1.78;margin-top:22px;max-width:52ch}
-.hero-stats{display:flex;gap:clamp(24px,5vw,52px);margin-top:44px;padding-top:36px;border-top:1px solid var(--line-l);flex-wrap:wrap}
-.hstat .num{font:800 2.2rem/1 var(--sans);color:#fff;letter-spacing:-.02em;display:block}
-.hstat .num em{color:var(--gold);font-style:normal}
-.hstat .lbl{font:500 .72rem/1.3 var(--sans);color:rgba(255,255,255,.45);letter-spacing:.06em;display:block;margin-top:5px}
 
 /* ─── Staff intro ─── */
 .staff-intro{padding-block:clamp(64px,8vw,100px);margin-top:-2vw;background:var(--paper)}
@@ -322,16 +318,16 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .staff-cat::before{max-width:32px}
 
 /* ─── CTA ─── */
-.cta{background:radial-gradient(900px 500px at 8% 45%,rgba(0,145,218,.35),transparent 58%),radial-gradient(700px 400px at 88% 80%,rgba(34,139,34,.22),transparent 55%),linear-gradient(130deg,#142849 0%,#1B365D 52%,#1E3F6B 100%);color:#fff;padding-block:clamp(72px,9vw,120px);position:relative;overflow:hidden}
-.cta .ridge{position:absolute;inset:auto 0 0 0;height:80%;z-index:0;opacity:.3}
-.cta .ridge svg{width:100%;height:100%}
-.cta-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:clamp(40px,6vw,80px);align-items:center}
-.cta-inner h2{font-size:clamp(1.9rem,3.5vw,2.8rem);max-width:22ch}
-.cta-inner p{font-size:.97rem;color:rgba(255,255,255,.72);margin-top:14px;max-width:50ch;line-height:1.72}
-.cta-inner .cta-phone{display:flex;align-items:center;gap:10px;margin-top:24px;font:700 1.3rem/1 var(--sans);color:var(--gold-soft)}
-.cta-inner .cta-phone svg{width:18px;height:18px;flex-shrink:0}
-.cta-inner .cta-phone small{display:block;font:500 .68rem/1 var(--sans);color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
-.cta-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+.cta-light{background:#fff;border-top:1px solid var(--line-d);padding-block:clamp(56px,7vw,88px)}
+.cta-light-inner{display:flex;align-items:center;justify-content:space-between;gap:clamp(32px,5vw,64px);flex-wrap:wrap}
+.cta-light-text h2{font-size:clamp(1.6rem,2.8vw,2.2rem);color:var(--ink);max-width:22ch}
+.cta-light-text p{margin-top:12px;font-size:.95rem;color:var(--stone);max-width:48ch;line-height:1.7}
+.cta-light-phone{display:flex;align-items:center;gap:9px;margin-top:22px;font:700 1.2rem/1 var(--sans);color:var(--ink)}
+.cta-light-phone svg{width:17px;height:17px;color:var(--signal);flex-shrink:0}
+.cta-light-phone small{display:block;font:500 .65rem/1 var(--sans);color:var(--stone);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.cta-light-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.btn--outline{background:transparent;color:var(--ink);border:1.5px solid var(--line-d)}
+.btn--outline:hover{background:var(--paper);transform:translateY(-2px)}
 
 /* ─── Footer ─── */
 .ft{background:linear-gradient(175deg,#142849 0%,#1B365D 40%,#1B365D 100%);color:rgba(255,255,255,.62);padding-block:64px 30px;border-top:1px solid var(--line-l)}
@@ -406,7 +402,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 }
 @media(max-width:640px){
   .staff-grid{grid-template-columns:1fr}
-  .hero-stats{flex-direction:column;gap:18px}
 }
 /* ─── Mobile ─── */
 @media(max-width:640px){
@@ -530,14 +525,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
           <span>Our Team</span>
         </div>
-        <span class="eyebrow on-dark">The People Behind Your Care</span>
-        <h1>Experienced.<br>Caring.<br>Here for you.</h1>
-        <p class="lead">Every therapist on our team brings advanced credentials, genuine warmth, and a commitment to hands-on, one-on-one care. You'll see the same face, every visit.</p>
-        <div class="hero-stats">
-          <div class="hstat"><span class="num"><em>35</em>+</span><span class="lbl">Years serving<br>Clackamas County</span></div>
-          <div class="hstat"><span class="num"><em>7</em></span><span class="lbl">Clinical team<br>members</span></div>
-          <div class="hstat"><span class="num"><em>100</em>%</span><span class="lbl">One-on-one<br>every visit</span></div>
-        </div>
+        <span class="eyebrow on-dark">Our Team</span>
+        <h1>The people behind your care.</h1>
+        <p class="lead">Credentialed, hands-on, and in it for the long haul — you'll work with the same therapist every visit.</p>
       </div>
     </div>
   </div>
@@ -830,17 +820,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 </section>
 
 <!-- ── CTA ── -->
-<section class="cta" id="contact">
-  <div class="ridge" aria-hidden="true">
-    <svg viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none"><path d="M0 300V180c160-30 240 20 420 10s260-60 460-50 280 50 560 30v130Z" fill="rgba(27,54,93,.5)"/></svg>
-  </div>
+<section class="cta-light" id="contact">
   <div class="wrap">
-    <div class="cta-inner">
-      <div class="reveal">
-        <span class="eyebrow on-dark">Ready to Start?</span>
+    <div class="cta-light-inner reveal">
+      <div class="cta-light-text">
+        <span class="eyebrow">Get Started</span>
         <h2>Meet your therapist — and begin your recovery.</h2>
         <p>Schedule an appointment and we'll match you with the right therapist for your needs. One-on-one, hands-on care from day one — at any of our three Clackamas County locations.</p>
-        <div class="cta-phone">
+        <div class="cta-light-phone">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           <div>
             <a href="tel:5036985500">(503) 698-5500</a>
@@ -848,11 +835,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           </div>
         </div>
       </div>
-      <div class="cta-right reveal d2">
+      <div class="cta-light-actions">
         <button class="btn btn--blue" onclick="openModal()">Request an Appointment
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
-        <a href="/about" class="btn btn--ghost">Learn Our Story
+        <a href="/about" class="btn btn--outline">Learn Our Story
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
