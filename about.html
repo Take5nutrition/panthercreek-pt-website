@@ -361,14 +361,20 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 
 
 /* ─── Community grid ─── */
+.comm-header{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:end;margin-bottom:0}
+.comm-header .comm-intro{font-size:.97rem;color:var(--stone);line-height:1.78;max-width:44ch;border-left:2px solid var(--gold);padding-left:24px}
 .comm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px);margin-top:clamp(40px,5vw,64px)}
 .comm-card{padding:clamp(24px,3vw,36px);background:#fff;border:1px solid var(--line-d);border-radius:14px;display:flex;flex-direction:column;gap:0}
 .comm-icon{width:48px;height:48px;border-radius:10px;background:rgba(0,145,218,.08);border:1px solid rgba(0,145,218,.16);display:grid;place-items:center;color:var(--signal);margin-bottom:18px;flex-shrink:0}
 .comm-icon svg{width:22px;height:22px}
 .comm-card h4{font:700 .95rem/1.2 var(--sans);color:var(--ink);margin-bottom:8px}
 .comm-card p{font-size:.83rem;color:var(--stone);line-height:1.7}
-@media(max-width:640px){.comm-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:420px){.comm-grid{grid-template-columns:1fr}}
+@media(max-width:860px){.comm-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+  .comm-header{grid-template-columns:1fr}
+  .comm-header .comm-intro{border-left:none;padding-left:0;border-top:2px solid var(--gold);padding-top:18px;margin-top:4px}
+  .comm-grid{grid-template-columns:1fr}
+}
 
 /* ─── Commitments ─── */
 .commitments{background:#fff;padding-block:clamp(80px,10vw,130px);border-top:1px solid var(--line-d)}
@@ -752,12 +758,12 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 ════════════════════════════════════════ -->
 <section style="background:#fff;border-top:1px solid var(--line-d);padding-block:clamp(64px,8vw,100px)" id="community">
   <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:end;margin-bottom:0" class="reveal">
+    <div class="comm-header reveal">
       <div>
         <span class="eyebrow">Community Involvement</span>
         <h2 style="font-size:clamp(1.9rem,3.2vw,2.8rem);color:var(--ink);margin-top:14px">Rooted in Clackamas County.</h2>
       </div>
-      <p style="font-size:.97rem;color:var(--stone);line-height:1.78;max-width:44ch;border-left:2px solid var(--gold);padding-left:24px">PantherCreek Physical Therapy &amp; Balance is proud to be a local, independent practice. We believe in giving back to the communities that have trusted us for over 35 years.</p>
+      <p class="comm-intro">PantherCreek Physical Therapy &amp; Balance is proud to be a local, independent practice. We believe in giving back to the communities that have trusted us for over 35 years.</p>
     </div>
     <div class="comm-grid">
       <div class="comm-card reveal">
