@@ -115,7 +115,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .svc-card-body h3{font-size:clamp(1.1rem,1.5vw,1.25rem);color:var(--ink);margin-bottom:10px}
 .svc-card-body p{font-size:.88rem;color:var(--stone);line-height:1.7;margin-bottom:20px;flex:1}
 .svc-sub{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
-.svc-sub-tag{font:600 .68rem/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--signal);background:var(--mist);border:1px solid rgba(0,145,218,.18);border-radius:4px;padding:5px 9px}
+.svc-sub-tag{font:600 .68rem/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--signal);background:var(--mist);border:1px solid rgba(0,145,218,.18);border-radius:4px;padding:5px 9px;transition:background .18s,color .18s,border-color .18s}
+.svc-sub-tag:hover{background:var(--signal);color:#fff;border-color:var(--signal)}
 .svc-card-link{display:inline-flex;align-items:center;gap:.5em;font:600 .85rem/1 var(--sans);color:var(--signal);transition:gap .2s}
 .svc-card-link svg{width:14px;height:14px;transition:transform .2s}
 .svc-card:hover .svc-card-link svg{transform:translateX(3px)}
@@ -341,7 +342,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 
     <div class="svc-grid">
 
-      <a class="svc-card reveal" href="balance-therapy.html">
+      <div class="svc-card reveal">
         <div class="svc-card-img">
           <img src="public/Balance.png" alt="Balance Therapy">
         </div>
@@ -349,13 +350,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <h3>Balance Therapy</h3>
           <p>Expert treatment for balance disorders and fall prevention — including our signature overhead safety-support system that lets you push further without fear of falling.</p>
           <div class="svc-sub">
-            <span class="svc-sub-tag">Vestibular Rehab</span>
+            <a class="svc-sub-tag" href="vestibular-rehab.html">Vestibular Rehab</a>
           </div>
-          <span class="svc-card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a class="svc-card-link" href="balance-therapy.html">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-      </a>
+      </div>
 
-      <a class="svc-card reveal d1" href="orthopedic-rehab.html">
+      <div class="svc-card reveal d1">
         <div class="svc-card-img">
           <img src="public/Orthopedic.jpg" alt="Orthopedic Rehab">
         </div>
@@ -363,14 +364,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <h3>Orthopedic Rehab</h3>
           <p>Evidence-based treatment for joint, muscle, and spine conditions — from acute injury and chronic pain to post-surgical recovery and auto or work-related injuries.</p>
           <div class="svc-sub">
-            <span class="svc-sub-tag">Auto &amp; Work Injuries</span>
-            <span class="svc-sub-tag">Chronic Back Pain</span>
+            <a class="svc-sub-tag" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+            <a class="svc-sub-tag" href="back-pain.html">Chronic Back Pain</a>
           </div>
-          <span class="svc-card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a class="svc-card-link" href="orthopedic-rehab.html">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-      </a>
+      </div>
 
-      <a class="svc-card reveal d2" href="fitness-wellness.html">
+      <div class="svc-card reveal d2">
         <div class="svc-card-img">
           <img src="public/Patient%20/ChatGPT%20Image%20Jun%2019%2C%202026%2C%2002_32_53%20PM.png" alt="Fitness &amp; Wellness">
         </div>
@@ -378,16 +379,16 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <h3>Fitness &amp; Wellness</h3>
           <p>Active recovery programs, sport-specific training, Pilates, nutritional health, and bike fit services — designed to keep you moving and performing at your best.</p>
           <div class="svc-sub">
-            <span class="svc-sub-tag">Sports Rehab</span>
-            <span class="svc-sub-tag">Pilates</span>
-            <span class="svc-sub-tag">Nutritional Health</span>
-            <span class="svc-sub-tag">Bike Fit</span>
+            <a class="svc-sub-tag" href="sports-rehab.html">Sports Rehab</a>
+            <a class="svc-sub-tag" href="pilates.html">Pilates</a>
+            <a class="svc-sub-tag" href="nutritional-health.html">Nutritional Health</a>
+            <a class="svc-sub-tag" href="bike-fit.html">Bike Fit</a>
           </div>
-          <span class="svc-card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a class="svc-card-link" href="fitness-wellness.html">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-      </a>
+      </div>
 
-      <a class="svc-card reveal" href="neurological-rehab.html">
+      <div class="svc-card reveal">
         <div class="svc-card-img">
           <img src="public/parkinsons-rehab.png" alt="Neurological Rehab">
         </div>
@@ -395,14 +396,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <h3>Neurological Rehab</h3>
           <p>Specialized programs for Parkinson's disease and other neurological conditions — including our Rock Steady Boxing program to build strength, balance, and confidence.</p>
           <div class="svc-sub">
-            <span class="svc-sub-tag">Parkinson's Rehab</span>
-            <span class="svc-sub-tag">Rock Steady Boxing</span>
+            <a class="svc-sub-tag" href="parkinsons-rehab.html">Parkinson's Rehab</a>
+            <a class="svc-sub-tag" href="rock-steady-boxing.html">Rock Steady Boxing</a>
           </div>
-          <span class="svc-card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a class="svc-card-link" href="neurological-rehab.html">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-      </a>
+      </div>
 
-      <a class="svc-card reveal d1" href="urinary-incontinence.html">
+      <div class="svc-card reveal d1">
         <div class="svc-card-img">
           <img src="public/Patient%20/ChatGPT%20Image%20Jun%2019%2C%202026%2C%2002_34_55%20PM.png" alt="Urinary Incontinence Rehab">
         </div>
@@ -410,13 +411,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <h3>Urinary Incontinence Rehab</h3>
           <p>Discreet, effective pelvic floor therapy for urinary incontinence — a condition that responds very well to physical therapy and is far more treatable than most people realize.</p>
           <div class="svc-sub">
-            <span class="svc-sub-tag">Pelvic Floor Therapy</span>
+            <a class="svc-sub-tag" href="urinary-incontinence.html">Pelvic Floor Therapy</a>
           </div>
-          <span class="svc-card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a class="svc-card-link" href="urinary-incontinence.html">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-      </a>
+      </div>
 
-      <a class="svc-card reveal d2" href="acupuncture.html">
+      <div class="svc-card reveal d2">
         <div class="svc-card-img">
           <img src="public/Acupuncture.png" alt="Acupuncture">
         </div>
@@ -428,9 +429,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
             <span class="svc-sub-tag">Stress &amp; Anxiety</span>
             <span class="svc-sub-tag">Integrative Care</span>
           </div>
-          <span class="svc-card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <a class="svc-card-link" href="acupuncture.html">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-      </a>
+      </div>
 
     </div>
   </div>
