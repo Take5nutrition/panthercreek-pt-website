@@ -305,7 +305,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   .svc-intro h2{font-size:clamp(1.4rem,5vw,1.8rem)}
 }
 @media(max-width:640px){
-  .mission .feats{grid-template-columns:1fr 1fr}
+  .mission .feats{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line-d);padding-top:20px;margin-top:24px}
+  .mission .feat{background:var(--navy);border-radius:100px;padding:8px 16px;display:flex;align-items:center}
+  .mission .feat h4{color:#fff;font-size:.75rem;letter-spacing:.06em}
   .locs .grid{grid-template-columns:1fr!important}
   .trust .wrap{grid-template-columns:1fr!important}
   .trust .item+.item{border-left:none;border-top:1px solid var(--line-l)}
@@ -324,7 +326,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   .hdr-cta .btn--blue{display:none}
   .ft .bottom{flex-direction:column;gap:12px}
   .ft .bottom .socials{flex-wrap:wrap}
-  .mission .feats{grid-template-columns:1fr}
   .founder-grid{grid-template-columns:1fr;text-align:center}
 }
 </style>
