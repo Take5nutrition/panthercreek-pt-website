@@ -87,6 +87,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .hero-layout::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(20,40,73,.95) 0%,rgba(20,40,73,.6) 45%,transparent 75%);pointer-events:none}
 .hero-left{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(48px,6vw,80px) clamp(32px,5vw,80px) clamp(48px,6vw,72px) var(--gut);max-width:580px}
 .hero-left .eyebrow{color:rgba(255,255,255,.8)}
+.hero-mob-sub{display:none;font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.65;margin:16px 0 0}
 .hero-left h1{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:#fff;line-height:1.1;margin:16px 0 0;letter-spacing:-.01em}
 .hero-left h1 span{color:#fff}
 .hero-left p.lead{font-size:clamp(.95rem,1.3vw,1.1rem);color:rgba(255,255,255,.85);line-height:1.7;margin:20px 0 0;max-width:44ch}
@@ -331,6 +332,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   .hero-left p.lead{display:none}
   .hero-left .eyebrow{display:none}
   .hero-clinics{display:none}
+  .hero-mob-sub{display:block}
   .founder-grid{grid-template-columns:1fr;gap:28px;text-align:left}
   .founder-grid>div:first-child{width:96px;margin:0 auto}
   .founder-grid blockquote{font-size:1rem!important;line-height:1.65;margin-bottom:20px}
@@ -456,6 +458,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="hero-left">
       <span class="eyebrow">PantherCreek Physical Therapy &amp; Balance</span>
       <h1>Clackamas County's Most Trusted Physical Therapy<span class="hero-clinics"> Clinics.</span></h1>
+      <p class="hero-mob-sub">Recover with private treatment rooms, personalized hands-on therapy, and a dedicated therapist committed to your progress from start to finish.</p>
       <p class="lead">Private treatment rooms. Skilled, hands-on care. A therapist who stays with you from start to finish — across three Clackamas County locations.</p>
       <div class="actions">
         <button class="btn btn--blue" onclick="openModal()">Schedule an Appointment
