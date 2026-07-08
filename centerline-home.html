@@ -74,9 +74,15 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .burger.open span:nth-child(1){top:10px;transform:rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){top:10px;transform:rotate(-45deg)}
-.mobnav{position:fixed;inset:0;z-index:70;background:rgba(27,54,93,.98);backdrop-filter:blur(10px);display:flex;flex-direction:column;padding:104px var(--gut) 48px;gap:2px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .32s var(--ease),transform .32s var(--ease),visibility .32s}
+.mobnav{position:fixed;inset:0;z-index:70;background:rgba(27,54,93,.98);backdrop-filter:blur(10px);display:flex;flex-direction:column;padding:104px var(--gut) 48px;gap:2px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .32s var(--ease),transform .32s var(--ease),visibility .32s;overflow-y:auto}
 .mobnav.open{opacity:1;visibility:visible;transform:none}
-.mobnav a.mlink{color:#fff;font:500 1.55rem/1 var(--serif);padding:18px 0;border-bottom:1px solid var(--line-l)}
+.mobnav a.mlink,.mobnav .macc-btn{color:#fff;font:500 1.55rem/1 var(--serif);padding:18px 0;border-bottom:1px solid var(--line-l)}
+.mobnav .macc-btn{background:none;border-top:none;border-left:none;border-right:none;width:100%;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.macc-arrow{flex:none;transition:transform .28s ease;opacity:.7}
+.macc-btn[aria-expanded="true"] .macc-arrow{transform:rotate(180deg)}
+.macc-panel{overflow:hidden;max-height:0;transition:max-height .38s ease;display:flex;flex-direction:column}
+.macc-panel.open{max-height:1200px}
+.mlink--sub{font:500 1.1rem/1 var(--serif)!important;padding:13px 0 13px 16px!important;color:rgba(255,255,255,.72)!important;border-bottom:1px solid rgba(255,255,255,.06)!important}
 .mobnav .btn{margin-top:28px;justify-content:center}
 .mobnav .mtel{display:inline-flex;align-items:center;gap:9px;color:var(--gold-soft);font:600 1rem/1 var(--sans);margin-top:22px}
 .mobnav .mtel svg{width:16px;height:16px}
@@ -423,21 +429,28 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   <a class="mlink" href="about.html">About</a>
   <a class="mlink" href="staff.html">Our Team</a>
   <a class="mlink" href="locations.html">Locations</a>
-  <a class="mlink" href="balance-therapy.html">Balance &amp; Fall Prevention</a>
-  <a class="mlink" href="vestibular-rehab.html">Vestibular Rehabilitation</a>
-  <a class="mlink" href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
-  <a class="mlink" href="back-pain.html">Chronic Back Pain</a>
-  <a class="mlink" href="sports-rehab.html">Sports Rehabilitation</a>
-  <a class="mlink" href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
-  <a class="mlink" href="neurological-rehab.html">Neurological Rehabilitation</a>
-  <a class="mlink" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
-  <a class="mlink" href="fitness-wellness.html">Fitness &amp; Wellness</a>
-  <a class="mlink" href="pilates.html">Pilates</a>
-  <a class="mlink" href="rock-steady-boxing.html">Rock Steady Boxing</a>
-  <a class="mlink" href="urinary-incontinence.html">Urinary Incontinence Rehab</a>
-  <a class="mlink" href="nutritional-health.html">Nutritional Health</a>
-  <a class="mlink" href="acupuncture.html">Acupuncture Therapy</a>
-  <a class="mlink" href="bike-fit.html">Bike Fit</a>
+  <button class="mlink macc-btn" aria-expanded="false" onclick="toggleAcc(this)">
+    Services
+    <svg class="macc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="macc-panel">
+    <a class="mlink mlink--sub" href="services.html">View All Services</a>
+    <a class="mlink mlink--sub" href="balance-therapy.html">Balance &amp; Fall Prevention</a>
+    <a class="mlink mlink--sub" href="vestibular-rehab.html">Vestibular Rehabilitation</a>
+    <a class="mlink mlink--sub" href="orthopedic-rehab.html">Orthopedic Rehabilitation</a>
+    <a class="mlink mlink--sub" href="back-pain.html">Chronic Back Pain</a>
+    <a class="mlink mlink--sub" href="sports-rehab.html">Sports Rehabilitation</a>
+    <a class="mlink mlink--sub" href="parkinsons-rehab.html">Parkinson&#39;s Rehabilitation</a>
+    <a class="mlink mlink--sub" href="neurological-rehab.html">Neurological Rehabilitation</a>
+    <a class="mlink mlink--sub" href="auto-work-injuries.html">Auto &amp; Work Injuries</a>
+    <a class="mlink mlink--sub" href="fitness-wellness.html">Fitness &amp; Wellness</a>
+    <a class="mlink mlink--sub" href="pilates.html">Pilates</a>
+    <a class="mlink mlink--sub" href="rock-steady-boxing.html">Rock Steady Boxing</a>
+    <a class="mlink mlink--sub" href="urinary-incontinence.html">Urinary Incontinence Rehab</a>
+    <a class="mlink mlink--sub" href="nutritional-health.html">Nutritional Health</a>
+    <a class="mlink mlink--sub" href="acupuncture.html">Acupuncture Therapy</a>
+    <a class="mlink mlink--sub" href="bike-fit.html">Bike Fit</a>
+  </div>
   <a class="mlink" href="billing.html">Billing &amp; Insurance</a>
   <a class="mlink" href="first-visit.html">Preparing for Your Visit</a>
   <a class="mlink" href="contact.html">Contact</a>
@@ -887,6 +900,7 @@ const burger=document.getElementById('burger'),mobnav=document.getElementById('m
 function toggleNav(open){mobnav.classList.toggle('open',open);burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':''}
 burger.addEventListener('click',()=>toggleNav(!mobnav.classList.contains('open')));
 mobnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleNav(false)));
+function toggleAcc(btn){const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',!open);btn.nextElementSibling.classList.toggle('open',!open)}
 const modalOverlay=document.getElementById('modalOverlay');
 const modalClose=document.getElementById('modalClose');
 function openModal(){modalOverlay.classList.add('open');document.body.style.overflow='hidden'}
