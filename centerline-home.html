@@ -305,12 +305,18 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   .svc-intro h2{font-size:clamp(1.4rem,5vw,1.8rem)}
 }
 @media(max-width:640px){
-  .mission .feats{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line-d);padding-top:20px;margin-top:24px}
-  .mission .feat{background:var(--navy);border-radius:100px;padding:8px 16px;display:flex;align-items:center}
-  .mission .feat h4{color:#fff;font-size:.75rem;letter-spacing:.06em}
+  /* feat cards — single col with descriptions */
+  .mission .feats{display:grid;grid-template-columns:1fr;gap:16px;border-top:1px solid var(--line-d);padding-top:20px;margin-top:24px}
+  .mission .feat{background:none;border-radius:0;padding:0;display:flex;flex-direction:column;gap:5px}
+  .mission .feat h4{color:var(--ink);font-size:.83rem;letter-spacing:.02em;text-transform:uppercase}
+  .mission .feat p{display:block;font-size:.8rem;color:var(--stone);line-height:1.5;margin:0}
   .locs .grid{grid-template-columns:1fr!important}
-  .trust .wrap{grid-template-columns:1fr!important}
-  .trust .item+.item{border-left:none;border-top:1px solid var(--line-l)}
+  /* trust bar — 2×2 compact grid overlapping hero bottom */
+  .trust .wrap{grid-template-columns:repeat(2,1fr)!important}
+  .trust .item{padding:13px 10px;font-size:.76rem;gap:7px}
+  .trust .item+.item{border-left:1px solid var(--line-l);border-top:none}
+  .trust .item:nth-child(2n+1){border-left:none}
+  .trust .item:nth-child(n+3){border-top:1px solid var(--line-l)}
   .hero-left .actions .btn{width:100%;justify-content:center}
   .hero-left .actions .btn--ghost{display:none}
   .hero-left .actions{margin-top:48px}
@@ -322,8 +328,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   .hero-layout{align-items:flex-start;padding-top:0;padding-bottom:40px}
   .hero-left{padding-top:160px;padding-bottom:0}
   .hero-left p.lead{display:none}
-  .trust{display:none}
-  .feat p{display:none}
   .founder-grid{grid-template-columns:1fr;gap:28px;text-align:left}
   .founder-grid>div:first-child{width:96px;margin:0 auto}
   .founder-grid blockquote{font-size:1rem!important;line-height:1.65;margin-bottom:20px}
