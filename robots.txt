@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /api/
+
+Sitemap: https://www.panthercreekpt.com/sitemap.xml
