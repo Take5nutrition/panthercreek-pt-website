@@ -289,12 +289,12 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   html{scroll-behavior:auto}
 }
 /* ─── The PantherCreek Difference ─── */
+.founder-grid{display:grid;grid-template-columns:140px 1fr;gap:clamp(32px,5vw,72px);align-items:center}
 /* ─── Mobile ─── */
 @media(max-width:640px){
   .hdr .brand img{max-height:64px!important}
   .hdr-cta .tel{display:none}
   .hdr-cta .btn--blue{font-size:.78rem;padding:11px 16px;letter-spacing:.05em}
-  .founder-grid{display:grid;grid-template-columns:140px 1fr;gap:clamp(32px,5vw,72px);align-items:center}
   .ft .top{grid-template-columns:1fr}
   .mform .row{grid-template-columns:1fr}
   .time-opts{grid-template-columns:repeat(2,1fr)}
@@ -304,20 +304,21 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   .svc-stats{grid-template-columns:1fr}
   .svc-intro h2{font-size:clamp(1.4rem,5vw,1.8rem)}
 }
+@media(max-width:640px){
+  .mission .feats{grid-template-columns:1fr 1fr}
+  .locs .grid{grid-template-columns:1fr!important}
+  .trust .wrap{grid-template-columns:1fr!important}
+  .trust .item+.item{border-left:none;border-top:1px solid var(--line-l)}
+  .hero-left .actions .btn{width:100%;justify-content:center}
+  .svc-oc-grid{grid-template-columns:1fr!important}
+  .svc-oc{aspect-ratio:4/3!important}
+}
 @media(max-width:480px){
   .hdr-cta .btn--blue{display:none}
   .ft .bottom{flex-direction:column;gap:12px}
   .ft .bottom .socials{flex-wrap:wrap}
-}
-@media(max-width:680px){
-  .mission .feats{grid-template-columns:1fr 1fr}
-}
-@media(max-width:480px){
   .mission .feats{grid-template-columns:1fr}
-  .locs .grid{grid-template-columns:1fr!important}
   .founder-grid{grid-template-columns:1fr;text-align:center}
-  .trust .wrap{grid-template-columns:1fr!important}
-  .trust .item+.item{border-left:none;border-top:1px solid var(--line-l)}
 }
 </style>
 </head>
