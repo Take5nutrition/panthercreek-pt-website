@@ -332,6 +332,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .time-opts input:checked+.chip{background:var(--signal);color:#fff;border-color:var(--signal)}
 .appt-notice{display:flex;align-items:flex-start;gap:10px;background:var(--mist);border:1px solid rgba(0,145,218,.15);border-radius:6px;padding:12px 14px;color:var(--stone)}
 .appt-notice svg{flex:none;margin-top:1px;color:var(--signal)}
+.prog-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.prog-opts label{cursor:pointer}
+.prog-opts input[type="radio"]{display:none}
+.prog-opts .chip{display:block;padding:10px 8px;text-align:center;border:1px solid var(--line-d);border-radius:6px;font:600 .75rem/1.2 var(--sans);color:var(--stone);transition:.2s;letter-spacing:.06em;text-transform:uppercase}
+.prog-opts label:hover .chip{border-color:var(--signal);color:var(--signal)}
+.prog-opts input:checked+.chip{background:var(--signal);color:#fff;border-color:var(--signal)}
+.youth-fields{display:none;flex-direction:column;gap:16px}
+.youth-fields.show{display:flex}
 .appt-notice p{font-size:.78rem;line-height:1.55;margin:0}
 .appt-notice strong{color:var(--ink);font-weight:600}
 
@@ -829,9 +837,29 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
             <label><input type="radio" name="time" value="evening"><span class="chip">Evening</span></label>
           </div>
         </div>
+        <div class="field">
+          <label>I'm Interested In</label>
+          <div class="prog-opts">
+            <label><input type="radio" name="program" value="Adult Fitness" id="progAdult"><span class="chip">Adult Fitness</span></label>
+            <label><input type="radio" name="program" value="Youth Performance" id="progYouth"><span class="chip">Youth Performance</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Training Format</label>
+          <div class="prog-opts">
+            <label><input type="radio" name="format" value="Private 1-on-1"><span class="chip">Private 1-on-1</span></label>
+            <label><input type="radio" name="format" value="Small Group"><span class="chip">Small Group</span></label>
+          </div>
+        </div>
         <div class="row">
-          <div class="field"><label for="fname">First Name</label><input type="text" id="fname" name="fname" placeholder="Jane" required></div>
-          <div class="field"><label for="lname">Last Name</label><input type="text" id="lname" name="lname" placeholder="Smith" required></div>
+          <div class="field"><label for="fname" id="fnameLabel">First Name</label><input type="text" id="fname" name="fname" placeholder="Jane" required></div>
+          <div class="field"><label for="lname" id="lnameLabel">Last Name</label><input type="text" id="lname" name="lname" placeholder="Smith" required></div>
+        </div>
+        <div class="youth-fields" id="youthFields">
+          <div class="row">
+            <div class="field"><label for="athleteName">Athlete's Name</label><input type="text" id="athleteName" name="athleteName" placeholder="Athlete's full name"></div>
+            <div class="field"><label for="athleteAge">Athlete's Age</label><input type="text" id="athleteAge" name="athleteAge" placeholder="e.g. 14"></div>
+          </div>
         </div>
         <div class="field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="(503) 000-0000" required></div>
         <div class="field"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="jane@email.com" required></div>
@@ -870,6 +898,16 @@ function closeModal(){modalOverlay.classList.remove('open');document.body.style.
 modalClose.addEventListener('click',closeModal);
 modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
 document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeModal()});
+document.querySelectorAll('input[name="program"]').forEach(r=>{
+  r.addEventListener('change',function(){
+    const youth=this.value==='Youth Performance';
+    document.getElementById('fnameLabel').textContent=youth?"Guardian's First Name":"First Name";
+    document.getElementById('lnameLabel').textContent=youth?"Guardian's Last Name":"Last Name";
+    document.getElementById('fname').placeholder=youth?'Guardian first name':'Jane';
+    document.getElementById('lname').placeholder=youth?'Guardian last name':'Smith';
+    document.getElementById('youthFields').classList.toggle('show',youth);
+  });
+});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleNav(false);closeModal()}});
 
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
