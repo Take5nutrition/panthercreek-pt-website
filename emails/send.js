@@ -1,17 +1,8 @@
-import type { ReactElement } from 'react'
 import { render } from '@react-email/components'
 import { Resend } from 'resend'
 
 const FROM = 'PantherCreek PT Website <noreply@panthercreekpt.com>'
 const TO = 'take5athletics@gmail.com'
-
-interface SendNotificationOptions {
-  subject: string
-  /** React Email template element, e.g. <ContactFormEmail {...props} />. */
-  react: ReactElement
-  /** Lead's email so a plain "Reply" in the inbox goes straight to them. */
-  replyTo?: string
-}
 
 /**
  * Sends an internal notification email via Resend.
@@ -23,8 +14,10 @@ interface SendNotificationOptions {
  *
  * The plain-text part comes from the same React template — multipart emails
  * score better with spam filters and stay readable in text-only clients.
+ *
+ * @param {{ subject: string, react: import('react').ReactElement, replyTo?: string }} options
  */
-export async function sendNotification({ subject, react, replyTo }: SendNotificationOptions) {
+export async function sendNotification({ subject, react, replyTo }) {
   const resend = new Resend(process.env.RESEND_API_KEY)
   const [html, text] = await Promise.all([
     render(react),
@@ -42,7 +35,7 @@ export async function sendNotification({ subject, react, replyTo }: SendNotifica
 }
 
 /** Current time formatted for Pacific (e.g. "Wed, Jul 8, 2026, 5:45 PM PT"). */
-export function pacificTimestamp(): string {
+export function pacificTimestamp() {
   return `${new Date().toLocaleString('en-US', {
     timeZone: 'America/Los_Angeles',
     weekday: 'short',

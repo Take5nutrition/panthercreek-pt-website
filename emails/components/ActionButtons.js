@@ -1,22 +1,14 @@
+import { createElement as h } from 'react'
 import { Button, Section } from '@react-email/components'
-import { colors } from '../theme'
-
-export interface ActionButtonsProps {
-  /** Lead's email — renders the "Reply" button. */
-  email?: string | null
-  /** Lead's phone — renders the "Call" button when present. */
-  phone?: string | null
-  /** First name used in button labels, e.g. "Call Jane". */
-  name?: string | null
-  /** Pre-filled subject for the mailto reply link. */
-  replySubject?: string
-}
+import { colors } from '../theme.js'
 
 /**
  * Quick-action buttons for following up on a lead. Buttons only render
  * when their underlying contact info exists.
+ *
+ * @param {{ email?: string|null, phone?: string|null, name?: string|null, replySubject?: string }} props
  */
-export default function ActionButtons({ email, phone, name, replySubject }: ActionButtonsProps) {
+export default function ActionButtons({ email, phone, name, replySubject }) {
   const telHref = phone ? `tel:${phone.replace(/[^\d+]/g, '')}` : null
   const mailHref = email
     ? `mailto:${email}${replySubject ? `?subject=${encodeURIComponent(replySubject)}` : ''}`
@@ -24,25 +16,15 @@ export default function ActionButtons({ email, phone, name, replySubject }: Acti
 
   if (!mailHref && !telHref) return null
 
-  return (
-    <Section style={wrap}>
-      {mailHref && (
-        <Button href={mailHref} style={primary}>
-          Reply to {name || 'Lead'}
-        </Button>
-      )}
-      {telHref && (
-        <Button href={telHref} style={secondary}>
-          Call {name || 'Now'}
-        </Button>
-      )}
-    </Section>
+  return h(Section, { style: wrap },
+    mailHref ? h(Button, { href: mailHref, style: primary }, `Reply to ${name || 'Lead'}`) : null,
+    telHref ? h(Button, { href: telHref, style: secondary }, `Call ${name || 'Now'}`) : null,
   )
 }
 
 const wrap = {
   padding: '6px 0 18px',
-  textAlign: 'center' as const,
+  textAlign: 'center',
 }
 
 const buttonBase = {

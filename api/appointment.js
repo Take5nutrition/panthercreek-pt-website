@@ -1,21 +1,11 @@
-import { createElement } from 'react'
-import AppointmentRequestEmail from '../emails/templates/AppointmentRequestEmail'
-import { pacificTimestamp, sendNotification } from '../emails/send'
+import { createElement as h } from 'react'
+import AppointmentRequestEmail from '../emails/templates/AppointmentRequestEmail.js'
+import { pacificTimestamp, sendNotification } from '../emails/send.js'
 
-/** Minimal Vercel function types — avoids pulling in @vercel/node. */
-interface VercelRequest {
-  method?: string
-  body: Record<string, unknown>
-}
-interface VercelResponse {
-  status(code: number): VercelResponse
-  json(data: unknown): void
-}
-
-const str = (v: unknown, max = 2000) => String(v ?? '').trim().slice(0, max)
+const str = (v, max = 2000) => String(v ?? '').trim().slice(0, max)
 
 /** "2026-07-15" → "Wed, Jul 15, 2026" (falls back to the raw value). */
-function formatDate(raw: string): string {
+function formatDate(raw) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw
   const d = new Date(`${raw}T12:00:00Z`)
   if (Number.isNaN(d.getTime())) return raw
@@ -28,7 +18,7 @@ function formatDate(raw: string): string {
   })
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
@@ -53,7 +43,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const { error } = await sendNotification({
       subject: `New Appointment Request — ${firstName} ${lastName}${tags ? ` (${tags})` : ''}`,
-      react: createElement(AppointmentRequestEmail, {
+      react: h(AppointmentRequestEmail, {
         firstName,
         lastName,
         email,

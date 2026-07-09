@@ -1,22 +1,17 @@
-import type { ReactNode } from 'react'
+import { createElement as h } from 'react'
 import { Section, Text } from '@react-email/components'
-import { colors } from '../theme'
-
-interface InfoCardProps {
-  title: string
-  children: ReactNode
-}
+import { colors } from '../theme.js'
 
 /**
  * Rounded card section grouping related fields, with a blue-accented
  * uppercase title in the PantherCreek style.
+ *
+ * @param {{ title: string, children: import('react').ReactNode }} props
  */
-export default function InfoCard({ title, children }: InfoCardProps) {
-  return (
-    <Section style={card}>
-      <Text style={cardTitle}>{title}</Text>
-      {children}
-    </Section>
+export default function InfoCard({ title, children }) {
+  return h(Section, { style: card },
+    h(Text, { style: cardTitle }, title),
+    children,
   )
 }
 
@@ -34,7 +29,7 @@ const cardTitle = {
   fontSize: '13px',
   fontWeight: 700,
   letterSpacing: '2px',
-  textTransform: 'uppercase' as const,
+  textTransform: 'uppercase',
   paddingLeft: '10px',
   margin: '0 0 16px',
 }

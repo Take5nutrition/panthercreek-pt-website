@@ -1,20 +1,10 @@
-import { createElement } from 'react'
-import ContactFormEmail from '../emails/templates/ContactFormEmail'
-import { pacificTimestamp, sendNotification } from '../emails/send'
+import { createElement as h } from 'react'
+import ContactFormEmail from '../emails/templates/ContactFormEmail.js'
+import { pacificTimestamp, sendNotification } from '../emails/send.js'
 
-/** Minimal Vercel function types — avoids pulling in @vercel/node. */
-interface VercelRequest {
-  method?: string
-  body: Record<string, unknown>
-}
-interface VercelResponse {
-  status(code: number): VercelResponse
-  json(data: unknown): void
-}
+const str = (v, max = 2000) => String(v ?? '').trim().slice(0, max)
 
-const str = (v: unknown, max = 2000) => String(v ?? '').trim().slice(0, max)
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
@@ -32,7 +22,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const { error } = await sendNotification({
       subject: subject ? `[Website] ${subject}` : `[Website] New message from ${name}`,
-      react: createElement(ContactFormEmail, {
+      react: h(ContactFormEmail, {
         name,
         email,
         phone,

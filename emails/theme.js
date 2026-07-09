@@ -19,7 +19,7 @@ export const colors = {
   muted: '#5B6B7A',
   /** Field labels. */
   label: '#8494A3',
-} as const
+}
 
 /**
  * Web-safe stack — custom fonts are unreliable in email clients (Gmail
