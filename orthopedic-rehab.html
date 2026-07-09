@@ -458,6 +458,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   .ft .bottom{flex-direction:column;gap:12px}
   .ft .bottom .socials{flex-wrap:wrap}
 }
+.svc-sub{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.svc-sub-tag{display:inline-flex;align-items:center;gap:5px;font:600 .72rem/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--signal);background:#fff;border:1.5px solid var(--signal);border-radius:20px;padding:6px 12px;cursor:pointer;transition:background .18s,color .18s,transform .18s}
+.svc-sub-tag::after{content:"\2192";font-size:.7rem}
+.svc-sub-tag:hover{background:var(--signal);color:#fff;transform:translateY(-1px)}
 </style>
 </head>
 <body>
@@ -594,6 +598,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
         <span class="eyebrow">What We Do</span>
         <h2>Orthopedic care that gets to the root of the problem.</h2>
         <p class="svc-lead">Your musculoskeletal system — bones, joints, muscles, tendons, ligaments, and cartilage — affects everything you do physically and mentally. We build individualized treatment plans that address the underlying cause of your condition and restore full function.</p>
+        <div class="svc-sub-block" style="margin-top:22px">
+          <span class="eyebrow" style="margin-bottom:2px">Related Services</span>
+          <div class="svc-sub">
+            <a class="svc-sub-tag" href="/auto-work-injuries">Auto &amp; Work Injuries</a>
+            <a class="svc-sub-tag" href="/back-pain">Chronic Back Pain</a>
+          </div>
+        </div>
         <div class="svc-features">
           <div class="svc-feat">
             <div class="svc-feat-icon">
