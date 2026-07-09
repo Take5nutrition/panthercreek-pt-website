@@ -30,5 +30,5 @@ export const fontStack =
 
 export const SITE_URL = 'https://panthercreekpt.com'
 /** White wordmark with panther mark — designed for the navy header. */
-export const LOGO_URL = `${SITE_URL}/public/FOOTER%20LOGO.png`
+export const LOGO_URL = `${SITE_URL}/public/Logos/FOOTER%20LOGO.png`
 export const BUSINESS_NAME = 'PantherCreek Physical Therapy & Balance'
