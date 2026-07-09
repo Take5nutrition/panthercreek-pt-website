@@ -430,7 +430,39 @@ function openModal(){modalOverlay.classList.add('open');document.body.style.over
 function closeModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
 modalClose.addEventListener('click',closeModal);
 modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
-document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeModal()});
+const apptForm=document.getElementById('apptForm');
+apptForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!apptForm.checkValidity()){apptForm.reportValidity();return}
+  const btn=apptForm.querySelector('button[type="submit"]');
+  let status=document.getElementById('apptStatus');
+  if(!status){status=document.createElement('p');status.id='apptStatus';status.style.cssText='display:none;margin:12px 0 0;font:500 .85rem/1.5 var(--sans);text-align:center';apptForm.appendChild(status)}
+  const orig=btn.innerHTML;
+  btn.disabled=true;btn.textContent='Sending…';status.style.display='none';
+  try{
+    const res=await fetch('/api/appointment',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(Object.fromEntries(new FormData(apptForm)))
+    });
+    const data=await res.json();
+    if(!res.ok)throw new Error(data.error||'Something went wrong.');
+    btn.textContent='Request Sent';
+    status.textContent="Request received! We'll call you to confirm availability.";
+    status.style.color='#2e7d46';status.style.display='block';
+    setTimeout(()=>{
+      closeModal();apptForm.reset();
+      const yf=document.getElementById('youthFields');if(yf)yf.classList.remove('show');
+      const fl=document.getElementById('fnameLabel');if(fl)fl.textContent='First Name';
+      const ll=document.getElementById('lnameLabel');if(ll)ll.textContent='Last Name';
+      btn.disabled=false;btn.innerHTML=orig;status.style.display='none';
+    },2200);
+  }catch(err){
+    status.textContent=err.message||'Something went wrong. Please try again or call us directly.';
+    status.style.color='#B3261E';status.style.display='block';
+    btn.disabled=false;btn.innerHTML=orig;
+  }
+});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleNav(false);closeModal()}});
 </script>
 </body>

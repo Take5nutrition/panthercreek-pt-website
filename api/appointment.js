@@ -39,6 +39,8 @@ export default async function handler(req, res) {
   const program = str(req.body.program, 60)
   const trainingFormat = str(req.body.format, 60)
   const tags = [program, trainingFormat].filter(Boolean).join(' · ')
+  // Some pages send lowercase option values ("clackamas", "morning")
+  const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s)
 
   try {
     const { error } = await sendNotification({
@@ -48,9 +50,9 @@ export default async function handler(req, res) {
         lastName,
         email,
         phone,
-        location: str(req.body.location, 80),
+        location: cap(str(req.body.location, 80)),
         preferredDate: formatDate(str(req.body.date, 40)),
-        preferredTime: time ? time.charAt(0).toUpperCase() + time.slice(1) : '',
+        preferredTime: cap(time),
         program,
         trainingFormat,
         athleteName: str(req.body.athleteName, 120),

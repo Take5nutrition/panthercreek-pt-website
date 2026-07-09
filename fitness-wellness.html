@@ -901,8 +901,10 @@ modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal(
 const apptForm=document.getElementById('apptForm');
 apptForm.addEventListener('submit',async e=>{
   e.preventDefault();
+  if(!apptForm.checkValidity()){apptForm.reportValidity();return}
   const btn=apptForm.querySelector('button[type="submit"]');
-  const status=document.getElementById('apptStatus');
+  let status=document.getElementById('apptStatus');
+  if(!status){status=document.createElement('p');status.id='apptStatus';status.style.cssText='display:none;margin:12px 0 0;font:500 .85rem/1.5 var(--sans);text-align:center';apptForm.appendChild(status)}
   const orig=btn.innerHTML;
   btn.disabled=true;btn.textContent='Sending…';status.style.display='none';
   try{
@@ -918,9 +920,9 @@ apptForm.addEventListener('submit',async e=>{
     status.style.color='#2e7d46';status.style.display='block';
     setTimeout(()=>{
       closeModal();apptForm.reset();
-      document.getElementById('youthFields').classList.remove('show');
-      document.getElementById('fnameLabel').textContent='First Name';
-      document.getElementById('lnameLabel').textContent='Last Name';
+      const yf=document.getElementById('youthFields');if(yf)yf.classList.remove('show');
+      const fl=document.getElementById('fnameLabel');if(fl)fl.textContent='First Name';
+      const ll=document.getElementById('lnameLabel');if(ll)ll.textContent='Last Name';
       btn.disabled=false;btn.innerHTML=orig;status.style.display='none';
     },2200);
   }catch(err){
