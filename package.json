@@ -2,7 +2,19 @@
   "name": "panthercreek-pt",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "email:preview": "tsx scripts/render-email-previews.tsx"
+  },
   "dependencies": {
-    "resend": "^3.2.0"
+    "@react-email/components": "^1.0.12",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "resend": "^6.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "tsx": "^4.23.0",
+    "typescript": "^5"
   }
 }

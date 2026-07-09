@@ -870,6 +870,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
         <button type="submit" class="btn btn--blue" style="justify-content:center">Submit Request
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
+        <p id="apptStatus" style="display:none;margin:12px 0 0;font:500 .85rem/1.5 var(--sans);text-align:center"></p>
       </form>
     </div>
   </div>
@@ -897,7 +898,37 @@ function openModal(location){
 function closeModal(){modalOverlay.classList.remove('open');document.body.style.overflow=''}
 modalClose.addEventListener('click',closeModal);
 modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
-document.getElementById('apptForm').addEventListener('submit',e=>{e.preventDefault();closeModal()});
+const apptForm=document.getElementById('apptForm');
+apptForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=apptForm.querySelector('button[type="submit"]');
+  const status=document.getElementById('apptStatus');
+  const orig=btn.innerHTML;
+  btn.disabled=true;btn.textContent='Sending…';status.style.display='none';
+  try{
+    const res=await fetch('/api/appointment',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(Object.fromEntries(new FormData(apptForm)))
+    });
+    const data=await res.json();
+    if(!res.ok)throw new Error(data.error||'Something went wrong.');
+    btn.textContent='Request Sent';
+    status.textContent="Request received! We'll call you to confirm availability.";
+    status.style.color='#2e7d46';status.style.display='block';
+    setTimeout(()=>{
+      closeModal();apptForm.reset();
+      document.getElementById('youthFields').classList.remove('show');
+      document.getElementById('fnameLabel').textContent='First Name';
+      document.getElementById('lnameLabel').textContent='Last Name';
+      btn.disabled=false;btn.innerHTML=orig;status.style.display='none';
+    },2200);
+  }catch(err){
+    status.textContent=err.message||'Something went wrong. Please try again or call us directly.';
+    status.style.color='#B3261E';status.style.display='block';
+    btn.disabled=false;btn.innerHTML=orig;
+  }
+});
 document.querySelectorAll('input[name="program"]').forEach(r=>{
   r.addEventListener('change',function(){
     const youth=this.value==='Youth Performance';
