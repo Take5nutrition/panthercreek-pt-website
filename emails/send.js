@@ -2,6 +2,8 @@ import { render } from '@react-email/components'
 import { Resend } from 'resend'
 
 const FROM = 'PantherCreek PT Website <noreply@panthercreekpt.com>'
+/** Friendlier display name for client-facing auto-replies. */
+const FROM_FRIENDLY = 'PantherCreek Physical Therapy <noreply@panthercreekpt.com>'
 const TO = 'tatumerickson@panthercreekpt.com'
 
 /**
@@ -31,6 +33,29 @@ export async function sendNotification({ subject, react, replyTo }) {
     html,
     text,
     replyTo,
+  })
+}
+
+/**
+ * Sends a client-facing confirmation to the person who submitted a form.
+ * Replies to this email go to the clinic inbox, not the noreply address.
+ *
+ * @param {{ to: string, subject: string, react: import('react').ReactElement }} options
+ */
+export async function sendAutoReply({ to, subject, react }) {
+  const resend = new Resend(process.env.RESEND_API_KEY)
+  const [html, text] = await Promise.all([
+    render(react),
+    render(react, { plainText: true }),
+  ])
+
+  return resend.emails.send({
+    from: FROM_FRIENDLY,
+    to,
+    subject,
+    html,
+    text,
+    replyTo: TO,
   })
 }
 

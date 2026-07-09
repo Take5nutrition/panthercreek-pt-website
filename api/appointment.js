@@ -1,6 +1,7 @@
 import { createElement as h } from 'react'
 import AppointmentRequestEmail from '../emails/templates/AppointmentRequestEmail.js'
-import { pacificTimestamp, sendNotification } from '../emails/send.js'
+import AutoReplyEmail from '../emails/templates/AutoReplyEmail.js'
+import { pacificTimestamp, sendAutoReply, sendNotification } from '../emails/send.js'
 
 const str = (v, max = 2000) => String(v ?? '').trim().slice(0, max)
 
@@ -62,6 +63,22 @@ export default async function handler(req, res) {
       replyTo: email,
     })
     if (error) throw error
+
+    // Best effort — a failed confirmation must not fail the submission.
+    try {
+      await sendAutoReply({
+        to: email,
+        subject: "We've received your appointment request — PantherCreek Physical Therapy",
+        react: h(AutoReplyEmail, {
+          firstName,
+          heading: "We've Received Your Request",
+          message:
+            'Thanks for requesting an appointment with PantherCreek Physical Therapy & Balance. This is a request only for now — our team will call you soon to confirm your time or suggest alternate availability.',
+        }),
+      })
+    } catch (e) {
+      console.error('Auto-reply error:', e)
+    }
 
     return res.status(200).json({ success: true })
   } catch (err) {

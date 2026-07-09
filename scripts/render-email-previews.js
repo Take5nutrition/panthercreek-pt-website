@@ -12,9 +12,10 @@ import { fileURLToPath } from 'node:url'
 import { createElement as h } from 'react'
 import { render } from '@react-email/components'
 import AppointmentRequestEmail from '../emails/templates/AppointmentRequestEmail.js'
+import AutoReplyEmail from '../emails/templates/AutoReplyEmail.js'
 import ContactFormEmail from '../emails/templates/ContactFormEmail.js'
 
-const templates = [ContactFormEmail, AppointmentRequestEmail]
+const templates = [ContactFormEmail, AppointmentRequestEmail, AutoReplyEmail]
 
 const outDir = join(dirname(fileURLToPath(import.meta.url)), '..', '.email-previews')
 mkdirSync(outDir, { recursive: true })
