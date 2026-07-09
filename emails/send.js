@@ -2,7 +2,7 @@ import { render } from '@react-email/components'
 import { Resend } from 'resend'
 
 const FROM = 'PantherCreek PT Website <noreply@panthercreekpt.com>'
-const TO = 'take5athletics@gmail.com'
+const TO = 'tatumerickson@panthercreekpt.com'
 
 /**
  * Sends an internal notification email via Resend.
