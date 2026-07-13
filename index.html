@@ -549,6 +549,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
   .ft .bottom{flex-direction:column;gap:12px}
   .ft .bottom .socials{flex-wrap:wrap}
 }
+.svc-lead-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:9px;max-width:56ch}
+.svc-lead-list li{font-size:.92rem;color:var(--stone);line-height:1.6;padding-left:22px;position:relative}
+.svc-lead-list li::before{content:"";position:absolute;left:0;top:.6em;width:11px;height:2px;background:var(--gold)}
+.svc-lead-list strong{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -712,7 +716,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
       <svg class="rule" viewBox="0 0 80 20" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
         <path d="M0 10C12 3 22 17 40 10s28-7 40 0"/>
       </svg>
-      <p>Serving Clackamas County since 1989, we've built our reputation on skilled, one-on-one care and specialized equipment — including an overhead safety-support system designed to give you the confidence to push further in your recovery.</p>
+      <p>Serving Clackamas communities since 1989. We've built our reputation on skilled, one-on-one, hands-on care and individualized treatment plans. Specialized balance equipment gives you the confidence to push further in your recovery.</p>
       <a class="more" href="/about">Learn more about us
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <div class="feats">
@@ -757,37 +761,22 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="svc-head reveal">
       <span class="eyebrow">Our Services</span>
       <h2>Specialized care.<br>Proven results.</h2>
-      <p class="svc-lead">Hands-on, one-on-one treatment across six specialty areas — all under one roof at our Clackamas County clinics.</p>
+      <p class="svc-lead">Here is what sets us apart:</p>
+      <ul class="svc-lead-list">
+        <li><strong>Hands-on care:</strong> Skilled manual therapy directly from your physical therapist.</li>
+        <li><strong>Private rooms:</strong> Your care stays private.</li>
+        <li><strong>Built around you:</strong> Treatment plans are customized to your life, goals, and activity level.</li>
+      </ul>
     </div>
 
     <div class="svc-oc-grid reveal">
-
-      <a class="svc-oc" href="/balance-therapy">
-        <img src="public/New%20balance.jpg" alt="Balance Therapy" loading="lazy" decoding="async">
-        <div class="svc-oc-grad"></div>
-        <div class="svc-oc-body">
-          <span class="svc-oc-num">01</span>
-          <h3>Balance Therapy</h3>
-          <span class="svc-oc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
 
       <a class="svc-oc" href="/orthopedic-rehab">
         <img src="public/Orthopedic.jpg" alt="Orthopedic Rehab" loading="lazy" decoding="async">
         <div class="svc-oc-grad"></div>
         <div class="svc-oc-body">
-          <span class="svc-oc-num">02</span>
+          <span class="svc-oc-num">01</span>
           <h3>Orthopedic Rehab</h3>
-          <span class="svc-oc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a class="svc-oc" href="/fitness-wellness">
-        <img src="public/Fitness.jpg" alt="Fitness &amp; Wellness" loading="lazy" decoding="async">
-        <div class="svc-oc-grad"></div>
-        <div class="svc-oc-body">
-          <span class="svc-oc-num">03</span>
-          <h3>Fitness &amp; Wellness</h3>
           <span class="svc-oc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </a>
@@ -796,18 +785,38 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
         <img src="public/Neru.jpg" alt="Neurological Rehab" loading="lazy" decoding="async">
         <div class="svc-oc-grad"></div>
         <div class="svc-oc-body">
-          <span class="svc-oc-num">04</span>
+          <span class="svc-oc-num">02</span>
           <h3>Neurological Rehab</h3>
           <span class="svc-oc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </a>
 
+      <a class="svc-oc" href="/balance-therapy">
+        <img src="public/New%20balance.jpg" alt="Balance Therapy" loading="lazy" decoding="async">
+        <div class="svc-oc-grad"></div>
+        <div class="svc-oc-body">
+          <span class="svc-oc-num">03</span>
+          <h3>Balance Therapy</h3>
+          <span class="svc-oc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="svc-oc" href="/fitness-wellness">
+        <img src="public/Fitness.jpg" alt="Fitness &amp; Wellness" loading="lazy" decoding="async">
+        <div class="svc-oc-grad"></div>
+        <div class="svc-oc-body">
+          <span class="svc-oc-num">04</span>
+          <h3>Fitness &amp; Wellness</h3>
+          <span class="svc-oc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
       <a class="svc-oc" href="/urinary-incontinence">
-        <img src="public/Urinary.jpeg" alt="Urinary Incontinence Rehab" loading="lazy" decoding="async">
+        <img src="public/Urinary.jpeg" alt="Pelvic Floor Rehab" loading="lazy" decoding="async">
         <div class="svc-oc-grad"></div>
         <div class="svc-oc-body">
           <span class="svc-oc-num">05</span>
-          <h3>Urinary Incontinence Rehab</h3>
+          <h3>Pelvic Floor Rehab</h3>
           <span class="svc-oc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </a>
@@ -843,7 +852,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
         </div>
       </div>
       <div>
-        <blockquote style="font:italic 400 clamp(1.15rem,2vw,1.55rem)/1.65 Georgia,serif;color:var(--ink);max-width:64ch;margin-bottom:20px">"I opened this practice to help patients overcome injuries and return to their favorite activities — whether that's waterskiing, keeping up with grandchildren, or performing at their best. That purpose has never changed."</blockquote>
+        <blockquote style="font:italic 400 clamp(1.15rem,2vw,1.55rem)/1.65 Georgia,serif;color:var(--ink);max-width:64ch;margin-bottom:20px">"We started this practice to help patients overcome injuries and return to their favorite activities — whether that's waterskiing, keeping up with grandchildren, or performing at their best. That purpose has never changed."</blockquote>
         <div style="display:flex;align-items:center;gap:12px">
           <div style="width:32px;height:1.5px;background:var(--gold)"></div>
           <div>
@@ -927,7 +936,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
     <div class="intro reveal">
       <span class="eyebrow">Proudly Serving Clackamas County</span>
       <h2>Four clinics, one standard of care.</h2>
-      <p>Locally owned and rooted in the communities we serve — helping our neighbors move better and live better.</p>
+      <p>Locally owned in the communities we serve — helping our neighbors move better and live better.</p>
     </div>
     <a class="loc reveal d1" href="/clackamas"><div class="photo" data-tag="Clackamas"><img src="public/locations/clack.jpg" alt="Clackamas clinic" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async"></div><h3>Clackamas</h3></a>
     <a class="loc reveal d2" href="/molalla"><div class="photo" data-tag="Molalla"></div><h3>Molalla</h3></a>
@@ -966,7 +975,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
         <p class="blurb">PantherCreek Physical Therapy &amp; Balance — hands on, one on one care serving Clackamas County, Oregon since 1989.</p>
         <p style="font:700 .68rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:14px">Stronger Every Step</p>
       </div>
-      <div><h4>Services</h4><ul><li><a href="/balance-therapy">Balance Therapy</a></li><li><a href="/orthopedic-rehab">Orthopedic Rehab</a></li><li><a href="/fitness-wellness">Fitness &amp; Wellness</a></li><li><a href="/neurological-rehab">Neurological Rehab</a></li><li><a href="/urinary-incontinence">Urinary Incontinence Rehab</a></li><li><a href="/acupuncture">Acupuncture</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="/orthopedic-rehab">Orthopedic Rehab</a></li><li><a href="/neurological-rehab">Neurological Rehab</a></li><li><a href="/balance-therapy">Balance Therapy</a></li><li><a href="/fitness-wellness">Fitness &amp; Wellness</a></li><li><a href="/urinary-incontinence">Urinary Incontinence Rehab</a></li><li><a href="/acupuncture">Acupuncture</a></li></ul></div>
       <div><h4>Locations</h4><ul><li><a href="/clackamas">Clackamas</a></li><li><a href="/molalla">Molalla</a></li><li><a href="/estacada">Estacada</a></li><li><a href="/lake-oswego">Lake Oswego</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:5036985500">(503) 698-5500</a></li><li><a href="#">Schedule an evaluation</a></li><li><a href="/first-visit">Patient intake form</a></li><li><a href="/billing">Billing &amp; insurance</a></li></ul></div>
     </div>
