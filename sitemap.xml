@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Core pages -->
-  <url><loc>https://www.panthercreekpt.com/</loc><lastmod>2026-07-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.panthercreekpt.com/services</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.panthercreekpt.com/locations</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.panthercreekpt.com/about</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.panthercreekpt.com/staff</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.panthercreekpt.com/contact</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.panthercreekpt.com/</loc><lastmod>2026-07-17</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.panthercreekpt.com/services</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.panthercreekpt.com/locations</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.panthercreekpt.com/about</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.panthercreekpt.com/staff</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.panthercreekpt.com/contact</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Location pages -->
   <url><loc>https://www.panthercreekpt.com/clackamas</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.panthercreekpt.com/molalla</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.panthercreekpt.com/estacada</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.panthercreekpt.com/lake-oswego</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.panthercreekpt.com/molalla</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.panthercreekpt.com/estacada</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.panthercreekpt.com/lake-oswego</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Service pages — highest priority after homepage -->
-  <url><loc>https://www.panthercreekpt.com/balance-therapy</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.panthercreekpt.com/vestibular-rehab</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.panthercreekpt.com/orthopedic-rehab</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.panthercreekpt.com/back-pain</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.panthercreekpt.com/auto-work-injuries</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.panthercreekpt.com/neurological-rehab</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.panthercreekpt.com/parkinsons-rehab</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.panthercreekpt.com/rock-steady-boxing</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.panthercreekpt.com/urinary-incontinence</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.panthercreekpt.com/acupuncture</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.panthercreekpt.com/fitness-wellness</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.panthercreekpt.com/sports-rehab</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.panthercreekpt.com/pilates</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.panthercreekpt.com/nutritional-health</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.panthercreekpt.com/bike-fit</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.panthercreekpt.com/balance-therapy</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.panthercreekpt.com/vestibular-rehab</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.panthercreekpt.com/orthopedic-rehab</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.panthercreekpt.com/back-pain</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.panthercreekpt.com/auto-work-injuries</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.panthercreekpt.com/neurological-rehab</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.panthercreekpt.com/parkinsons-rehab</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.panthercreekpt.com/rock-steady-boxing</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.panthercreekpt.com/urinary-incontinence</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.panthercreekpt.com/acupuncture</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.panthercreekpt.com/fitness-wellness</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.panthercreekpt.com/sports-rehab</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.panthercreekpt.com/pilates</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.panthercreekpt.com/nutritional-health</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.panthercreekpt.com/bike-fit</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Resource pages -->
-  <url><loc>https://www.panthercreekpt.com/billing</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.panthercreekpt.com/first-visit</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.panthercreekpt.com/billing</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.panthercreekpt.com/first-visit</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
 </urlset>
