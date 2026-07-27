@@ -5,5 +5,6 @@ node_modules/
 # rendered email previews
 .email-previews/
 
-# full-resolution original of the hero photo (web version is Home page hero.jpg)
+# full-resolution originals (web versions are the committed .jpg files)
 public/Home page hero.jpeg
+public/homepage below hero.jpeg
