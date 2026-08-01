@@ -3,5 +3,17 @@
   "trailingSlash": false,
   "buildCommand": null,
   "outputDirectory": ".",
-  "framework": null
+  "framework": null,
+  "redirects": [
+    {
+      "source": "/pilates",
+      "destination": "/fitness-wellness",
+      "permanent": true
+    },
+    {
+      "source": "/nutritional-health",
+      "destination": "/fitness-wellness",
+      "permanent": true
+    }
+  ]
 }
