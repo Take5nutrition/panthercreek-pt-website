@@ -14,6 +14,11 @@
       "source": "/nutritional-health",
       "destination": "/fitness-wellness",
       "permanent": true
+    },
+    {
+      "source": "/rock-steady-boxing",
+      "destination": "/parkinsons-rehab",
+      "permanent": true
     }
   ]
 }
