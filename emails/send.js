@@ -4,7 +4,44 @@ import { Resend } from 'resend'
 const FROM = 'PantherCreek PT Website <noreply@panthercreekpt.com>'
 /** Friendlier display name for client-facing auto-replies. */
 const FROM_FRIENDLY = 'PantherCreek Physical Therapy <noreply@panthercreekpt.com>'
-const TO = 'tatumerickson@panthercreekpt.com'
+
+/**
+ * Who gets appointment requests and contact-form messages. Used when
+ * NOTIFY_TO is unset — set that env var in Vercel (comma-separated) to
+ * change the list without a redeploy.
+ */
+const DEFAULT_NOTIFY_TO = [
+  'kristina.h@panthercreekpt.com',
+  'jessica.s@panthercreekpt.com',
+  'Info@panthercreekpt.com',
+]
+
+/** Where replies to client-facing auto-replies land. Always one address. */
+const REPLY_TO = 'Info@panthercreekpt.com'
+
+/**
+ * Notification recipients: NOTIFY_TO if set and usable, else DEFAULT_NOTIFY_TO.
+ *
+ * Read per call rather than at module load so an env var change takes effect
+ * on the next request instead of the next cold start. Resend caps a single
+ * send at 50 recipients; case is preserved but duplicates are folded.
+ */
+function notifyRecipients() {
+  const configured = String(process.env.NOTIFY_TO ?? '')
+    .split(/[,;\s]+/)
+    .map((address) => address.trim())
+    .filter((address) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address))
+
+  const seen = new Set()
+  return (configured.length ? configured : DEFAULT_NOTIFY_TO)
+    .filter((address) => {
+      const key = address.toLowerCase()
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+    .slice(0, 50)
+}
 
 /**
  * Sends an internal notification email via Resend.
@@ -28,7 +65,7 @@ export async function sendNotification({ subject, react, replyTo }) {
 
   return resend.emails.send({
     from: FROM,
-    to: TO,
+    to: notifyRecipients(),
     subject,
     html,
     text,
@@ -55,7 +92,7 @@ export async function sendAutoReply({ to, subject, react }) {
     subject,
     html,
     text,
-    replyTo: TO,
+    replyTo: REPLY_TO,
   })
 }
 
