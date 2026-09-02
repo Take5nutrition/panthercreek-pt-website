@@ -1,10 +1,20 @@
-.DS_Store
-**/.DS_Store
 node_modules/
-
-# rendered email previews
+.vercel
+.env
+.env.local
 .email-previews/
+
+# macOS
+.DS_Store
 
 # full-resolution originals (web versions are the committed .jpg files)
 public/Home page hero.jpeg
 public/homepage below hero.jpeg
+public/Acupunture.jpeg
+public/New Fitness.jpeg
+public/New auto.jpeg
+public/New back pain.jpeg
+
+# design scratch / source art — not shipped
+public/Patient/
+public/Patient /
