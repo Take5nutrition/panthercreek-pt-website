@@ -347,6 +347,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .cancel-notice p{font-size:.78rem;line-height:1.55;margin:0}
 .cancel-notice strong{color:var(--ink);font-weight:600}
 .cancel-notice a{color:var(--ink);font-weight:700;white-space:nowrap}
+.hp-wrap{position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden}
 @media(max-width:700px){.modal{grid-template-columns:1fr}.modal-side{display:none}.modal-form-wrap{padding:36px 24px}}
 @media(max-width:640px){
   .modal-overlay{padding:0;align-items:stretch}
@@ -907,6 +908,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
       <h2 id="modalTitle">Schedule an Appointment</h2>
       <p class="sub">Request your preferred time below — we'll call to confirm or suggest alternate availability.</p>
       <form class="mform" id="apptForm" novalidate>
+        <div class="hp-wrap" aria-hidden="true">
+          <label for="hp-website-appt">Website</label>
+          <input type="text" id="hp-website-appt" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="field">
           <label for="appt-location">Location</label>
           <select id="appt-location" name="location" required>

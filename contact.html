@@ -355,6 +355,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .cancel-notice p{font-size:.78rem;line-height:1.55;margin:0}
 .cancel-notice strong{color:var(--ink);font-weight:600}
 .cancel-notice a{color:var(--ink);font-weight:700;white-space:nowrap}
+.hp-wrap{position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden}
 @media(max-width:1080px){
   .modal{grid-template-columns:1fr}.modal-side{display:none}.modal-form-wrap{padding:36px 24px}
 }
@@ -537,6 +538,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
             <p>To cancel or change an existing appointment, please call <a href="tel:5036985500">(503) 698-5500</a>. Website messages and appointment requests <strong>do not cancel appointments</strong>. If you call outside office hours, please leave a voicemail.</p>
           </div>
           <form class="cform" id="contactForm" novalidate>
+            <div class="hp-wrap" aria-hidden="true">
+              <label for="hp-website-msg">Website</label>
+              <input type="text" id="hp-website-msg" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <div class="row">
               <div class="field">
                 <label for="name">Full Name <span style="color:#c0392b">*</span></label>
@@ -679,6 +684,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
       <h2 id="modalTitle">Request an Appointment</h2>
       <p class="sub">Fill out the form and we'll be in touch within one business day.</p>
       <form class="mform" id="apptForm" novalidate>
+        <div class="hp-wrap" aria-hidden="true">
+          <label for="hp-website-appt">Website</label>
+          <input type="text" id="hp-website-appt" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="field">
           <label for="apptLoc">Preferred Location</label>
           <select id="apptLoc" name="location" required>
@@ -808,7 +817,8 @@ form.addEventListener('submit',async e=>{
         email,
         phone:document.getElementById('phone').value.trim(),
         subject:document.getElementById('subject').value,
-        message
+        message,
+        website:document.getElementById('hp-website-msg').value
       })
     });
     const data=await res.json();

@@ -387,6 +387,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .cancel-notice p{font-size:.78rem;line-height:1.55;margin:0}
 .cancel-notice strong{color:var(--ink);font-weight:600}
 .cancel-notice a{color:var(--ink);font-weight:700;white-space:nowrap}
+.hp-wrap{position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden}
 
 /* ─── Scroll reveal ─── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
@@ -661,6 +662,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
       <h2 id="modalTitle">Request an Appointment</h2>
       <p class="sub">Fill out the form and we'll be in touch within one business day.</p>
       <form class="mform" id="apptForm" novalidate>
+        <div class="hp-wrap" aria-hidden="true">
+          <label for="hp-website-appt">Website</label>
+          <input type="text" id="hp-website-appt" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="field">
           <label for="location">Preferred Location</label>
           <select id="location" name="location" required>

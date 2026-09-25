@@ -16,6 +16,16 @@ export default async function handler(req, res) {
   const subject = str(req.body.subject, 200)
   const message = str(req.body.message, 5000)
 
+  // Honeypot: "website" is an off-screen input no human sees. Bots fill every
+  // field they find, so any value here means automation. Answer 200 so the bot
+  // cannot tell it was blocked, but log the details in case a real person
+  // somehow tripped it — a dropped message should still be recoverable.
+  if (str(req.body.website, 200)) {
+    console.warn('[honeypot] contact submission dropped:',
+      JSON.stringify({ name, email, phone, subject }))
+    return res.status(200).json({ success: true })
+  }
+
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Name, email, and message are required.' })
   }

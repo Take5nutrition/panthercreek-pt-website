@@ -29,6 +29,16 @@ export default async function handler(req, res) {
   const email = str(req.body.email, 200)
   const phone = str(req.body.phone, 40)
 
+  // Honeypot: "website" is an off-screen input no human sees. Bots fill every
+  // field they find, so any value here means automation. Answer 200 so the bot
+  // cannot tell it was blocked, but log the details in case a real person
+  // somehow tripped it — a dropped request should still be recoverable.
+  if (str(req.body.website, 200)) {
+    console.warn('[honeypot] appointment request dropped:',
+      JSON.stringify({ firstName, lastName, email, phone }))
+    return res.status(200).json({ success: true })
+  }
+
   if (!firstName || !lastName || !email || !phone) {
     return res.status(400).json({ error: 'Name, email, and phone are required.' })
   }
