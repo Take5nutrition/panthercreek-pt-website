@@ -24,7 +24,7 @@ export default function AutoReplyEmail({ firstName, heading, message }) {
     h(Text, { style: paragraph }, `Hi ${firstName},`),
     h(Text, { style: paragraph }, message),
     h(Text, { style: paragraph },
-      `If you need anything right away, give us a call at ${CLINIC_PHONE}.`),
+      "If you need anything right away, we're here to help."),
     h(Text, { style: notice },
       `To cancel or change an existing appointment, please call ${CLINIC_PHONE}. `
       + 'Website messages and appointment requests do not cancel appointments. '
