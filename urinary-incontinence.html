@@ -344,6 +344,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
 .appt-notice svg{flex:none;margin-top:1px;color:var(--signal)}
 .appt-notice p{font-size:.78rem;line-height:1.55;margin:0}
 .appt-notice strong{color:var(--ink);font-weight:600}
+.cancel-notice{display:flex;align-items:flex-start;gap:10px;background:#FFF9E8;border:1px solid rgba(140,172,23,.4);border-radius:6px;padding:12px 14px;color:var(--stone);margin-top:10px}
+.cancel-notice svg{flex:none;margin-top:1px;color:var(--gold)}
+.cancel-notice p{font-size:.78rem;line-height:1.55;margin:0}
+.cancel-notice strong{color:var(--ink);font-weight:600}
+.cancel-notice a{color:var(--ink);font-weight:700;white-space:nowrap}
 
 /* ─── Service page layout ─── */
 .svc-body{padding-block:clamp(64px,9vw,110px);background:var(--paper)}
@@ -854,6 +859,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.04;letter-spacin
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <p><strong>Please note:</strong> This is a request only. We will call you to confirm availability or suggest an alternate time.</p>
         </div>
+        <div class="cancel-notice">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <p>To cancel or change an existing appointment, please call <a href="tel:5036985500">(503) 698-5500</a>. Website messages and appointment requests <strong>do not cancel appointments</strong>. If you call outside office hours, please leave a voicemail.</p>
+        </div>
         <button type="submit" class="btn btn--blue" style="justify-content:center">Submit Request
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
@@ -902,7 +911,7 @@ apptForm.addEventListener('submit',async e=>{
     const data=await res.json();
     if(!res.ok)throw new Error(data.error||'Something went wrong.');
     btn.textContent='Request Sent';
-    status.textContent="Request received! We'll call you to confirm availability.";
+    status.innerHTML="Request received! We'll call you to confirm availability.<br><br>To cancel or change an existing appointment, please call <a href=\"tel:5036985500\" style=\"color:inherit;font-weight:700\">(503) 698-5500</a>. Website messages and appointment requests do not cancel appointments. If you call outside office hours, please leave a voicemail.";
     status.style.color='#2e7d46';status.style.display='block';
     setTimeout(()=>{
       closeModal();apptForm.reset();
@@ -910,7 +919,7 @@ apptForm.addEventListener('submit',async e=>{
       const fl=document.getElementById('fnameLabel');if(fl)fl.textContent='First Name';
       const ll=document.getElementById('lnameLabel');if(ll)ll.textContent='Last Name';
       btn.disabled=false;btn.innerHTML=orig;status.style.display='none';
-    },2200);
+    },9000);
   }catch(err){
     status.textContent=err.message||'Something went wrong. Please try again or call us directly.';
     status.style.color='#B3261E';status.style.display='block';

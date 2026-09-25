@@ -25,6 +25,10 @@ export default function AutoReplyEmail({ firstName, heading, message }) {
     h(Text, { style: paragraph }, message),
     h(Text, { style: paragraph },
       `If you need anything right away, give us a call at ${CLINIC_PHONE}.`),
+    h(Text, { style: notice },
+      `To cancel or change an existing appointment, please call ${CLINIC_PHONE}. `
+      + 'Website messages and appointment requests do not cancel appointments. '
+      + 'If you call outside office hours, please leave a voicemail.'),
     h(Text, { style: signoff }, '— The PantherCreek Team'),
   )
 }
@@ -34,6 +38,17 @@ const paragraph = {
   fontSize: '15px',
   lineHeight: '1.7',
   margin: '0 0 16px',
+}
+
+const notice = {
+  color: colors.ink,
+  fontSize: '14px',
+  lineHeight: '1.65',
+  margin: '0 0 16px',
+  padding: '12px 14px',
+  background: '#FFF9E8',
+  border: '1px solid rgba(140,172,23,.4)',
+  borderRadius: '6px',
 }
 
 const signoff = {
